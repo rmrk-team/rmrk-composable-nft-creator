@@ -1,0 +1,59 @@
+{
+  "name": "rmrk-composable-nft-creator",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "prepare": "panda codegen",
+    "format": "biome format . --write",
+    "lint": "biome check .",
+    "lint:fix": "pnpm lint --apply"
+  },
+  "dependencies": {
+    "@ark-ui/anatomy": "^2.2.0",
+    "@ark-ui/react": "^2.1.1",
+    "@rainbow-me/rainbowkit": "^2.0.0",
+    "@rmrk-team/nft-renderer": "latest",
+    "@rmrk-team/rmrk-evm-utils": "latest",
+    "@rmrk-team/rmrk-hooks": "latest",
+    "@tanstack/react-query": "^5.22.2",
+    "lucide-react": "^0.303.0",
+    "next": "13.4.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "viem": "^2.7.11",
+    "wagmi": "^2.5.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.5.3",
+    "@pandacss/dev": "^0.32.0",
+    "@park-ui/panda-preset": "^0.35.2",
+    "@types/node": "18.16.9",
+    "@types/react": "18.2.33",
+    "@types/react-dom": "18.2.14",
+    "@typescript-eslint/eslint-plugin": "5.58.0",
+    "@typescript-eslint/parser": "5.58.0",
+    "@zag-js/select": "^0.32.0",
+    "abitype": "^1.0.0",
+    "eslint": "8.53.0",
+    "eslint-config-next": "14.0.1",
+    "eslint-config-prettier": "8.10.0",
+    "eslint-plugin-import": "2.29.0",
+    "eslint-plugin-jsx-a11y": "6.8.0",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "prettier": "^3.0.3",
+    "simple-git-hooks": "^2.9.0",
+    "typescript": "5.3.3"
+  },
+  "packageManager": "pnpm@8.15.1",
+  "simple-git-hooks": {
+    "pre-commit": "pnpm format && pnpm lint:fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

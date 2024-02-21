@@ -1,0 +1,32 @@
+'use client';
+
+import type { CollectionItem } from '@ark-ui/react';
+import { EVM_NETWORKS, assertIsEvmNetwork } from '@rmrk-team/rmrk-evm-utils';
+import type { ValueChangeDetails } from '@zag-js/select';
+import React, { useState } from 'react';
+import { Center, VStack } from 'styled-system/jsx';
+import Page from '../components/app/page';
+
+const networkOptions = Object.values(EVM_NETWORKS).map((network) => ({
+  label: network,
+  value: network,
+}));
+
+export default function Home() {
+  const [selectedNetwork, setSelectedNetwork] = useState<
+    EVM_NETWORKS | undefined
+  >();
+
+  const changeNetwork = (item: ValueChangeDetails<CollectionItem>) => {
+    assertIsEvmNetwork(item.value?.[0]);
+    setSelectedNetwork(item.value?.[0]);
+  };
+
+  return (
+    <Page>
+      <VStack gap="8" width="100%" flex={1}>
+        <Center flex={1}>Hello World</Center>
+      </VStack>
+    </Page>
+  );
+}
