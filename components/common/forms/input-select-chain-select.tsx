@@ -1,22 +1,15 @@
-import { InputSelect } from 'components/common/forms/input-select';
 import * as Select from 'components/park-ui/select';
 import { Text } from 'components/park-ui/text';
 import { useField } from 'formik';
-import {
-  fileUploadCatalogPartAcceptedFileTypes,
-} from 'lib/consts/media-types';
 import React from 'react';
 import { VStack } from 'styled-system/jsx';
 import { FormLabel } from 'components/park-ui/form-label';
+import { ChainSelectDropdown } from 'components/common/chain-select-dropdown';
 
-const catalogTypeOptions = Object.keys(fileUploadCatalogPartAcceptedFileTypes).map((type) => ({
-  value: type,
-  label: type,
-}));
 
-const fieldName = 'type';
+const fieldName = 'chainId';
 
-export const InputSelectCatalogType = () => {
+export const InputSelectChainSelect = () => {
   const [field, meta, helpers] = useField(fieldName);
 
   const onChange: Select.RootProps['onValueChange'] = (e) => {
@@ -25,14 +18,10 @@ export const InputSelectCatalogType = () => {
 
   return (
     <VStack gap={2}>
-      <FormLabel htmlFor={field.name}>Catalog type</FormLabel>
-      <InputSelect
+      <FormLabel htmlFor={field.name}>Chain</FormLabel>
+      <ChainSelectDropdown
         defaultValue={field.value ? [field.value] : undefined}
-        id={fieldName}
-        groupLabel="Catalog type"
-        placeholder="Select a catalog type"
         onValueChange={onChange}
-        items={catalogTypeOptions}
       />
       {meta.touched && meta.error && <Text color="red">{meta.error}</Text>}
     </VStack>

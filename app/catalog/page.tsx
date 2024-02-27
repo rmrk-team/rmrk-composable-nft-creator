@@ -16,10 +16,23 @@ import React, { useState } from 'react';
 import { Box, Container, VStack } from 'styled-system/jsx';
 import invariant from 'tiny-invariant';
 import { useWaitForTransactionReceipt, useWalletClient } from 'wagmi';
+import { DeploySuccessDialog } from 'components/catalog/deploy-catalog/deploy-success-dialog';
+import {ChainSelectDropdown} from "components/common/chain-select-dropdown";
+import {baseSepolia, type Chain} from "wagmi/chains";
+import * as Select from "components/park-ui/select";
 
 export default function CatalogLandingPage() {
   const { data: walletClient } = useWalletClient();
   const [hash, setHash] = useState<Address>();
+  const [selectedChainId, setSelectedChainId] = useState<Chain['id']>(baseSepolia.id);
+
+  const onChainSelect: Select.RootProps['onValueChange'] = (e) => {
+    const selectedChainIdString = e.value?.[0]
+    const chainId = selectedChainIdString ? parseInt(selectedChainIdString) : undefined;
+    if (chainId) {
+      setSelectedChainId(chainId);
+    }
+  }
 
   const {
     isLoading: isLoadingReceipt,
@@ -32,19 +45,19 @@ export default function CatalogLandingPage() {
   });
 
   const onSubmit = async (deployCatalogFormFields: DeployCatalogFormFields) => {
-    console.log('submit');
+    const { type, files, name } = deployCatalogFormFields;
     //TODO: Allow user to enter metadataURI directly instead of pinning it. Same for images
-    invariant(deployCatalogFormFields.files[0]);
+    invariant(files[0]);
     const metadataURI = await pinMetadataWithFiles({
-      mediaFile: deployCatalogFormFields.files[0],
-      metadataFields: { name: deployCatalogFormFields.name },
+      mediaFile: files[0],
+      metadataFields: { name },
     });
     try {
       setHash(undefined);
       const hash = await walletClient?.deployContract({
         abi: RMRKCatalogImpl,
         bytecode: RMRKNFTCatalogArtifact.bytecode.object as `0x${string}`,
-        args: [metadataURI, deployCatalogFormFields.type as string],
+        args: [metadataURI, type],
       });
       console.log('Deploying catalog contract with hash:', hash);
       setHash(hash);
@@ -53,34 +66,37 @@ export default function CatalogLandingPage() {
     }
   };
 
-  //TODO: Redirect to /catalog/${receipt.contractAddress} page when receipt is received
-
   return (
-    <VStack gap="8" width="100%" flex={1}>
-      <Heading as="h1">RMRK Catalog creator</Heading>
+    <>
+      <DeploySuccessDialog receipt={receipt} chainId={selectedChainId} />
 
-      {receipt && isSuccess && (
-        <Container>
-          <Text>Contract deployed: {receipt.contractAddress}</Text>
-        </Container>
-      )}
+      <VStack gap="8" width="100%" flex={1}>
+        <Heading as="h1">RMRK Catalog creator</Heading>
 
-      {errorTransaction && (
-        <Alert.Root>
-          <Alert.Icon asChild>
-            <AlertCircle />
-          </Alert.Icon>
-          <Alert.Title>Something went wrong</Alert.Title>
-        </Alert.Root>
-      )}
+        {receipt && isSuccess && (
+          <Container>
+            <Text>Contract deployed: {receipt.contractAddress}</Text>
+          </Container>
+        )}
 
-      <Box width={['100%', undefined, undefined, 'xl']}>
-        <DeployCatalogForm
-          onSubmit={onSubmit}
-          isLoading={isLoadingReceipt}
-          isDisabled={isErrorReceipt || isSuccess}
-        />
-      </Box>
-    </VStack>
+        {errorTransaction && (
+          <Alert.Root>
+            <Alert.Icon asChild>
+              <AlertCircle />
+            </Alert.Icon>
+            <Alert.Title>Something went wrong</Alert.Title>
+          </Alert.Root>
+        )}
+
+        <Box width={['100%', undefined, undefined, 'xl']}>
+          <ChainSelectDropdown defaultValue={[selectedChainId.toString()]} onValueChange={onChainSelect} />
+          <DeployCatalogForm
+            onSubmit={onSubmit}
+            isLoading={isLoadingReceipt}
+            isDisabled={isErrorReceipt || isSuccess || !selectedChainId}
+          />
+        </Box>
+      </VStack>
+    </>
   );
 }
