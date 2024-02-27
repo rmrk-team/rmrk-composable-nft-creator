@@ -44,8 +44,8 @@ export async function POST(request: Request) {
     );
 
     return Response.json({ metadataUri: `ipfs://${metadataCid}` });
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-}  catch (error: any) {
+    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  } catch (error: any) {
     return new Response(`Pin metadata error: ${error.message}`, {
       status: 400,
     });
