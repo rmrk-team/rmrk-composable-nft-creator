@@ -1,11 +1,10 @@
+import { ChainSelectDropdown } from 'components/common/chain-select-dropdown';
+import { FormLabel } from 'components/park-ui/form-label';
 import * as Select from 'components/park-ui/select';
 import { Text } from 'components/park-ui/text';
 import { useField } from 'formik';
 import React from 'react';
 import { VStack } from 'styled-system/jsx';
-import { FormLabel } from 'components/park-ui/form-label';
-import { ChainSelectDropdown } from 'components/common/chain-select-dropdown';
-
 
 const fieldName = 'chainId';
 

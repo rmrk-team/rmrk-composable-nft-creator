@@ -1,19 +1,23 @@
-import { Stack } from 'styled-system/jsx';
 import { Button } from 'components/park-ui/button';
 import * as Dialog from 'components/park-ui/dialog';
-import type { TransactionReceipt } from 'viem';
-import { Text } from 'components/park-ui/text';
-import React from 'react';
-import NextLink from 'next/link';
 import { Link } from 'components/park-ui/link';
-import type {Chain} from "wagmi/chains";
+import { Text } from 'components/park-ui/text';
+import NextLink from 'next/link';
+import React from 'react';
+import { Stack } from 'styled-system/jsx';
+import type { TransactionReceipt } from 'viem';
+import type { Chain } from 'wagmi/chains';
 
 type Props = Dialog.RootProps & {
   receipt?: TransactionReceipt;
   chainId?: Chain['id'];
 };
 
-export const DeploySuccessDialog = ({ receipt, chainId, ...dialogProps }: Props) => {
+export const DeploySuccessDialog = ({
+  receipt,
+  chainId,
+  ...dialogProps
+}: Props) => {
   const isOpen = receipt?.status === 'success';
   if (!receipt || !chainId) {
     return null;
@@ -43,7 +47,9 @@ export const DeploySuccessDialog = ({ receipt, chainId, ...dialogProps }: Props)
               </Link>
 
               <Link asChild>
-                <NextLink href={`/catalog/${chainId}/${receipt.contractAddress}`}>
+                <NextLink
+                  href={`/catalog/${chainId}/${receipt.contractAddress}`}
+                >
                   <Button width="full">Confirm</Button>
                 </NextLink>
               </Link>

@@ -1,17 +1,17 @@
 'use client';
 
+import { RMRKCatalogUtils } from '@rmrk-team/rmrk-evm-utils';
+import { useRMRKConfig } from '@rmrk-team/rmrk-hooks';
 import type { Address } from 'abitype';
+import { Loader } from 'components/common/loader';
 import * as Alert from 'components/park-ui/alert';
 import { Heading } from 'components/park-ui/heading';
+import { Text } from 'components/park-ui/text';
+import { useMediaQuery } from 'lib/hooks/use-media-query';
 import { AlertCircle } from 'lucide-react';
 import React from 'react';
 import { Box, Container, Flex, Grid, VStack } from 'styled-system/jsx';
-import { useMediaQuery } from 'lib/hooks/use-media-query';
-import { useChainId, useReadContract} from "wagmi";
-import {RMRKCatalogUtils} from "@rmrk-team/rmrk-evm-utils";
-import {useRMRKConfig} from "@rmrk-team/rmrk-hooks";
-import {Text} from "components/park-ui/text";
-import {Loader} from "components/common/loader";
+import { useChainId, useReadContract } from 'wagmi';
 
 type Props = {
   params: {
@@ -26,20 +26,24 @@ type Props = {
  * @param chainIdFromPath
  * @constructor
  */
-export default function ManageCatalogPage({ params: { catalogContractAddress, chainId: chainIdFromPath } }: Props) {
+export default function ManageCatalogPage({
+  params: { catalogContractAddress, chainId: chainIdFromPath },
+}: Props) {
   const isScreenSm = useMediaQuery('(min-width: 768px)');
   const config = useRMRKConfig();
-  const chainIdFromConnector = useChainId()
+  const chainIdFromConnector = useChainId();
 
-  const chainId = chainIdFromPath ? parseInt(chainIdFromPath) : chainIdFromConnector;
+  const chainId = chainIdFromPath
+    ? parseInt(chainIdFromPath)
+    : chainIdFromConnector;
 
   const catalogDetailsResponse = useReadContract({
     chainId,
     abi: RMRKCatalogUtils,
     address: config.utilityContracts[chainId]?.RMRKCatalogUtils,
     functionName: 'getCatalogData',
-    query: {enabled: !!chainId && !!catalogContractAddress}
-  })
+    query: { enabled: !!chainId && !!catalogContractAddress },
+  });
 
   if (!catalogContractAddress || !chainId) {
     return (
@@ -49,7 +53,9 @@ export default function ManageCatalogPage({ params: { catalogContractAddress, ch
           <Alert.Icon asChild>
             <AlertCircle />
           </Alert.Icon>
-          <Alert.Title>Invalid contract chainId or catalog address in url</Alert.Title>
+          <Alert.Title>
+            Invalid contract chainId or catalog address in url
+          </Alert.Title>
         </Alert.Root>
       </VStack>
     );
@@ -57,10 +63,10 @@ export default function ManageCatalogPage({ params: { catalogContractAddress, ch
 
   if (catalogDetailsResponse.isLoading) {
     return (
-        <Container>
-          <Loader size="lg" />
-        </Container>
-    )
+      <Container>
+        <Loader size="lg" />
+      </Container>
+    );
   }
 
   if (!catalogDetailsResponse.data) {
@@ -72,12 +78,18 @@ export default function ManageCatalogPage({ params: { catalogContractAddress, ch
   return (
     <VStack gap="8" width="100%" flex={1}>
       <Heading as="h1">Manage catalog {catalogContractAddress}</Heading>
-      <Text>Please make sure that all catalog parts are of the same media type: {catalogType}</Text>
+      <Text>
+        Please make sure that all catalog parts are of the same media type:{' '}
+        {catalogType}
+      </Text>
 
-      {isScreenSm && <Container>For the best experience use larger screen</Container>}
+      {isScreenSm && (
+        <Container>For the best experience use larger screen</Container>
+      )}
 
       <Box width="100%">
-        TODO: Catalog edit form: "add parts and add whitelisted collections to slot parts"
+        TODO: Catalog edit form: "add parts and add whitelisted collections to
+        slot parts"
         <Grid
           gap={[6, null, null, null, 8, 12]}
           gridTemplateColumns={['1fr', null, null, 'auto max(420px, 30%)']}

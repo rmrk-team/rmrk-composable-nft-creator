@@ -1,7 +1,7 @@
 import { InputSelect } from 'components/common/forms/input-select';
-import React from 'react';
-import { allSupportedChains } from 'lib/wagmi-config';
 import * as Select from 'components/park-ui/select';
+import { allSupportedChains } from 'lib/wagmi-config';
+import React from 'react';
 
 const chainOptions = allSupportedChains.map((chain) => ({
   value: chain.id.toString(),

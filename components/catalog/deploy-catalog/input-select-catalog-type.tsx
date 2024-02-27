@@ -1,15 +1,15 @@
 import { InputSelect } from 'components/common/forms/input-select';
+import { FormLabel } from 'components/park-ui/form-label';
 import * as Select from 'components/park-ui/select';
 import { Text } from 'components/park-ui/text';
 import { useField } from 'formik';
-import {
-  fileUploadCatalogPartAcceptedFileTypes,
-} from 'lib/consts/media-types';
+import { fileUploadCatalogPartAcceptedFileTypes } from 'lib/consts/media-types';
 import React from 'react';
 import { VStack } from 'styled-system/jsx';
-import { FormLabel } from 'components/park-ui/form-label';
 
-const catalogTypeOptions = Object.keys(fileUploadCatalogPartAcceptedFileTypes).map((type) => ({
+const catalogTypeOptions = Object.keys(
+  fileUploadCatalogPartAcceptedFileTypes,
+).map((type) => ({
   value: type,
   label: type,
 }));
