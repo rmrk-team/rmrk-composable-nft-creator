@@ -3,8 +3,6 @@
 import { FileUploadDropzone } from 'components/common/forms/file-upload-dropzone';
 import { InputField } from 'components/common/forms/input-field';
 import { Button } from 'components/park-ui/button';
-import { Input } from 'components/park-ui/input';
-import { Label } from 'components/park-ui/select';
 import { Form, Formik } from 'formik';
 import type { CatalogSchema } from 'lib/catalog/deploy-catalog/deploy-catalog-form/deploy-catalog-form-schema';
 import {
@@ -14,36 +12,38 @@ import {
 import React from 'react';
 import { Box, VStack } from 'styled-system/jsx';
 import * as yup from 'yup';
+import { InputSelect } from 'components/common/forms/input-select';
+import { InputSelectCatalogType } from 'components/catalog/deploy-catalog/input-select-catalog-type';
 
 export type DeployCatalogFormFields = {
   type: CatalogSchema['type'] | '';
   name: string;
-  description: string;
-  image: string;
   files: File[];
 };
 
 const DeployCatalogFormSchema = yup.object().shape({
   name: yup.string().min(3).max(100).required(),
-  description: yup.string().required(),
-  image: yup.string().required(),
   type: yup.string().oneOf(supportedCatalogImageMimeTypes).defined().required(),
   files: yup.array().of(yup.mixed()).min(1).max(1).required(),
 });
 
 const initialValues: DeployCatalogFormFields = {
   name: '',
-  description: '',
-  image: '',
   type: '',
   files: [],
 };
 
 type Props = {
-  onSubmit: (deployCatalogFormFields: DeployCatalogFormFields) => void;
+  onSubmit: (deployCatalogFormFields: DeployCatalogFormFields) => Promise<void>;
+  isLoading?: boolean;
+  isDisabled?: boolean;
 };
 
-export const DeployCatalogForm = ({ onSubmit }: Props) => {
+export const DeployCatalogForm = ({
+  onSubmit,
+  isDisabled,
+  isLoading,
+}: Props) => {
   const formId = 'deploy-catalog-form';
 
   return (
@@ -55,17 +55,24 @@ export const DeployCatalogForm = ({ onSubmit }: Props) => {
       validateOnBlur={false}
       validateOnMount={false}
     >
-      {({ errors, submitForm }) => (
-        <Form id={formId}>
+      {({ errors, submitForm, isSubmitting, handleSubmit }) => (
+        <Form id={formId} onSubmit={handleSubmit}>
+          {errors && <Box>{JSON.stringify(errors)}</Box>}
           <VStack gap={8}>
             <InputField name="name" label="Catalog name" />
+            <InputSelectCatalogType />
             <FileUploadDropzone
-              name="image"
+              name="files"
               label="Catalog thumbnail"
               maxFiles={1}
               accept={fileUploadCatalogThumbnailAcceptedFileTypes}
             />
-            <Button type="submit">Deploy Catalog contract</Button>
+            <Button
+              type="submit"
+              disabled={isLoading || isDisabled || isSubmitting}
+            >
+              Deploy Catalog contract
+            </Button>
           </VStack>
         </Form>
       )}

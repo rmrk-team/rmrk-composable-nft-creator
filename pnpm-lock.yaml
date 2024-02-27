@@ -11,6 +11,9 @@ dependencies:
   '@ark-ui/react':
     specifier: ^2.1.1
     version: 2.1.1(@internationalized/date@3.5.2)(react-dom@18.2.0)(react@18.2.0)
+  '@openzeppelin/contracts':
+    specifier: ^5.0.1
+    version: 5.0.1
   '@rainbow-me/rainbowkit':
     specifier: ^2.0.0
     version: 2.0.0(@types/react@18.2.33)(react-dom@18.2.0)(react@18.2.0)(viem@2.7.11)(wagmi@2.5.7)
