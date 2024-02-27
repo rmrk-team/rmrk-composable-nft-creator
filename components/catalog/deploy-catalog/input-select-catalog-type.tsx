@@ -4,10 +4,9 @@ import { useField } from 'formik';
 import { fileUploadCatalogThumbnailAcceptedFileTypes } from 'lib/consts/media-types';
 import React from 'react';
 import { VStack } from 'styled-system/jsx';
+import { Text } from 'components/park-ui/text';
 
-const catalogTypeOptions = Object.keys(
-  fileUploadCatalogThumbnailAcceptedFileTypes,
-).map((type) => ({
+const catalogTypeOptions = Object.keys(fileUploadCatalogThumbnailAcceptedFileTypes).map((type) => ({
   value: type,
   label: type,
 }));
@@ -19,16 +18,17 @@ export const InputSelectCatalogType = () => {
     void helpers.setValue(e?.value?.[0]);
   };
 
-  console.log('type', field);
   return (
     <VStack gap={2}>
       <InputSelect
+        defaultValue={field.value ? [field.value] : undefined}
         id="type"
         groupLabel="Castalog type"
         placeholder="Select a catalog type"
         onValueChange={onChange}
         items={catalogTypeOptions}
       />
+      {meta.touched && meta.error && <Text color="red">{meta.error}</Text>}
     </VStack>
   );
 };

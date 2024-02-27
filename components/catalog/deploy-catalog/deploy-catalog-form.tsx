@@ -57,7 +57,6 @@ export const DeployCatalogForm = ({
     >
       {({ errors, submitForm, isSubmitting, handleSubmit }) => (
         <Form id={formId} onSubmit={handleSubmit}>
-          {errors && <Box>{JSON.stringify(errors)}</Box>}
           <VStack gap={8}>
             <InputField name="name" label="Catalog name" />
             <InputSelectCatalogType />
