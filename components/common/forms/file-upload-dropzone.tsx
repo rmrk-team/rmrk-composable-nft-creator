@@ -1,14 +1,14 @@
-import React from 'react';
-import * as FileUpload from 'components/park-ui/file-upload';
-import { IconButton } from 'components/park-ui/icon-button';
-import { Trash2Icon } from 'lucide-react';
-import { Button } from 'components/park-ui/button';
-import { useField } from 'formik';
 import type { FileUploadRootProps } from '@ark-ui/react';
-import { fileUploadCatalogThumbnailAcceptedFileTypes } from 'lib/consts/media-types';
-import { VStack } from 'styled-system/jsx';
+import { Button } from 'components/park-ui/button';
+import * as FileUpload from 'components/park-ui/file-upload';
 import { FormLabel } from 'components/park-ui/form-label';
+import { IconButton } from 'components/park-ui/icon-button';
 import { Text } from 'components/park-ui/text';
+import { useField } from 'formik';
+import { fileUploadCatalogThumbnailAcceptedFileTypes } from 'lib/consts/media-types';
+import { Trash2Icon } from 'lucide-react';
+import React from 'react';
+import { VStack } from 'styled-system/jsx';
 
 type PreviewFile = File & { preview: string };
 

@@ -1,6 +1,6 @@
+import { AccountWallet } from 'components/account/account-wallet';
 import React from 'react';
 import { Box, HStack } from 'styled-system/jsx';
-import { AccountWallet } from 'components/account/account-wallet';
 
 export const TopBar = () => {
   return (

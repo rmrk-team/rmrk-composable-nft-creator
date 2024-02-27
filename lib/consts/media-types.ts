@@ -1,6 +1,10 @@
 import type { Accept } from 'react-dropzone';
 
-export const supportedCatalogImageMimeTypes = ['image/png', 'image/svg+xml', 'image/webp'] as const;
+export const supportedCatalogImageMimeTypes = [
+  'image/png',
+  'image/svg+xml',
+  'image/webp',
+] as const;
 
 export const fileUploadCatalogPartAcceptedFileTypes: Accept = {
   'image/png': ['.png'],

@@ -1,16 +1,19 @@
 'use client';
 
-import React from 'react';
-import { Box, VStack } from 'styled-system/jsx';
-import { Form, Formik } from 'formik';
-import type { CatalogSchema } from 'lib/catalog/deploy-catalog/deploy-catalog-form/deploy-catalog-form-schema';
-import * as yup from 'yup';
-import {fileUploadCatalogThumbnailAcceptedFileTypes, supportedCatalogImageMimeTypes} from 'lib/consts/media-types';
+import { FileUploadDropzone } from 'components/common/forms/file-upload-dropzone';
+import { InputField } from 'components/common/forms/input-field';
+import { Button } from 'components/park-ui/button';
 import { Input } from 'components/park-ui/input';
 import { Label } from 'components/park-ui/select';
-import { InputField } from 'components/common/forms/input-field';
-import {FileUploadDropzone} from "components/common/forms/file-upload-dropzone";
-import {Button} from "components/park-ui/button";
+import { Form, Formik } from 'formik';
+import type { CatalogSchema } from 'lib/catalog/deploy-catalog/deploy-catalog-form/deploy-catalog-form-schema';
+import {
+  fileUploadCatalogThumbnailAcceptedFileTypes,
+  supportedCatalogImageMimeTypes,
+} from 'lib/consts/media-types';
+import React from 'react';
+import { Box, VStack } from 'styled-system/jsx';
+import * as yup from 'yup';
 
 export type DeployCatalogFormFields = {
   type: CatalogSchema['type'] | '';
@@ -56,7 +59,12 @@ export const DeployCatalogForm = ({ onSubmit }: Props) => {
         <Form id={formId}>
           <VStack gap={8}>
             <InputField name="name" label="Catalog name" />
-            <FileUploadDropzone name="image" label="Catalog thumbnail" maxFiles={1} accept={fileUploadCatalogThumbnailAcceptedFileTypes} />
+            <FileUploadDropzone
+              name="image"
+              label="Catalog thumbnail"
+              maxFiles={1}
+              accept={fileUploadCatalogThumbnailAcceptedFileTypes}
+            />
             <Button type="submit">Deploy Catalog contract</Button>
           </VStack>
         </Form>
