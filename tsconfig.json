@@ -10,10 +10,8 @@
     "noUnusedParameters": false,
     "useDefineForClassFields": true,
     "useUnknownInCatchVariables": true,
-
     "checkJs": false,
     "verbatimModuleSyntax": true,
-
     "noErrorTruncation": true,
     "module": "esnext",
     "target": "ES2019",
@@ -39,10 +37,18 @@
       }
     ],
     "paths": {
-      "styled-system/*": ["styled-system/*"],
-      "lib/*": ["lib/*"],
-      "components/*": ["components/*"],
-      "contracts/*": ["contracts/*"]
+      "styled-system/*": [
+        "styled-system/*"
+      ],
+      "lib/*": [
+        "lib/*"
+      ],
+      "components/*": [
+        "components/*"
+      ],
+      "contracts/*": [
+        "contracts/*"
+      ]
     }
   },
   "exclude": [
@@ -50,12 +56,8 @@
   ],
   "include": [
     "next-env.d.ts",
-    "app/**/*.ts",
-    "app/**/*.tsx",
-    "lib/**/*.ts",
-    "lib/**/*.tsx",
-    "components/**/*.ts",
-    "components/**/*.tsx",
+    "**/*.ts",
+    "**/*.tsx",
     ".next/types/**/*.ts"
   ]
 }

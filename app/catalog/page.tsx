@@ -10,9 +10,11 @@ import * as Alert from 'components/park-ui/alert';
 import { Heading } from 'components/park-ui/heading';
 import { Text } from 'components/park-ui/text';
 import RMRKNFTCatalogArtifact from 'lib/contract-artifacts/RMRKNFTCatalog.json';
+import { pinMetadataWithFiles } from 'lib/ipfs/pin-metadata';
 import { AlertCircle } from 'lucide-react';
 import React, { useState } from 'react';
 import { Box, Container, VStack } from 'styled-system/jsx';
+import invariant from 'tiny-invariant';
 import { useWaitForTransactionReceipt, useWalletClient } from 'wagmi';
 
 export default function CatalogLandingPage() {
@@ -31,9 +33,12 @@ export default function CatalogLandingPage() {
 
   const onSubmit = async (deployCatalogFormFields: DeployCatalogFormFields) => {
     console.log('submit');
-    //TODO: upload metadata to IPFS
-    // Need to create api endpoint to upload media file to ipfs and then to upload metadata json to ipfs
-    const metadataURI = '';
+    //TODO: Allow user to enter metadataURI directly instead of pinning it. Same for images
+    invariant(deployCatalogFormFields.files[0]);
+    const metadataURI = await pinMetadataWithFiles({
+      mediaFile: deployCatalogFormFields.files[0],
+      metadataFields: { name: deployCatalogFormFields.name },
+    });
     try {
       setHash(undefined);
       const hash = await walletClient?.deployContract({
