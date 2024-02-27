@@ -1,19 +1,19 @@
 'use client';
 
 import { RMRKCatalogImpl } from '@rmrk-team/rmrk-evm-utils';
-import RMRKNFTCatalogArtifact from 'lib/contract-artifacts/RMRKNFTCatalog.json';
+import type { Address } from 'abitype';
 import {
   DeployCatalogForm,
   type DeployCatalogFormFields,
 } from 'components/catalog/deploy-catalog/deploy-catalog-form';
+import * as Alert from 'components/park-ui/alert';
 import { Heading } from 'components/park-ui/heading';
+import { Text } from 'components/park-ui/text';
+import RMRKNFTCatalogArtifact from 'lib/contract-artifacts/RMRKNFTCatalog.json';
+import { AlertCircle } from 'lucide-react';
 import React, { useState } from 'react';
 import { Box, Container, VStack } from 'styled-system/jsx';
 import { useWaitForTransactionReceipt, useWalletClient } from 'wagmi';
-import type { Address } from 'abitype';
-import * as Alert from 'components/park-ui/alert';
-import { AlertCircle } from 'lucide-react';
-import { Text } from 'components/park-ui/text';
 
 export default function CatalogLandingPage() {
   const { data: walletClient } = useWalletClient();

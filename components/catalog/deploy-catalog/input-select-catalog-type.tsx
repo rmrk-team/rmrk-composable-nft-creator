@@ -1,9 +1,9 @@
-import { VStack } from 'styled-system/jsx';
 import { InputSelect } from 'components/common/forms/input-select';
-import React from 'react';
+import * as Select from 'components/park-ui/select';
 import { useField } from 'formik';
 import { fileUploadCatalogThumbnailAcceptedFileTypes } from 'lib/consts/media-types';
-import * as Select from 'components/park-ui/select';
+import React from 'react';
+import { VStack } from 'styled-system/jsx';
 
 const catalogTypeOptions = Object.keys(
   fileUploadCatalogThumbnailAcceptedFileTypes,

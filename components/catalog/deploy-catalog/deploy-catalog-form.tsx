@@ -1,7 +1,9 @@
 'use client';
 
+import { InputSelectCatalogType } from 'components/catalog/deploy-catalog/input-select-catalog-type';
 import { FileUploadDropzone } from 'components/common/forms/file-upload-dropzone';
 import { InputField } from 'components/common/forms/input-field';
+import { InputSelect } from 'components/common/forms/input-select';
 import { Button } from 'components/park-ui/button';
 import { Form, Formik } from 'formik';
 import type { CatalogSchema } from 'lib/catalog/deploy-catalog/deploy-catalog-form/deploy-catalog-form-schema';
@@ -12,8 +14,6 @@ import {
 import React from 'react';
 import { Box, VStack } from 'styled-system/jsx';
 import * as yup from 'yup';
-import { InputSelect } from 'components/common/forms/input-select';
-import { InputSelectCatalogType } from 'components/catalog/deploy-catalog/input-select-catalog-type';
 
 export type DeployCatalogFormFields = {
   type: CatalogSchema['type'] | '';
