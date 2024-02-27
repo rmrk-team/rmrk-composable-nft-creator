@@ -48,6 +48,8 @@ export default function CatalogLandingPage() {
     }
   };
 
+  //TODO: Redirect to /catalog/${receipt.contractAddress} page when receipt is received 
+
   return (
     <VStack gap="8" width="100%" flex={1}>
       <Heading as="h1">RMRK Catalog creator</Heading>
