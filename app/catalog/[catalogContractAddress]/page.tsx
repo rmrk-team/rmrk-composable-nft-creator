@@ -13,7 +13,9 @@ type Props = {
   };
 };
 
-export default function CatalogEditPage({ params: { catalogContractAddress } }: Props) {
+export default function CatalogEditPage({
+  params: { catalogContractAddress },
+}: Props) {
   if (!catalogContractAddress) {
     return (
       <VStack gap="8" width="100%" flex={1}>
@@ -32,7 +34,10 @@ export default function CatalogEditPage({ params: { catalogContractAddress } }: 
     <VStack gap="8" width="100%" flex={1}>
       <Heading as="h1">Manage catalog {catalogContractAddress}</Heading>
 
-      <Box width={['100%', undefined, undefined, 'xl']}>TODO: Catalog edit form: "add parts and add whitelisted collections to slot parts"</Box>
+      <Box width={['100%', undefined, undefined, 'xl']}>
+        TODO: Catalog edit form: "add parts and add whitelisted collections to
+        slot parts"
+      </Box>
     </VStack>
   );
 }

@@ -32,6 +32,7 @@ export default function CatalogLandingPage() {
   const onSubmit = async (deployCatalogFormFields: DeployCatalogFormFields) => {
     console.log('submit');
     //TODO: upload metadata to IPFS
+    // Need to create api endpoint to upload media file to ipfs and then to upload metadata json to ipfs
     const metadataURI = '';
     try {
       setHash(undefined);

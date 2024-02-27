@@ -39,6 +39,13 @@ type Props = {
   isDisabled?: boolean;
 };
 
+/**
+ * TODO: Add option to input metadata IPFS url manually
+ * @param onSubmit
+ * @param isDisabled
+ * @param isLoading
+ * @constructor
+ */
 export const DeployCatalogForm = ({
   onSubmit,
   isDisabled,
