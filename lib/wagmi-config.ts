@@ -17,7 +17,7 @@ export const allSupportedChains: readonly [Chain, ...Chain[]] = [
   ...testnetChains,
 ];
 
-const WALLET_CONNECT_PROJECT_ID = 'TODO';
+const WALLET_CONNECT_PROJECT_ID = 'b516f1bf510e8c7ce518c43f57aaf7e0';
 
 export const connectors = connectorsForWallets(
   [

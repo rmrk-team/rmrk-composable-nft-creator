@@ -5,7 +5,10 @@ import { EVM_NETWORKS, assertIsEvmNetwork } from '@rmrk-team/rmrk-evm-utils';
 import type { ValueChangeDetails } from '@zag-js/select';
 import React, { useState } from 'react';
 import { Center, VStack } from 'styled-system/jsx';
-import Page from '../components/app/page';
+import { Heading } from 'components/park-ui/heading';
+import { Link } from 'components/park-ui/link';
+import NextLink from 'next/link';
+import { Button } from 'components/park-ui/button';
 
 const networkOptions = Object.values(EVM_NETWORKS).map((network) => ({
   label: network,
@@ -13,9 +16,7 @@ const networkOptions = Object.values(EVM_NETWORKS).map((network) => ({
 }));
 
 export default function Home() {
-  const [selectedNetwork, setSelectedNetwork] = useState<
-    EVM_NETWORKS | undefined
-  >();
+  const [selectedNetwork, setSelectedNetwork] = useState<EVM_NETWORKS | undefined>();
 
   const changeNetwork = (item: ValueChangeDetails<CollectionItem>) => {
     assertIsEvmNetwork(item.value?.[0]);
@@ -23,10 +24,18 @@ export default function Home() {
   };
 
   return (
-    <Page>
-      <VStack gap="8" width="100%" flex={1}>
-        <Center flex={1}>Hello World</Center>
-      </VStack>
-    </Page>
+    <VStack gap="8" width="100%" flex={1}>
+      <Center flex={1}>
+        <Heading as="h1">Welcome to RMRK Composable NFT creator</Heading>
+      </Center>
+
+      <Center flex={1}>
+        <Link asChild>
+          <NextLink href="/catalog">
+            <Button variant="solid">Create catalog</Button>
+          </NextLink>
+        </Link>
+      </Center>
+    </VStack>
   );
 }

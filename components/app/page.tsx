@@ -17,7 +17,7 @@ const Page: FunctionComponent<PropsWithChildren> = ({ children }) => {
       >
         {children}
       </Flex>
-      <Footer />
+
     </>
   );
 };
