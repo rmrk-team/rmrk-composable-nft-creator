@@ -48,7 +48,7 @@ export default function CatalogLandingPage() {
     }
   };
 
-  //TODO: Redirect to /catalog/${receipt.contractAddress} page when receipt is received 
+  //TODO: Redirect to /catalog/${receipt.contractAddress} page when receipt is received
 
   return (
     <VStack gap="8" width="100%" flex={1}>
