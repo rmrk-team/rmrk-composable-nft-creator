@@ -12,7 +12,9 @@ export default function CollectionLandingPage() {
 
         <Box>TODO: Deploy a new RMRK Composable collection form</Box>
 
-        <Box>TODO: Add composable (Catalog) asset entries to the collection</Box>
+        <Box>
+          TODO: Add composable (Catalog) asset entries to the collection
+        </Box>
 
         <Box>TODO: Add equippable asset entries to the collection</Box>
       </VStack>

@@ -8,7 +8,9 @@ export default function NftLandingPage() {
   return (
     <>
       <VStack gap="8" width="100%" flex={1}>
-        <Heading as="h1">Select RMRK NFT collection to create Composable NFTs</Heading>
+        <Heading as="h1">
+          Select RMRK NFT collection to create Composable NFTs
+        </Heading>
 
         <Box>TODO: Mint NFT Landing page</Box>
 
