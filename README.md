@@ -17,6 +17,8 @@ Install dependencies
 
 `pnpm install` 
 
+Copy sample env file by running `cp env.example .env.local` and fill in the relevant environment variables
+
 Run nextjs dev server
 
 `pnpm dev`
