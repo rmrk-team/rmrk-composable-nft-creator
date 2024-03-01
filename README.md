@@ -1,6 +1,6 @@
 # RMRK Composable NFT creator
 
-A simple no-code UI for creating your own composable NFTs using [RMRK EVM NFTs](https://https://evm.rmrk.app) standard.
+A simple no-code UI for creating your own composable NFTs using [RMRK EVM NFTs](https://evm.rmrk.app) standard.
 
 ---
 
