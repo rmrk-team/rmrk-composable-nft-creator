@@ -14,15 +14,9 @@ dependencies:
   '@filebase/client':
     specifier: ^0.0.5
     version: 0.0.5(node-fetch@3.3.2)
-  '@openzeppelin/contracts':
-    specifier: ^5.0.1
-    version: 5.0.1
   '@rainbow-me/rainbowkit':
     specifier: ^2.0.0
     version: 2.0.0(@types/react@18.2.33)(react-dom@18.2.0)(react@18.2.0)(viem@2.7.11)(wagmi@2.5.7)
-  '@rmrk-team/evm-contracts':
-    specifier: ^2.4.4
-    version: 2.4.4
   '@rmrk-team/ipfs-utils':
     specifier: ^0.0.7
     version: 0.0.7(node-fetch@3.3.2)(typescript@5.3.3)
@@ -3684,10 +3678,6 @@ packages:
       fastq: 1.17.1
     dev: true
 
-  /@openzeppelin/contracts@5.0.1:
-    resolution: {integrity: sha512-yQJaT5HDp9hYOOp4jTYxMsR02gdFZFXhewX5HW9Jo4fsqSVqqyIO/xTHdWDaKX5a3pv1txmf076Lziz+sO7L1w==}
-    dev: false
-
   /@pandacss/config@0.32.0:
     resolution: {integrity: sha512-clf6DrtBvIEyztvdgAQc8Hq6RpdAwY5MTsune0Ka1iX4B5DjLyL38dIdV2DPCWSZkGx+oBHTgG9bmeGn7MYDpg==}
     dependencies:
@@ -4859,13 +4849,6 @@ packages:
       invariant: 2.2.4
       nullthrows: 1.1.1
       react-native: 0.73.4(@babel/core@7.23.9)(@babel/preset-env@7.23.9)(react@18.2.0)
-    dev: false
-
-  /@rmrk-team/evm-contracts@2.4.4:
-    resolution: {integrity: sha512-twz+yAOj2SWt/jcROwIiv04yKiQASMz7QQE+z7B/n1hVKg/lyxiU+Z/EUeoKvRnaiyNnBkQLnpOu8jPmDn0ZjQ==}
-    engines: {node: '>=18'}
-    dependencies:
-      '@openzeppelin/contracts': 5.0.1
     dev: false
 
   /@rmrk-team/ipfs-utils@0.0.7(node-fetch@3.3.2)(typescript@5.3.3):
