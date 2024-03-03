@@ -1,7 +1,6 @@
 'use client';
 
-import { RMRKCatalogImpl } from '@rmrk-team/rmrk-evm-utils';
-import type { Address } from 'abitype';
+import { type Address } from 'abitype';
 import {
   DeployCatalogForm,
   type DeployCatalogFormFields,
@@ -12,26 +11,27 @@ import * as Alert from 'components/park-ui/alert';
 import { Heading } from 'components/park-ui/heading';
 import * as Select from 'components/park-ui/select';
 import { Text } from 'components/park-ui/text';
-import RMRKNFTCatalogArtifact from 'lib/contract-artifacts/RMRKNFTCatalog.json';
 import { pinMetadataWithFiles } from 'lib/ipfs/pin-metadata';
 import { AlertCircle } from 'lucide-react';
 import React, { useState } from 'react';
 import { Box, Container, VStack } from 'styled-system/jsx';
 import invariant from 'tiny-invariant';
-import { useWaitForTransactionReceipt, useWalletClient } from 'wagmi';
-import { type Chain, baseSepolia } from 'wagmi/chains';
+import { useWaitForTransactionReceipt } from 'wagmi';
+import { baseSepolia } from 'wagmi/chains';
+import { writeRmrkCatalogFactoryDeployCatalog } from 'lib/wagmi/generated';
+import { type SupportedChainId, wagmiConfig } from 'lib/wagmi-config';
+import { getCatalogAddressFromDeployedEventLogs } from 'lib/catalog/deploy-catalog/get-catalog-address-from-deployed-event-logs';
 
 export default function CatalogLandingPage() {
-  const { data: walletClient } = useWalletClient();
   const [hash, setHash] = useState<Address>();
-  const [selectedChainId, setSelectedChainId] = useState<Chain['id']>(
+  const [selectedChainId, setSelectedChainId] = useState<SupportedChainId>(
     baseSepolia.id,
   );
 
   const onChainSelect: Select.RootProps['onValueChange'] = (e) => {
     const selectedChainIdString = e.value?.[0];
     const chainId = selectedChainIdString
-      ? parseInt(selectedChainIdString)
+      ? (parseInt(selectedChainIdString) as SupportedChainId)
       : undefined;
     if (chainId) {
       setSelectedChainId(chainId);
@@ -48,6 +48,9 @@ export default function CatalogLandingPage() {
     hash,
   });
 
+  const deployedCatalogAddress =
+    getCatalogAddressFromDeployedEventLogs(receipt) ?? undefined;
+
   const onSubmit = async (deployCatalogFormFields: DeployCatalogFormFields) => {
     const { type, files, name } = deployCatalogFormFields;
     //TODO: Allow user to enter metadataURI directly instead of pinning it. Same for images
@@ -58,10 +61,9 @@ export default function CatalogLandingPage() {
     });
     try {
       setHash(undefined);
-      const hash = await walletClient?.deployContract({
-        abi: RMRKCatalogImpl,
-        bytecode: RMRKNFTCatalogArtifact.bytecode.object as `0x${string}`,
+      const hash = await writeRmrkCatalogFactoryDeployCatalog(wagmiConfig, {
         args: [metadataURI, type],
+        chainId: selectedChainId,
       });
       console.log('Deploying catalog contract with hash:', hash);
       setHash(hash);
@@ -70,16 +72,21 @@ export default function CatalogLandingPage() {
     }
   };
 
+  console.log('receipt', receipt);
+
   return (
     <>
-      <DeploySuccessDialog receipt={receipt} chainId={selectedChainId} />
+      <DeploySuccessDialog
+        catalogAddress={deployedCatalogAddress}
+        chainId={selectedChainId}
+      />
 
       <VStack gap="8" width="100%" flex={1}>
         <Heading as="h1">RMRK Catalog creator</Heading>
 
-        {receipt && isSuccess && (
+        {deployedCatalogAddress && isSuccess && (
           <Container>
-            <Text>Contract deployed: {receipt.contractAddress}</Text>
+            <Text>Contract deployed: {deployedCatalogAddress}</Text>
           </Container>
         )}
 

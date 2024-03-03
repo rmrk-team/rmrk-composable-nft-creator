@@ -5,36 +5,35 @@ import { Text } from 'components/park-ui/text';
 import NextLink from 'next/link';
 import React from 'react';
 import { Stack } from 'styled-system/jsx';
-import type { TransactionReceipt } from 'viem';
 import type { Chain } from 'wagmi/chains';
+import type { Address } from 'abitype';
 
 type Props = Dialog.RootProps & {
-  receipt?: TransactionReceipt;
+  catalogAddress?: Address;
   chainId?: Chain['id'];
 };
 
 export const DeploySuccessDialog = ({
-  receipt,
+  catalogAddress,
   chainId,
   ...dialogProps
 }: Props) => {
-  const isOpen = receipt?.status === 'success';
-  if (!receipt || !chainId) {
+  const isOpen = !!catalogAddress;
+  if (!catalogAddress || !chainId) {
     return null;
   }
   return (
     <Dialog.Root {...dialogProps} open={isOpen}>
       <Dialog.Backdrop />
       <Dialog.Positioner>
-        <Dialog.Content>
+        <Dialog.Content width={'md'}>
           <Stack gap="8" p="6">
             <Stack gap="1">
               <Dialog.Title>Catalog contract deployed</Dialog.Title>
               <Dialog.Description>
                 Your catalog address is{' '}
-                <Text fontWeight={600}>{receipt.contractAddress}</Text>. Please
-                save the address to be able to add it to your composable NFTs
-                later
+                <Text fontWeight={600}>{catalogAddress}</Text>. Please save the
+                address to be able to add it to your composable NFTs later
               </Dialog.Description>
             </Stack>
             <Stack gap="3" direction="row" width="full">
@@ -47,9 +46,7 @@ export const DeploySuccessDialog = ({
               </Link>
 
               <Link asChild>
-                <NextLink
-                  href={`/catalog/${chainId}/${receipt.contractAddress}`}
-                >
+                <NextLink href={`/catalog/${chainId}/${catalogAddress}`}>
                   <Button width="full">Confirm</Button>
                 </NextLink>
               </Link>

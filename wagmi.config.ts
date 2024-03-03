@@ -1,26 +1,36 @@
 import { defineConfig } from '@wagmi/cli';
-import { actions, foundry, hardhat } from '@wagmi/cli/plugins';
+import { actions, foundry } from '@wagmi/cli/plugins';
 import { RMRKCatalogFactoryContractAddress } from 'lib/consts/contract-addresses';
-import { baseSepolia } from 'wagmi/chains';
+import { baseSepolia, sepolia } from 'wagmi/chains';
 
 type FoundryConfigDeployments = {
   [p: string]: `0x${string}` | Record<number, `0x${string}`> | undefined;
 };
 
-const rmrkCatalogFactoryConfigDeployments: FoundryConfigDeployments = {
+const rmrkConfigDeployments: FoundryConfigDeployments = {
   RMRKCatalogFactory: {
     [baseSepolia.id]: RMRKCatalogFactoryContractAddress[baseSepolia.id],
+    [sepolia.id]: RMRKCatalogFactoryContractAddress[sepolia.id],
   },
+  // RMRKEquipRenderUtils: {
+  //   [baseSepolia.id]: RMRKCatalogFactoryContractAddress[baseSepolia.id],
+  // },
 };
 
 export default defineConfig({
-  out: 'lib/abis.ts',
+  out: 'lib/wagmi/generated.ts',
   contracts: [],
   plugins: [
     actions(),
     foundry({
-      project: '/foundry',
-      deployments: rmrkCatalogFactoryConfigDeployments,
+      project: 'contracts',
+      deployments: rmrkConfigDeployments,
+      include: [
+        // the following patterns are included by default
+        'RMRKCatalogImpl.json',
+        'RMRKCatalogFactory.json',
+        'RMRKEquipRenderUtils.json',
+      ],
     }),
   ],
 });

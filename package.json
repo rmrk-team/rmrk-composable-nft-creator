@@ -11,7 +11,7 @@
     "format": "biome format . --write",
     "lint": "biome check .",
     "lint:fix": "pnpm lint --apply",
-    "copy:catalog": "cp contracts/out/RMRKCatalog.sol/RMRKNFTCatalog.json lib/contract-artifacts"
+    "wagmi:generate": "wagmi generate"
   },
   "dependencies": {
     "@ark-ui/anatomy": "^2.2.0",
@@ -24,6 +24,7 @@
     "@rmrk-team/rmrk-hooks": "latest",
     "@rmrk-team/types": "^0.0.6",
     "@tanstack/react-query": "^5.22.2",
+    "@wagmi/core": "^2.6.5",
     "formik": "^2.4.5",
     "lucide-react": "^0.303.0",
     "next": "13.4.1",
