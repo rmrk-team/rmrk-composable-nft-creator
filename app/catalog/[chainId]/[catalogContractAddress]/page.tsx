@@ -8,6 +8,8 @@ import * as Alert from 'components/park-ui/alert';
 import { Heading } from 'components/park-ui/heading';
 import { Text } from 'components/park-ui/text';
 import { useMediaQuery } from 'lib/hooks/use-media-query';
+import { jsonStringifyWithBigint } from 'lib/utils/json-stringify-with-bigint';
+import { useReadRmrkCatalogImplGetPaginatedPartIds } from 'lib/wagmi/generated';
 import { AlertCircle } from 'lucide-react';
 import React from 'react';
 import { Box, Container, Flex, Grid, VStack } from 'styled-system/jsx';
@@ -42,7 +44,13 @@ export default function ManageCatalogPage({
     abi: RMRKCatalogUtils,
     address: config.utilityContracts[chainId]?.RMRKCatalogUtils,
     functionName: 'getCatalogData',
+    args: catalogContractAddress ? [catalogContractAddress] : undefined,
     query: { enabled: !!chainId && !!catalogContractAddress },
+  });
+
+  const { data: catalogPartIds } = useReadRmrkCatalogImplGetPaginatedPartIds({
+    chainId,
+    address: catalogContractAddress,
   });
 
   if (!catalogContractAddress || !chainId) {
@@ -64,7 +72,7 @@ export default function ManageCatalogPage({
   if (catalogDetailsResponse.isLoading) {
     return (
       <Container>
-        <Loader size="lg" />
+        <Loader size={120} />
       </Container>
     );
   }
@@ -87,9 +95,12 @@ export default function ManageCatalogPage({
         <Container>For the best experience use larger screen</Container>
       )}
 
-      <Box width="100%">
+      <Text>
         TODO: Catalog edit form: "add parts and add whitelisted collections to
         slot parts"
+      </Text>
+      <Box width="100%">
+        {jsonStringifyWithBigint(catalogPartIds)}
         <Grid
           gap={[6, null, null, null, 8, 12]}
           gridTemplateColumns={['1fr', null, null, 'auto max(420px, 30%)']}
@@ -101,7 +112,7 @@ export default function ManageCatalogPage({
             minWidth={0}
             data-name={'catalog-parts-form-column'}
           >
-            Parts form
+            Parts form will be here
           </Flex>
           <Flex
             direction={'column'}
@@ -109,7 +120,7 @@ export default function ManageCatalogPage({
             gap={[4, null, 6]}
             data-name={'catalog-preview-column'}
           >
-            Preview
+            Preview will be here
           </Flex>
         </Grid>
       </Box>

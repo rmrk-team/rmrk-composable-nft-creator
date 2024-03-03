@@ -5,6 +5,13 @@ import {
   createWriteContract,
 } from 'wagmi/codegen';
 
+import {
+  createUseReadContract,
+  createUseSimulateContract,
+  createUseWatchContractEvent,
+  createUseWriteContract,
+} from 'wagmi/codegen';
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // RMRKCatalogFactory
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2148,6 +2155,881 @@ export const readRmrkEquipRenderUtilsValidateChildOf =
  */
 export const readRmrkEquipRenderUtilsValidateChildrenOf =
   /*#__PURE__*/ createReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'validateChildrenOf',
+  });
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// React
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
+ *
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ */
+export const useReadRmrkCatalogFactory = /*#__PURE__*/ createUseReadContract({
+  abi: rmrkCatalogFactoryAbi,
+  address: rmrkCatalogFactoryAddress,
+});
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getDeployerCatalogAtIndex"`
+ *
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ */
+export const useReadRmrkCatalogFactoryGetDeployerCatalogAtIndex =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogFactoryAbi,
+    address: rmrkCatalogFactoryAddress,
+    functionName: 'getDeployerCatalogAtIndex',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getDeployerCatalogs"`
+ *
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ */
+export const useReadRmrkCatalogFactoryGetDeployerCatalogs =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogFactoryAbi,
+    address: rmrkCatalogFactoryAddress,
+    functionName: 'getDeployerCatalogs',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getLastDeployerCatalog"`
+ *
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ */
+export const useReadRmrkCatalogFactoryGetLastDeployerCatalog =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogFactoryAbi,
+    address: rmrkCatalogFactoryAddress,
+    functionName: 'getLastDeployerCatalog',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getTotalDeployerCatalogs"`
+ *
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ */
+export const useReadRmrkCatalogFactoryGetTotalDeployerCatalogs =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogFactoryAbi,
+    address: rmrkCatalogFactoryAddress,
+    functionName: 'getTotalDeployerCatalogs',
+  });
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
+ *
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ */
+export const useWriteRmrkCatalogFactory = /*#__PURE__*/ createUseWriteContract({
+  abi: rmrkCatalogFactoryAbi,
+  address: rmrkCatalogFactoryAddress,
+});
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"deployCatalog"`
+ *
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ */
+export const useWriteRmrkCatalogFactoryDeployCatalog =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: rmrkCatalogFactoryAbi,
+    address: rmrkCatalogFactoryAddress,
+    functionName: 'deployCatalog',
+  });
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
+ *
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ */
+export const useSimulateRmrkCatalogFactory =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: rmrkCatalogFactoryAbi,
+    address: rmrkCatalogFactoryAddress,
+  });
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"deployCatalog"`
+ *
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ */
+export const useSimulateRmrkCatalogFactoryDeployCatalog =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: rmrkCatalogFactoryAbi,
+    address: rmrkCatalogFactoryAddress,
+    functionName: 'deployCatalog',
+  });
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
+ *
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ */
+export const useWatchRmrkCatalogFactoryEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: rmrkCatalogFactoryAbi,
+    address: rmrkCatalogFactoryAddress,
+  });
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `eventName` set to `"CatalogDeployed"`
+ *
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ */
+export const useWatchRmrkCatalogFactoryCatalogDeployedEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: rmrkCatalogFactoryAbi,
+    address: rmrkCatalogFactoryAddress,
+    eventName: 'CatalogDeployed',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__
+ */
+export const useReadRmrkCatalogImpl = /*#__PURE__*/ createUseReadContract({
+  abi: rmrkCatalogImplAbi,
+});
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"checkIsEquippable"`
+ */
+export const useReadRmrkCatalogImplCheckIsEquippable =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'checkIsEquippable',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"checkIsEquippableToAll"`
+ */
+export const useReadRmrkCatalogImplCheckIsEquippableToAll =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'checkIsEquippableToAll',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getAllPartIds"`
+ */
+export const useReadRmrkCatalogImplGetAllPartIds =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'getAllPartIds',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getLock"`
+ */
+export const useReadRmrkCatalogImplGetLock =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'getLock',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getMetadataURI"`
+ */
+export const useReadRmrkCatalogImplGetMetadataUri =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'getMetadataURI',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getPaginatedPartIds"`
+ */
+export const useReadRmrkCatalogImplGetPaginatedPartIds =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'getPaginatedPartIds',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getPart"`
+ */
+export const useReadRmrkCatalogImplGetPart =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'getPart',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getPartByIndex"`
+ */
+export const useReadRmrkCatalogImplGetPartByIndex =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'getPartByIndex',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getParts"`
+ */
+export const useReadRmrkCatalogImplGetParts =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'getParts',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getTotalParts"`
+ */
+export const useReadRmrkCatalogImplGetTotalParts =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'getTotalParts',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getType"`
+ */
+export const useReadRmrkCatalogImplGetType =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'getType',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"isContributor"`
+ */
+export const useReadRmrkCatalogImplIsContributor =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'isContributor',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"owner"`
+ */
+export const useReadRmrkCatalogImplOwner = /*#__PURE__*/ createUseReadContract({
+  abi: rmrkCatalogImplAbi,
+  functionName: 'owner',
+});
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"supportsInterface"`
+ */
+export const useReadRmrkCatalogImplSupportsInterface =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'supportsInterface',
+  });
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__
+ */
+export const useWriteRmrkCatalogImpl = /*#__PURE__*/ createUseWriteContract({
+  abi: rmrkCatalogImplAbi,
+});
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addEquippableAddresses"`
+ */
+export const useWriteRmrkCatalogImplAddEquippableAddresses =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'addEquippableAddresses',
+  });
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addPart"`
+ */
+export const useWriteRmrkCatalogImplAddPart =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'addPart',
+  });
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addPartList"`
+ */
+export const useWriteRmrkCatalogImplAddPartList =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'addPartList',
+  });
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"manageContributor"`
+ */
+export const useWriteRmrkCatalogImplManageContributor =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'manageContributor',
+  });
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"renounceOwnership"`
+ */
+export const useWriteRmrkCatalogImplRenounceOwnership =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'renounceOwnership',
+  });
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"resetEquippableAddresses"`
+ */
+export const useWriteRmrkCatalogImplResetEquippableAddresses =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'resetEquippableAddresses',
+  });
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setEquippableAddresses"`
+ */
+export const useWriteRmrkCatalogImplSetEquippableAddresses =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'setEquippableAddresses',
+  });
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setEquippableToAll"`
+ */
+export const useWriteRmrkCatalogImplSetEquippableToAll =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'setEquippableToAll',
+  });
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setLock"`
+ */
+export const useWriteRmrkCatalogImplSetLock =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'setLock',
+  });
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setMetadataURI"`
+ */
+export const useWriteRmrkCatalogImplSetMetadataUri =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'setMetadataURI',
+  });
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setType"`
+ */
+export const useWriteRmrkCatalogImplSetType =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'setType',
+  });
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"transferOwnership"`
+ */
+export const useWriteRmrkCatalogImplTransferOwnership =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'transferOwnership',
+  });
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__
+ */
+export const useSimulateRmrkCatalogImpl =
+  /*#__PURE__*/ createUseSimulateContract({ abi: rmrkCatalogImplAbi });
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addEquippableAddresses"`
+ */
+export const useSimulateRmrkCatalogImplAddEquippableAddresses =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'addEquippableAddresses',
+  });
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addPart"`
+ */
+export const useSimulateRmrkCatalogImplAddPart =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'addPart',
+  });
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addPartList"`
+ */
+export const useSimulateRmrkCatalogImplAddPartList =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'addPartList',
+  });
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"manageContributor"`
+ */
+export const useSimulateRmrkCatalogImplManageContributor =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'manageContributor',
+  });
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"renounceOwnership"`
+ */
+export const useSimulateRmrkCatalogImplRenounceOwnership =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'renounceOwnership',
+  });
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"resetEquippableAddresses"`
+ */
+export const useSimulateRmrkCatalogImplResetEquippableAddresses =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'resetEquippableAddresses',
+  });
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setEquippableAddresses"`
+ */
+export const useSimulateRmrkCatalogImplSetEquippableAddresses =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'setEquippableAddresses',
+  });
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setEquippableToAll"`
+ */
+export const useSimulateRmrkCatalogImplSetEquippableToAll =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'setEquippableToAll',
+  });
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setLock"`
+ */
+export const useSimulateRmrkCatalogImplSetLock =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'setLock',
+  });
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setMetadataURI"`
+ */
+export const useSimulateRmrkCatalogImplSetMetadataUri =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'setMetadataURI',
+  });
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setType"`
+ */
+export const useSimulateRmrkCatalogImplSetType =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'setType',
+  });
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"transferOwnership"`
+ */
+export const useSimulateRmrkCatalogImplTransferOwnership =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: rmrkCatalogImplAbi,
+    functionName: 'transferOwnership',
+  });
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__
+ */
+export const useWatchRmrkCatalogImplEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({ abi: rmrkCatalogImplAbi });
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"AddedEquippables"`
+ */
+export const useWatchRmrkCatalogImplAddedEquippablesEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: rmrkCatalogImplAbi,
+    eventName: 'AddedEquippables',
+  });
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"AddedPart"`
+ */
+export const useWatchRmrkCatalogImplAddedPartEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: rmrkCatalogImplAbi,
+    eventName: 'AddedPart',
+  });
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"ContractURIUpdated"`
+ */
+export const useWatchRmrkCatalogImplContractUriUpdatedEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: rmrkCatalogImplAbi,
+    eventName: 'ContractURIUpdated',
+  });
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"ContributorUpdate"`
+ */
+export const useWatchRmrkCatalogImplContributorUpdateEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: rmrkCatalogImplAbi,
+    eventName: 'ContributorUpdate',
+  });
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"LockSet"`
+ */
+export const useWatchRmrkCatalogImplLockSetEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: rmrkCatalogImplAbi,
+    eventName: 'LockSet',
+  });
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"OwnershipTransferred"`
+ */
+export const useWatchRmrkCatalogImplOwnershipTransferredEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: rmrkCatalogImplAbi,
+    eventName: 'OwnershipTransferred',
+  });
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"SetEquippableToAll"`
+ */
+export const useWatchRmrkCatalogImplSetEquippableToAllEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: rmrkCatalogImplAbi,
+    eventName: 'SetEquippableToAll',
+  });
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"SetEquippables"`
+ */
+export const useWatchRmrkCatalogImplSetEquippablesEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: rmrkCatalogImplAbi,
+    eventName: 'SetEquippables',
+  });
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"TypeUpdated"`
+ */
+export const useWatchRmrkCatalogImplTypeUpdatedEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: rmrkCatalogImplAbi,
+    eventName: 'TypeUpdated',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__
+ */
+export const useReadRmrkEquipRenderUtils = /*#__PURE__*/ createUseReadContract({
+  abi: rmrkEquipRenderUtilsAbi,
+});
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"checkExpectedParent"`
+ */
+export const useReadRmrkEquipRenderUtilsCheckExpectedParent =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'checkExpectedParent',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"composeEquippables"`
+ */
+export const useReadRmrkEquipRenderUtilsComposeEquippables =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'composeEquippables',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"directOwnerOfWithParentsPerspective"`
+ */
+export const useReadRmrkEquipRenderUtilsDirectOwnerOfWithParentsPerspective =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'directOwnerOfWithParentsPerspective',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"equippedChildrenOf"`
+ */
+export const useReadRmrkEquipRenderUtilsEquippedChildrenOf =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'equippedChildrenOf',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getAllEquippableSlotsFromParent"`
+ */
+export const useReadRmrkEquipRenderUtilsGetAllEquippableSlotsFromParent =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getAllEquippableSlotsFromParent',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getAssetIdWithTopPriority"`
+ */
+export const useReadRmrkEquipRenderUtilsGetAssetIdWithTopPriority =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getAssetIdWithTopPriority',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getAssetsById"`
+ */
+export const useReadRmrkEquipRenderUtilsGetAssetsById =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getAssetsById',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getChildIndex"`
+ */
+export const useReadRmrkEquipRenderUtilsGetChildIndex =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getChildIndex',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getChildrenWithTopMetadata"`
+ */
+export const useReadRmrkEquipRenderUtilsGetChildrenWithTopMetadata =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getChildrenWithTopMetadata',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getEquippableSlotsFromParent"`
+ */
+export const useReadRmrkEquipRenderUtilsGetEquippableSlotsFromParent =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getEquippableSlotsFromParent',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getEquippableSlotsFromParentForPendingChild"`
+ */
+export const useReadRmrkEquipRenderUtilsGetEquippableSlotsFromParentForPendingChild =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getEquippableSlotsFromParentForPendingChild',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getEquipped"`
+ */
+export const useReadRmrkEquipRenderUtilsGetEquipped =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getEquipped',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getExtendedActiveAssets"`
+ */
+export const useReadRmrkEquipRenderUtilsGetExtendedActiveAssets =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getExtendedActiveAssets',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getExtendedEquippableActiveAssets"`
+ */
+export const useReadRmrkEquipRenderUtilsGetExtendedEquippableActiveAssets =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getExtendedEquippableActiveAssets',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getExtendedNft"`
+ */
+export const useReadRmrkEquipRenderUtilsGetExtendedNft =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getExtendedNft',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getExtendedPendingAssets"`
+ */
+export const useReadRmrkEquipRenderUtilsGetExtendedPendingAssets =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getExtendedPendingAssets',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getParent"`
+ */
+export const useReadRmrkEquipRenderUtilsGetParent =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getParent',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getPendingAssets"`
+ */
+export const useReadRmrkEquipRenderUtilsGetPendingAssets =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getPendingAssets',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getPendingChildIndex"`
+ */
+export const useReadRmrkEquipRenderUtilsGetPendingChildIndex =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getPendingChildIndex',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getSlotPartsAndCatalog"`
+ */
+export const useReadRmrkEquipRenderUtilsGetSlotPartsAndCatalog =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getSlotPartsAndCatalog',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getTopAsset"`
+ */
+export const useReadRmrkEquipRenderUtilsGetTopAsset =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getTopAsset',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getTopAssetAndEquippableDataForToken"`
+ */
+export const useReadRmrkEquipRenderUtilsGetTopAssetAndEquippableDataForToken =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getTopAssetAndEquippableDataForToken',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getTopAssetMetaForToken"`
+ */
+export const useReadRmrkEquipRenderUtilsGetTopAssetMetaForToken =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getTopAssetMetaForToken',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getTopAssetMetadataForTokens"`
+ */
+export const useReadRmrkEquipRenderUtilsGetTopAssetMetadataForTokens =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getTopAssetMetadataForTokens',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getTotalDescendants"`
+ */
+export const useReadRmrkEquipRenderUtilsGetTotalDescendants =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'getTotalDescendants',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"hasMoreThanOneLevelOfNesting"`
+ */
+export const useReadRmrkEquipRenderUtilsHasMoreThanOneLevelOfNesting =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'hasMoreThanOneLevelOfNesting',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"isAssetEquipped"`
+ */
+export const useReadRmrkEquipRenderUtilsIsAssetEquipped =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'isAssetEquipped',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"isTokenRejectedOrAbandoned"`
+ */
+export const useReadRmrkEquipRenderUtilsIsTokenRejectedOrAbandoned =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'isTokenRejectedOrAbandoned',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"splitSlotAndFixedParts"`
+ */
+export const useReadRmrkEquipRenderUtilsSplitSlotAndFixedParts =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'splitSlotAndFixedParts',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"validateChildOf"`
+ */
+export const useReadRmrkEquipRenderUtilsValidateChildOf =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkEquipRenderUtilsAbi,
+    functionName: 'validateChildOf',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"validateChildrenOf"`
+ */
+export const useReadRmrkEquipRenderUtilsValidateChildrenOf =
+  /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'validateChildrenOf',
   });

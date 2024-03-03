@@ -1,5 +1,5 @@
 import { defineConfig } from '@wagmi/cli';
-import { actions, foundry } from '@wagmi/cli/plugins';
+import { actions, foundry, react } from '@wagmi/cli/plugins';
 import { RMRKCatalogFactoryContractAddress } from 'lib/consts/contract-addresses';
 import { baseSepolia, sepolia } from 'wagmi/chains';
 
@@ -22,6 +22,7 @@ export default defineConfig({
   contracts: [],
   plugins: [
     actions(),
+    react(),
     foundry({
       project: 'contracts',
       deployments: rmrkConfigDeployments,
