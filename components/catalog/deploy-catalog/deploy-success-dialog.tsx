@@ -1,3 +1,4 @@
+import type { Address } from 'abitype';
 import { Button } from 'components/park-ui/button';
 import * as Dialog from 'components/park-ui/dialog';
 import { Link } from 'components/park-ui/link';
@@ -6,7 +7,6 @@ import NextLink from 'next/link';
 import React from 'react';
 import { Stack } from 'styled-system/jsx';
 import type { Chain } from 'wagmi/chains';
-import type { Address } from 'abitype';
 
 type Props = Dialog.RootProps & {
   catalogAddress?: Address;

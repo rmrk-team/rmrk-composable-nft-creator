@@ -1,5 +1,5 @@
-import { decodeEventLog } from 'viem';
 import { rmrkCatalogFactoryAbi } from 'lib/wagmi/generated';
+import { decodeEventLog } from 'viem';
 import type { TransactionReceipt } from 'viem/types/transaction';
 
 export const getCatalogAddressFromDeployedEventLogs = (

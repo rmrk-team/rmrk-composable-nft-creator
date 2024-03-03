@@ -11,16 +11,16 @@ import * as Alert from 'components/park-ui/alert';
 import { Heading } from 'components/park-ui/heading';
 import * as Select from 'components/park-ui/select';
 import { Text } from 'components/park-ui/text';
+import { getCatalogAddressFromDeployedEventLogs } from 'lib/catalog/deploy-catalog/get-catalog-address-from-deployed-event-logs';
 import { pinMetadataWithFiles } from 'lib/ipfs/pin-metadata';
+import { type SupportedChainId, wagmiConfig } from 'lib/wagmi-config';
+import { writeRmrkCatalogFactoryDeployCatalog } from 'lib/wagmi/generated';
 import { AlertCircle } from 'lucide-react';
 import React, { useState } from 'react';
 import { Box, Container, VStack } from 'styled-system/jsx';
 import invariant from 'tiny-invariant';
 import { useWaitForTransactionReceipt } from 'wagmi';
 import { baseSepolia } from 'wagmi/chains';
-import { writeRmrkCatalogFactoryDeployCatalog } from 'lib/wagmi/generated';
-import { type SupportedChainId, wagmiConfig } from 'lib/wagmi-config';
-import { getCatalogAddressFromDeployedEventLogs } from 'lib/catalog/deploy-catalog/get-catalog-address-from-deployed-event-logs';
 
 export default function CatalogLandingPage() {
   const [hash, setHash] = useState<Address>();
