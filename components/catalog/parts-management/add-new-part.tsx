@@ -88,15 +88,13 @@ export const AddNewPart = ({
   };
 
   return (
-    <>
-      <AddNewPartModal
-        chainId={chainId}
-        catalogAddress={catalogAddress}
-        onSubmit={onSubmit}
-        onClose={onClose}
-        setIsOpen={setIsOpen}
-        isOpen={isOpen}
-      />
-    </>
+    <AddNewPartModal
+      chainId={chainId}
+      catalogAddress={catalogAddress}
+      onSubmit={onSubmit}
+      onClose={onClose}
+      setIsOpen={setIsOpen}
+      isOpen={isOpen}
+    />
   );
 };
