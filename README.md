@@ -32,7 +32,7 @@ This project uses [Panda.css](https://panda-css.com) for core styling and Panda'
 [wagmi](https://wagmi.sh/) for react hooks etc and [viem](https://viem.sh/) for framework agnostic utils.
 
 ### Other notes
-This project uses [Biome.js](https://biomejs.dev) for code formatting (instead of prettier) and linting. To run both formatting and linting at any time, run `pnpm format && pnpm lint:fix`. Please visit Biome.js website to see how to install and use biome IDE plugin.
+This project uses [Biome.js](https://biomejs.dev) for code formatting (instead of prettier) and linting. Biome IDE plugins have options to run on save (both vscode and intellij), I recommend turning it on. But to run both formatting and linting at any time manually, you can run `pnpm format && pnpm lint:fix`. Please visit Biome.js website to see how to install and use biome IDE plugin.
 
 
 ## Contributing
