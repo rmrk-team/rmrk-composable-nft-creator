@@ -24,7 +24,7 @@ Run nextjs dev server
 `pnpm dev`
 
 ### Styling
-This project uses [Panda.css](https://panda-css.com) for core styling and Panda's component library [Ark.ui](https://ark-ui.com) as well as [Park-ui](https://park-ui.com/) for a ready to use components. When running the dev server, styles will automatically re-generate using postcss when appropriate files are changed, however if you need to manually generate styles, run `pnpm panda`.
+This project uses [Panda.css](https://panda-css.com) for core styling and Panda's component library [Ark.ui](https://ark-ui.com) as well as [Park-ui](https://park-ui.com/) for a ready to use components. When you need a new component, please look at park-ui website first to see if it's already included. Park-ui is based on ArkUI, and often times the documentation for component properties and events is more detailed on Ark UI website. When running the dev server, styles will automatically re-generate using postcss when appropriate files are changed, however if you need to manually generate styles, run `pnpm panda`.
 
 [Lucide](https://lucide.dev/) is used for icons.
 
