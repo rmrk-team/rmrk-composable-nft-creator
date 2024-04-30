@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { forwardRef, useMemo } from 'react';
 import {
   type HTMLStyledProps,
   type StyledComponent,
@@ -23,9 +23,11 @@ export type TextProps = {
 } & TextVariantProps &
   HTMLStyledProps<As>;
 
-export const Text = (props: TextProps) => {
+export const Text = forwardRef<HTMLHeadingElement, TextProps>((props, ref) => {
   const { as = 'p', ...localProps } = props;
   const Dynamic = useMemo(() => styled(as, text) as StyledComponent<As>, [as]);
 
-  return <Dynamic {...localProps} />;
-};
+  return <Dynamic ref={ref} {...localProps} />;
+});
+
+Text.displayName = 'Text';

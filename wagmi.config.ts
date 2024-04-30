@@ -31,6 +31,7 @@ export default defineConfig({
         'RMRKCatalogImpl.json',
         'RMRKCatalogFactory.json',
         'RMRKEquipRenderUtils.json',
+        'RMRKCatalogUtils.json',
       ],
     }),
   ],

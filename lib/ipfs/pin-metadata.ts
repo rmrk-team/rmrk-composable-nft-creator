@@ -25,6 +25,6 @@ export const pinMetadataWithFiles = async ({
     data.append('thumbnailFile', thumbnailFile);
   }
 
-  const { ipfsUrl } = await pinMetadataWithFormData(data);
-  return ipfsUrl;
+  const { metadataUri } = await pinMetadataWithFormData(data);
+  return metadataUri;
 };

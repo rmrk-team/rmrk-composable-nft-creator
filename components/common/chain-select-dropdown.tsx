@@ -1,5 +1,5 @@
 import { InputSelect } from 'components/common/forms/input-select';
-import * as Select from 'components/park-ui/select';
+import type * as Select from 'components/park-ui/select';
 import { allSupportedChains } from 'lib/wagmi-config';
 import React from 'react';
 

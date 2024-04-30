@@ -4,7 +4,8 @@ import Page from 'components/app/page';
 import { Providers } from 'components/app/providers';
 import { TopBar } from 'components/app/top-bar';
 import type { Metadata } from 'next';
-import React from 'react';
+import type React from 'react';
+import { Flex } from 'styled-system/jsx';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -19,11 +20,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <>
+          <Flex minHeight="100vh" direction="column">
             <TopBar />
             <Page>{children}</Page>
             <Footer />
-          </>
+          </Flex>
         </Providers>
       </body>
     </html>

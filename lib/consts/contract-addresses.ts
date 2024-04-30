@@ -2,6 +2,6 @@ import { base, baseSepolia, sepolia } from 'wagmi/chains';
 
 export const RMRKCatalogFactoryContractAddress = {
   [base.id]: '0xTODO',
-  [baseSepolia.id]: '0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80',
-  [sepolia.id]: '0x4E80834c7c84881578F875d048C157f8FD3211F3',
+  [baseSepolia.id]: '0xD23820304b10E8AC745E90B33924A886b92DF13f',
+  [sepolia.id]: '0x14ec017a839687dc364A22ABd36fF300338A44ee',
 } as const;

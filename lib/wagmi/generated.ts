@@ -17,12 +17,11 @@ import {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const rmrkCatalogFactoryAbi = [
   {
-    stateMutability: 'nonpayable',
     type: 'function',
     inputs: [
       { name: 'metadataURI', internalType: 'string', type: 'string' },
@@ -30,9 +29,9 @@ export const rmrkCatalogFactoryAbi = [
     ],
     name: 'deployCatalog',
     outputs: [{ name: '', internalType: 'address', type: 'address' }],
+    stateMutability: 'nonpayable',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'deployer', internalType: 'address', type: 'address' },
@@ -42,29 +41,30 @@ export const rmrkCatalogFactoryAbi = [
     outputs: [
       { name: 'catalogAddress', internalType: 'address', type: 'address' },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [{ name: 'deployer', internalType: 'address', type: 'address' }],
     name: 'getDeployerCatalogs',
     outputs: [{ name: '', internalType: 'address[]', type: 'address[]' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [{ name: 'deployer', internalType: 'address', type: 'address' }],
     name: 'getLastDeployerCatalog',
     outputs: [
       { name: 'catalogAddress', internalType: 'address', type: 'address' },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [{ name: 'deployer', internalType: 'address', type: 'address' }],
     name: 'getTotalDeployerCatalogs',
     outputs: [{ name: 'total', internalType: 'uint256', type: 'uint256' }],
+    stateMutability: 'view',
   },
   {
     type: 'event',
@@ -88,17 +88,17 @@ export const rmrkCatalogFactoryAbi = [
 ] as const;
 
 /**
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const rmrkCatalogFactoryAddress = {
-  84532: '0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80',
-  11155111: '0x4E80834c7c84881578F875d048C157f8FD3211F3',
+  84532: '0xD23820304b10E8AC745E90B33924A886b92DF13f',
+  11155111: '0x14ec017a839687dc364A22ABd36fF300338A44ee',
 } as const;
 
 /**
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const rmrkCatalogFactoryConfig = {
   address: rmrkCatalogFactoryAddress,
@@ -111,15 +111,14 @@ export const rmrkCatalogFactoryConfig = {
 
 export const rmrkCatalogImplAbi = [
   {
-    stateMutability: 'nonpayable',
     type: 'constructor',
     inputs: [
       { name: 'metadataURI', internalType: 'string', type: 'string' },
       { name: 'type_', internalType: 'string', type: 'string' },
     ],
+    stateMutability: 'nonpayable',
   },
   {
-    stateMutability: 'nonpayable',
     type: 'function',
     inputs: [
       { name: 'partId', internalType: 'uint64', type: 'uint64' },
@@ -131,9 +130,9 @@ export const rmrkCatalogImplAbi = [
     ],
     name: 'addEquippableAddresses',
     outputs: [],
+    stateMutability: 'nonpayable',
   },
   {
-    stateMutability: 'nonpayable',
     type: 'function',
     inputs: [
       {
@@ -166,9 +165,9 @@ export const rmrkCatalogImplAbi = [
     ],
     name: 'addPart',
     outputs: [],
+    stateMutability: 'nonpayable',
   },
   {
-    stateMutability: 'nonpayable',
     type: 'function',
     inputs: [
       {
@@ -201,9 +200,9 @@ export const rmrkCatalogImplAbi = [
     ],
     name: 'addPartList',
     outputs: [],
+    stateMutability: 'nonpayable',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'partId', internalType: 'uint64', type: 'uint64' },
@@ -211,37 +210,37 @@ export const rmrkCatalogImplAbi = [
     ],
     name: 'checkIsEquippable',
     outputs: [{ name: 'isEquippable', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [{ name: 'partId', internalType: 'uint64', type: 'uint64' }],
     name: 'checkIsEquippableToAll',
     outputs: [{ name: 'isEquippable', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [],
     name: 'getAllPartIds',
     outputs: [{ name: 'partIds', internalType: 'uint64[]', type: 'uint64[]' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [],
     name: 'getLock',
     outputs: [{ name: 'isLocked', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [],
     name: 'getMetadataURI',
     outputs: [{ name: '', internalType: 'string', type: 'string' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'offset', internalType: 'uint256', type: 'uint256' },
@@ -249,9 +248,9 @@ export const rmrkCatalogImplAbi = [
     ],
     name: 'getPaginatedPartIds',
     outputs: [{ name: 'partIds', internalType: 'uint64[]', type: 'uint64[]' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [{ name: 'partId', internalType: 'uint64', type: 'uint64' }],
     name: 'getPart',
@@ -272,9 +271,9 @@ export const rmrkCatalogImplAbi = [
         ],
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [{ name: 'index', internalType: 'uint256', type: 'uint256' }],
     name: 'getPartByIndex',
@@ -295,9 +294,9 @@ export const rmrkCatalogImplAbi = [
         ],
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [{ name: 'partIds', internalType: 'uint64[]', type: 'uint64[]' }],
     name: 'getParts',
@@ -318,30 +317,30 @@ export const rmrkCatalogImplAbi = [
         ],
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [],
     name: 'getTotalParts',
     outputs: [{ name: 'totalParts', internalType: 'uint256', type: 'uint256' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [],
     name: 'getType',
     outputs: [{ name: '', internalType: 'string', type: 'string' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [{ name: 'contributor', internalType: 'address', type: 'address' }],
     name: 'isContributor',
     outputs: [{ name: 'isContributor_', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'nonpayable',
     type: 'function',
     inputs: [
       { name: 'contributor', internalType: 'address', type: 'address' },
@@ -349,30 +348,30 @@ export const rmrkCatalogImplAbi = [
     ],
     name: 'manageContributor',
     outputs: [],
+    stateMutability: 'nonpayable',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [],
     name: 'owner',
     outputs: [{ name: 'owner_', internalType: 'address', type: 'address' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'nonpayable',
     type: 'function',
     inputs: [],
     name: 'renounceOwnership',
     outputs: [],
+    stateMutability: 'nonpayable',
   },
   {
-    stateMutability: 'nonpayable',
     type: 'function',
     inputs: [{ name: 'partId', internalType: 'uint64', type: 'uint64' }],
     name: 'resetEquippableAddresses',
     outputs: [],
+    stateMutability: 'nonpayable',
   },
   {
-    stateMutability: 'nonpayable',
     type: 'function',
     inputs: [
       { name: 'partId', internalType: 'uint64', type: 'uint64' },
@@ -384,50 +383,51 @@ export const rmrkCatalogImplAbi = [
     ],
     name: 'setEquippableAddresses',
     outputs: [],
+    stateMutability: 'nonpayable',
   },
   {
-    stateMutability: 'nonpayable',
     type: 'function',
     inputs: [{ name: 'partId', internalType: 'uint64', type: 'uint64' }],
     name: 'setEquippableToAll',
     outputs: [],
+    stateMutability: 'nonpayable',
   },
   {
-    stateMutability: 'nonpayable',
     type: 'function',
     inputs: [],
     name: 'setLock',
     outputs: [],
+    stateMutability: 'nonpayable',
   },
   {
-    stateMutability: 'nonpayable',
     type: 'function',
     inputs: [
       { name: 'newContractURI', internalType: 'string', type: 'string' },
     ],
     name: 'setMetadataURI',
     outputs: [],
+    stateMutability: 'nonpayable',
   },
   {
-    stateMutability: 'nonpayable',
     type: 'function',
     inputs: [{ name: 'newType', internalType: 'string', type: 'string' }],
     name: 'setType',
     outputs: [],
+    stateMutability: 'nonpayable',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [{ name: 'interfaceId', internalType: 'bytes4', type: 'bytes4' }],
     name: 'supportsInterface',
     outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'nonpayable',
     type: 'function',
     inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
     name: 'transferOwnership',
     outputs: [],
+    stateMutability: 'nonpayable',
   },
   {
     type: 'event',
@@ -559,12 +559,164 @@ export const rmrkCatalogImplAbi = [
 ] as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// RMRKCatalogUtils
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+export const rmrkCatalogUtilsAbi = [
+  {
+    type: 'function',
+    inputs: [{ name: 'catalog', internalType: 'address', type: 'address' }],
+    name: 'getCatalogData',
+    outputs: [
+      { name: 'owner', internalType: 'address', type: 'address' },
+      { name: 'type_', internalType: 'string', type: 'string' },
+      { name: 'metadataURI', internalType: 'string', type: 'string' },
+    ],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'catalog', internalType: 'address', type: 'address' },
+      { name: 'partIds', internalType: 'uint64[]', type: 'uint64[]' },
+    ],
+    name: 'getCatalogDataAndExtendedParts',
+    outputs: [
+      { name: 'owner', internalType: 'address', type: 'address' },
+      { name: 'type_', internalType: 'string', type: 'string' },
+      { name: 'metadataURI', internalType: 'string', type: 'string' },
+      {
+        name: 'parts',
+        internalType: 'struct RMRKCatalogUtils.ExtendedPart[]',
+        type: 'tuple[]',
+        components: [
+          { name: 'partId', internalType: 'uint64', type: 'uint64' },
+          {
+            name: 'itemType',
+            internalType: 'enum IRMRKCatalog.ItemType',
+            type: 'uint8',
+          },
+          { name: 'z', internalType: 'uint8', type: 'uint8' },
+          { name: 'equippable', internalType: 'address[]', type: 'address[]' },
+          { name: 'equippableToAll', internalType: 'bool', type: 'bool' },
+          { name: 'metadataURI', internalType: 'string', type: 'string' },
+        ],
+      },
+    ],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'catalog', internalType: 'address', type: 'address' },
+      { name: 'partIds', internalType: 'uint64[]', type: 'uint64[]' },
+    ],
+    name: 'getExtendedParts',
+    outputs: [
+      {
+        name: 'parts',
+        internalType: 'struct RMRKCatalogUtils.ExtendedPart[]',
+        type: 'tuple[]',
+        components: [
+          { name: 'partId', internalType: 'uint64', type: 'uint64' },
+          {
+            name: 'itemType',
+            internalType: 'enum IRMRKCatalog.ItemType',
+            type: 'uint8',
+          },
+          { name: 'z', internalType: 'uint8', type: 'uint8' },
+          { name: 'equippable', internalType: 'address[]', type: 'address[]' },
+          { name: 'equippableToAll', internalType: 'bool', type: 'bool' },
+          { name: 'metadataURI', internalType: 'string', type: 'string' },
+        ],
+      },
+    ],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'parentAddress', internalType: 'address', type: 'address' },
+      { name: 'parentId', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'getOrphanEquipmentsFromChildAsset',
+    outputs: [
+      {
+        name: 'equipments',
+        internalType: 'struct RMRKCatalogUtils.ExtendedEquipment[]',
+        type: 'tuple[]',
+        components: [
+          { name: 'parentAssetId', internalType: 'uint64', type: 'uint64' },
+          { name: 'slotId', internalType: 'uint64', type: 'uint64' },
+          { name: 'childAddress', internalType: 'address', type: 'address' },
+          { name: 'childId', internalType: 'uint256', type: 'uint256' },
+          { name: 'childAssetId', internalType: 'uint64', type: 'uint64' },
+        ],
+      },
+    ],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'parentAddress', internalType: 'address', type: 'address' },
+      { name: 'parentId', internalType: 'uint256', type: 'uint256' },
+      { name: 'catalogAddress', internalType: 'address', type: 'address' },
+      { name: 'slotPartIds', internalType: 'uint64[]', type: 'uint64[]' },
+    ],
+    name: 'getOrphanEquipmentsFromParentAsset',
+    outputs: [
+      {
+        name: 'equipments',
+        internalType: 'struct RMRKCatalogUtils.ExtendedEquipment[]',
+        type: 'tuple[]',
+        components: [
+          { name: 'parentAssetId', internalType: 'uint64', type: 'uint64' },
+          { name: 'slotId', internalType: 'uint64', type: 'uint64' },
+          { name: 'childAddress', internalType: 'address', type: 'address' },
+          { name: 'childId', internalType: 'uint256', type: 'uint256' },
+          { name: 'childAssetId', internalType: 'uint64', type: 'uint64' },
+        ],
+      },
+    ],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'tokenAddress', internalType: 'address', type: 'address' },
+      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
+      { name: 'assetId', internalType: 'uint64', type: 'uint64' },
+    ],
+    name: 'getSlotPartsAndCatalog',
+    outputs: [
+      { name: 'parentSlotPartIds', internalType: 'uint64[]', type: 'uint64[]' },
+      { name: 'catalogAddress', internalType: 'address', type: 'address' },
+    ],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'allPartIds', internalType: 'uint64[]', type: 'uint64[]' },
+      { name: 'catalogAddress', internalType: 'address', type: 'address' },
+    ],
+    name: 'splitSlotAndFixedParts',
+    outputs: [
+      { name: 'slotPartIds', internalType: 'uint64[]', type: 'uint64[]' },
+      { name: 'fixedPartIds', internalType: 'uint64[]', type: 'uint64[]' },
+    ],
+    stateMutability: 'view',
+  },
+  { type: 'error', inputs: [], name: 'RMRKNotComposableAsset' },
+] as const;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // RMRKEquipRenderUtils
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const rmrkEquipRenderUtilsAbi = [
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'childAddress', internalType: 'address', type: 'address' },
@@ -574,9 +726,9 @@ export const rmrkEquipRenderUtilsAbi = [
     ],
     name: 'checkExpectedParent',
     outputs: [],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'target', internalType: 'address', type: 'address' },
@@ -617,9 +769,9 @@ export const rmrkEquipRenderUtilsAbi = [
         ],
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'collection', internalType: 'address', type: 'address' },
@@ -633,9 +785,9 @@ export const rmrkEquipRenderUtilsAbi = [
       { name: 'inParentsActiveChildren', internalType: 'bool', type: 'bool' },
       { name: 'inParentsPendingChildren', internalType: 'bool', type: 'bool' },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'parentAddress', internalType: 'address', type: 'address' },
@@ -660,9 +812,9 @@ export const rmrkEquipRenderUtilsAbi = [
         ],
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'targetChild', internalType: 'address', type: 'address' },
@@ -701,9 +853,9 @@ export const rmrkEquipRenderUtilsAbi = [
         ],
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'target', internalType: 'address', type: 'address' },
@@ -714,9 +866,9 @@ export const rmrkEquipRenderUtilsAbi = [
       { name: 'maxPriorityAssetId', internalType: 'uint64', type: 'uint64' },
       { name: 'maxPriority', internalType: 'uint64', type: 'uint64' },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'target', internalType: 'address', type: 'address' },
@@ -725,9 +877,9 @@ export const rmrkEquipRenderUtilsAbi = [
     ],
     name: 'getAssetsById',
     outputs: [{ name: 'assets', internalType: 'string[]', type: 'string[]' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'parentAddress', internalType: 'address', type: 'address' },
@@ -737,9 +889,9 @@ export const rmrkEquipRenderUtilsAbi = [
     ],
     name: 'getChildIndex',
     outputs: [{ name: 'index', internalType: 'uint256', type: 'uint256' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'parentAddress', internalType: 'address', type: 'address' },
@@ -758,9 +910,9 @@ export const rmrkEquipRenderUtilsAbi = [
         ],
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'childAddress', internalType: 'address', type: 'address' },
@@ -800,9 +952,9 @@ export const rmrkEquipRenderUtilsAbi = [
         ],
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'targetChild', internalType: 'address', type: 'address' },
@@ -841,9 +993,9 @@ export const rmrkEquipRenderUtilsAbi = [
         ],
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'targetChild', internalType: 'address', type: 'address' },
@@ -882,9 +1034,9 @@ export const rmrkEquipRenderUtilsAbi = [
         ],
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'target', internalType: 'address', type: 'address' },
@@ -915,9 +1067,9 @@ export const rmrkEquipRenderUtilsAbi = [
         type: 'string[]',
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'target', internalType: 'address', type: 'address' },
@@ -936,9 +1088,9 @@ export const rmrkEquipRenderUtilsAbi = [
         ],
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'target', internalType: 'address', type: 'address' },
@@ -961,9 +1113,9 @@ export const rmrkEquipRenderUtilsAbi = [
         ],
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
@@ -1020,9 +1172,9 @@ export const rmrkEquipRenderUtilsAbi = [
         ],
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'target', internalType: 'address', type: 'address' },
@@ -1053,9 +1205,9 @@ export const rmrkEquipRenderUtilsAbi = [
         ],
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'childAddress', internalType: 'address', type: 'address' },
@@ -1066,9 +1218,9 @@ export const rmrkEquipRenderUtilsAbi = [
       { name: 'parentAddress', internalType: 'address', type: 'address' },
       { name: 'parentId', internalType: 'uint256', type: 'uint256' },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'target', internalType: 'address', type: 'address' },
@@ -1096,9 +1248,9 @@ export const rmrkEquipRenderUtilsAbi = [
         ],
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'parentAddress', internalType: 'address', type: 'address' },
@@ -1108,9 +1260,9 @@ export const rmrkEquipRenderUtilsAbi = [
     ],
     name: 'getPendingChildIndex',
     outputs: [{ name: 'index', internalType: 'uint256', type: 'uint256' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'tokenAddress', internalType: 'address', type: 'address' },
@@ -1122,9 +1274,9 @@ export const rmrkEquipRenderUtilsAbi = [
       { name: 'parentSlotPartIds', internalType: 'uint64[]', type: 'uint64[]' },
       { name: 'catalogAddress', internalType: 'address', type: 'address' },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'target', internalType: 'address', type: 'address' },
@@ -1136,9 +1288,9 @@ export const rmrkEquipRenderUtilsAbi = [
       { name: 'topAssetPriority', internalType: 'uint64', type: 'uint64' },
       { name: 'topAssetMetadata', internalType: 'string', type: 'string' },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'target', internalType: 'address', type: 'address' },
@@ -1161,9 +1313,9 @@ export const rmrkEquipRenderUtilsAbi = [
         ],
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'target', internalType: 'address', type: 'address' },
@@ -1171,9 +1323,9 @@ export const rmrkEquipRenderUtilsAbi = [
     ],
     name: 'getTopAssetMetaForToken',
     outputs: [{ name: 'metadata', internalType: 'string', type: 'string' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'target', internalType: 'address', type: 'address' },
@@ -1181,9 +1333,9 @@ export const rmrkEquipRenderUtilsAbi = [
     ],
     name: 'getTopAssetMetadataForTokens',
     outputs: [{ name: 'metadata', internalType: 'string[]', type: 'string[]' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'collection', internalType: 'address', type: 'address' },
@@ -1198,9 +1350,9 @@ export const rmrkEquipRenderUtilsAbi = [
         type: 'bool',
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'collection', internalType: 'address', type: 'address' },
@@ -1214,9 +1366,9 @@ export const rmrkEquipRenderUtilsAbi = [
         type: 'bool',
       },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'parentAddress', internalType: 'address', type: 'address' },
@@ -1229,9 +1381,9 @@ export const rmrkEquipRenderUtilsAbi = [
     ],
     name: 'isAssetEquipped',
     outputs: [{ name: 'isEquipped', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'collection', internalType: 'address', type: 'address' },
@@ -1241,9 +1393,9 @@ export const rmrkEquipRenderUtilsAbi = [
     outputs: [
       { name: 'isRejectedOrAbandoned', internalType: 'bool', type: 'bool' },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'allPartIds', internalType: 'uint64[]', type: 'uint64[]' },
@@ -1254,9 +1406,9 @@ export const rmrkEquipRenderUtilsAbi = [
       { name: 'slotPartIds', internalType: 'uint64[]', type: 'uint64[]' },
       { name: 'fixedPartIds', internalType: 'uint64[]', type: 'uint64[]' },
     ],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'parentAddress', internalType: 'address', type: 'address' },
@@ -1266,9 +1418,9 @@ export const rmrkEquipRenderUtilsAbi = [
     ],
     name: 'validateChildOf',
     outputs: [{ name: 'validChild', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'view',
   },
   {
-    stateMutability: 'view',
     type: 'function',
     inputs: [
       { name: 'parentAddress', internalType: 'address', type: 'address' },
@@ -1281,6 +1433,7 @@ export const rmrkEquipRenderUtilsAbi = [
       { name: 'isValid', internalType: 'bool', type: 'bool' },
       { name: 'validityOfChildren', internalType: 'bool[]', type: 'bool[]' },
     ],
+    stateMutability: 'view',
   },
   { type: 'error', inputs: [], name: 'RMRKChildNotFoundInParent' },
   { type: 'error', inputs: [], name: 'RMRKMismachedArrayLength' },
@@ -1297,8 +1450,8 @@ export const rmrkEquipRenderUtilsAbi = [
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const readRmrkCatalogFactory = /*#__PURE__*/ createReadContract({
   abi: rmrkCatalogFactoryAbi,
@@ -1308,8 +1461,8 @@ export const readRmrkCatalogFactory = /*#__PURE__*/ createReadContract({
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getDeployerCatalogAtIndex"`
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const readRmrkCatalogFactoryGetDeployerCatalogAtIndex =
   /*#__PURE__*/ createReadContract({
@@ -1321,8 +1474,8 @@ export const readRmrkCatalogFactoryGetDeployerCatalogAtIndex =
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getDeployerCatalogs"`
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const readRmrkCatalogFactoryGetDeployerCatalogs =
   /*#__PURE__*/ createReadContract({
@@ -1334,8 +1487,8 @@ export const readRmrkCatalogFactoryGetDeployerCatalogs =
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getLastDeployerCatalog"`
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const readRmrkCatalogFactoryGetLastDeployerCatalog =
   /*#__PURE__*/ createReadContract({
@@ -1347,8 +1500,8 @@ export const readRmrkCatalogFactoryGetLastDeployerCatalog =
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getTotalDeployerCatalogs"`
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const readRmrkCatalogFactoryGetTotalDeployerCatalogs =
   /*#__PURE__*/ createReadContract({
@@ -1360,8 +1513,8 @@ export const readRmrkCatalogFactoryGetTotalDeployerCatalogs =
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const writeRmrkCatalogFactory = /*#__PURE__*/ createWriteContract({
   abi: rmrkCatalogFactoryAbi,
@@ -1371,8 +1524,8 @@ export const writeRmrkCatalogFactory = /*#__PURE__*/ createWriteContract({
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"deployCatalog"`
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const writeRmrkCatalogFactoryDeployCatalog =
   /*#__PURE__*/ createWriteContract({
@@ -1384,8 +1537,8 @@ export const writeRmrkCatalogFactoryDeployCatalog =
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const simulateRmrkCatalogFactory = /*#__PURE__*/ createSimulateContract({
   abi: rmrkCatalogFactoryAbi,
@@ -1395,8 +1548,8 @@ export const simulateRmrkCatalogFactory = /*#__PURE__*/ createSimulateContract({
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"deployCatalog"`
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const simulateRmrkCatalogFactoryDeployCatalog =
   /*#__PURE__*/ createSimulateContract({
@@ -1408,8 +1561,8 @@ export const simulateRmrkCatalogFactoryDeployCatalog =
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const watchRmrkCatalogFactoryEvent =
   /*#__PURE__*/ createWatchContractEvent({
@@ -1420,8 +1573,8 @@ export const watchRmrkCatalogFactoryEvent =
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `eventName` set to `"CatalogDeployed"`
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const watchRmrkCatalogFactoryCatalogDeployedEvent =
   /*#__PURE__*/ createWatchContractEvent({
@@ -1874,6 +2027,76 @@ export const watchRmrkCatalogImplTypeUpdatedEvent =
   });
 
 /**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__
+ */
+export const readRmrkCatalogUtils = /*#__PURE__*/ createReadContract({
+  abi: rmrkCatalogUtilsAbi,
+});
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getCatalogData"`
+ */
+export const readRmrkCatalogUtilsGetCatalogData =
+  /*#__PURE__*/ createReadContract({
+    abi: rmrkCatalogUtilsAbi,
+    functionName: 'getCatalogData',
+  });
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getCatalogDataAndExtendedParts"`
+ */
+export const readRmrkCatalogUtilsGetCatalogDataAndExtendedParts =
+  /*#__PURE__*/ createReadContract({
+    abi: rmrkCatalogUtilsAbi,
+    functionName: 'getCatalogDataAndExtendedParts',
+  });
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getExtendedParts"`
+ */
+export const readRmrkCatalogUtilsGetExtendedParts =
+  /*#__PURE__*/ createReadContract({
+    abi: rmrkCatalogUtilsAbi,
+    functionName: 'getExtendedParts',
+  });
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getOrphanEquipmentsFromChildAsset"`
+ */
+export const readRmrkCatalogUtilsGetOrphanEquipmentsFromChildAsset =
+  /*#__PURE__*/ createReadContract({
+    abi: rmrkCatalogUtilsAbi,
+    functionName: 'getOrphanEquipmentsFromChildAsset',
+  });
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getOrphanEquipmentsFromParentAsset"`
+ */
+export const readRmrkCatalogUtilsGetOrphanEquipmentsFromParentAsset =
+  /*#__PURE__*/ createReadContract({
+    abi: rmrkCatalogUtilsAbi,
+    functionName: 'getOrphanEquipmentsFromParentAsset',
+  });
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getSlotPartsAndCatalog"`
+ */
+export const readRmrkCatalogUtilsGetSlotPartsAndCatalog =
+  /*#__PURE__*/ createReadContract({
+    abi: rmrkCatalogUtilsAbi,
+    functionName: 'getSlotPartsAndCatalog',
+  });
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"splitSlotAndFixedParts"`
+ */
+export const readRmrkCatalogUtilsSplitSlotAndFixedParts =
+  /*#__PURE__*/ createReadContract({
+    abi: rmrkCatalogUtilsAbi,
+    functionName: 'splitSlotAndFixedParts',
+  });
+
+/**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__
  */
 export const readRmrkEquipRenderUtils = /*#__PURE__*/ createReadContract({
@@ -2166,8 +2389,8 @@ export const readRmrkEquipRenderUtilsValidateChildrenOf =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const useReadRmrkCatalogFactory = /*#__PURE__*/ createUseReadContract({
   abi: rmrkCatalogFactoryAbi,
@@ -2177,8 +2400,8 @@ export const useReadRmrkCatalogFactory = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getDeployerCatalogAtIndex"`
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const useReadRmrkCatalogFactoryGetDeployerCatalogAtIndex =
   /*#__PURE__*/ createUseReadContract({
@@ -2190,8 +2413,8 @@ export const useReadRmrkCatalogFactoryGetDeployerCatalogAtIndex =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getDeployerCatalogs"`
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const useReadRmrkCatalogFactoryGetDeployerCatalogs =
   /*#__PURE__*/ createUseReadContract({
@@ -2203,8 +2426,8 @@ export const useReadRmrkCatalogFactoryGetDeployerCatalogs =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getLastDeployerCatalog"`
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const useReadRmrkCatalogFactoryGetLastDeployerCatalog =
   /*#__PURE__*/ createUseReadContract({
@@ -2216,8 +2439,8 @@ export const useReadRmrkCatalogFactoryGetLastDeployerCatalog =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getTotalDeployerCatalogs"`
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const useReadRmrkCatalogFactoryGetTotalDeployerCatalogs =
   /*#__PURE__*/ createUseReadContract({
@@ -2229,8 +2452,8 @@ export const useReadRmrkCatalogFactoryGetTotalDeployerCatalogs =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const useWriteRmrkCatalogFactory = /*#__PURE__*/ createUseWriteContract({
   abi: rmrkCatalogFactoryAbi,
@@ -2240,8 +2463,8 @@ export const useWriteRmrkCatalogFactory = /*#__PURE__*/ createUseWriteContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"deployCatalog"`
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const useWriteRmrkCatalogFactoryDeployCatalog =
   /*#__PURE__*/ createUseWriteContract({
@@ -2253,8 +2476,8 @@ export const useWriteRmrkCatalogFactoryDeployCatalog =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const useSimulateRmrkCatalogFactory =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2265,8 +2488,8 @@ export const useSimulateRmrkCatalogFactory =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"deployCatalog"`
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const useSimulateRmrkCatalogFactoryDeployCatalog =
   /*#__PURE__*/ createUseSimulateContract({
@@ -2278,8 +2501,8 @@ export const useSimulateRmrkCatalogFactoryDeployCatalog =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const useWatchRmrkCatalogFactoryEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -2290,8 +2513,8 @@ export const useWatchRmrkCatalogFactoryEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `eventName` set to `"CatalogDeployed"`
  *
- * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x6f5BCEE387da9D44d6E16E46095D50F9c6006e80)
- * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x4E80834c7c84881578F875d048C157f8FD3211F3)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const useWatchRmrkCatalogFactoryCatalogDeployedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
@@ -2746,6 +2969,76 @@ export const useWatchRmrkCatalogImplTypeUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'TypeUpdated',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__
+ */
+export const useReadRmrkCatalogUtils = /*#__PURE__*/ createUseReadContract({
+  abi: rmrkCatalogUtilsAbi,
+});
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getCatalogData"`
+ */
+export const useReadRmrkCatalogUtilsGetCatalogData =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogUtilsAbi,
+    functionName: 'getCatalogData',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getCatalogDataAndExtendedParts"`
+ */
+export const useReadRmrkCatalogUtilsGetCatalogDataAndExtendedParts =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogUtilsAbi,
+    functionName: 'getCatalogDataAndExtendedParts',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getExtendedParts"`
+ */
+export const useReadRmrkCatalogUtilsGetExtendedParts =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogUtilsAbi,
+    functionName: 'getExtendedParts',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getOrphanEquipmentsFromChildAsset"`
+ */
+export const useReadRmrkCatalogUtilsGetOrphanEquipmentsFromChildAsset =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogUtilsAbi,
+    functionName: 'getOrphanEquipmentsFromChildAsset',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getOrphanEquipmentsFromParentAsset"`
+ */
+export const useReadRmrkCatalogUtilsGetOrphanEquipmentsFromParentAsset =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogUtilsAbi,
+    functionName: 'getOrphanEquipmentsFromParentAsset',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getSlotPartsAndCatalog"`
+ */
+export const useReadRmrkCatalogUtilsGetSlotPartsAndCatalog =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogUtilsAbi,
+    functionName: 'getSlotPartsAndCatalog',
+  });
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"splitSlotAndFixedParts"`
+ */
+export const useReadRmrkCatalogUtilsSplitSlotAndFixedParts =
+  /*#__PURE__*/ createUseReadContract({
+    abi: rmrkCatalogUtilsAbi,
+    functionName: 'splitSlotAndFixedParts',
   });
 
 /**

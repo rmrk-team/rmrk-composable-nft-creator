@@ -1,4 +1,4 @@
-import { File, FilebaseClient } from '@filebase/client';
+import { type File, FilebaseClient } from '@filebase/client';
 import type { Metadata } from '@rmrk-team/types';
 
 const filebaseClient = new FilebaseClient({
@@ -25,7 +25,6 @@ export async function POST(request: Request) {
         status: 400,
       });
     }
-
     const mediaFileCid = await filebaseClient.storeBlob(mediaFile);
     const mediaUri = mediaFileCid ? `ipfs://${mediaFileCid}` : undefined;
 
@@ -46,6 +45,7 @@ export async function POST(request: Request) {
     return Response.json({ metadataUri: `ipfs://${metadataCid}` });
     // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   } catch (error: any) {
+    console.error(error);
     return new Response(`Pin metadata error: ${error.message}`, {
       status: 400,
     });

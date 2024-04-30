@@ -15,11 +15,7 @@
     "noErrorTruncation": true,
     "module": "esnext",
     "target": "ES2019",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "jsx": "preserve",
     "baseUrl": "./",
     "moduleResolution": "node",
@@ -37,28 +33,12 @@
       }
     ],
     "paths": {
-      "styled-system/*": [
-        "styled-system/*"
-      ],
-      "lib/*": [
-        "lib/*"
-      ],
-      "components/*": [
-        "components/*"
-      ],
-      "contracts/*": [
-        "contracts/*"
-      ]
+      "styled-system/*": ["styled-system/*"],
+      "lib/*": ["lib/*"],
+      "components/*": ["components/*"],
+      "contracts/*": ["contracts/*"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "contracts"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ]
+  "exclude": ["node_modules", "contracts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"]
 }

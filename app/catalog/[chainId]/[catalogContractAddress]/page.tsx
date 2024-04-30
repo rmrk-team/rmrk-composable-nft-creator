@@ -3,11 +3,13 @@
 import { RMRKCatalogUtils } from '@rmrk-team/rmrk-evm-utils';
 import { useRMRKConfig } from '@rmrk-team/rmrk-hooks';
 import type { Address } from 'abitype';
+import { PartsManagementContainer } from 'components/catalog/parts-management/parts-management-container';
 import { Loader } from 'components/common/loader';
 import * as Alert from 'components/park-ui/alert';
 import { Heading } from 'components/park-ui/heading';
 import { Text } from 'components/park-ui/text';
 import { useMediaQuery } from 'lib/hooks/use-media-query';
+import { getIsSupportedChainId } from 'lib/utils/get-is-supported-chain-id';
 import { jsonStringifyWithBigint } from 'lib/utils/json-stringify-with-bigint';
 import { useReadRmrkCatalogImplGetPaginatedPartIds } from 'lib/wagmi/generated';
 import { AlertCircle } from 'lucide-react';
@@ -36,7 +38,7 @@ export default function ManageCatalogPage({
   const chainIdFromConnector = useChainId();
 
   const chainId = chainIdFromPath
-    ? parseInt(chainIdFromPath)
+    ? Number.parseInt(chainIdFromPath)
     : chainIdFromConnector;
 
   const catalogDetailsResponse = useReadContract({
@@ -52,6 +54,10 @@ export default function ManageCatalogPage({
     chainId,
     address: catalogContractAddress,
   });
+
+  if (!getIsSupportedChainId(chainId)) {
+    return null;
+  }
 
   if (!catalogContractAddress || !chainId) {
     return (
@@ -71,9 +77,15 @@ export default function ManageCatalogPage({
 
   if (catalogDetailsResponse.isLoading) {
     return (
-      <Container>
-        <Loader size={120} />
-      </Container>
+      <Flex
+        height={'100%'}
+        width={'100%'}
+        justifyContent={'center'}
+        alignItems={'center'}
+        flexGrow={1}
+      >
+        <Loader size={80} />
+      </Flex>
     );
   }
 
@@ -112,7 +124,10 @@ export default function ManageCatalogPage({
             minWidth={0}
             data-name={'catalog-parts-form-column'}
           >
-            Parts form will be here
+            <PartsManagementContainer
+              catalogAddress={catalogContractAddress}
+              chainId={chainId}
+            />
           </Flex>
           <Flex
             direction={'column'}

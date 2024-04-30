@@ -37,7 +37,7 @@ export const FileUploadDropzone = ({
   };
 
   return (
-    <VStack gap={1} width="100%">
+    <VStack gap={1} width="100%" alignItems={'flex-start'}>
       <FormLabel htmlFor="name">{label}</FormLabel>
       {meta.touched && meta.error && <Text color="red">{meta.error}</Text>}
       <FileUpload.Root
@@ -48,30 +48,37 @@ export const FileUploadDropzone = ({
         accept={accept}
         {...fileUploadProps}
       >
-        <FileUpload.Dropzone>
-          <FileUpload.Label>Drop your files here</FileUpload.Label>
-          <FileUpload.Trigger asChild>
-            <Button size="sm">Open Dialog</Button>
-          </FileUpload.Trigger>
-        </FileUpload.Dropzone>
         <FileUpload.ItemGroup>
-          {(files) =>
-            files.map((file, id) => (
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              <FileUpload.Item key={id} file={file}>
-                <FileUpload.ItemPreview type="image/*">
-                  <FileUpload.ItemPreviewImage />
-                </FileUpload.ItemPreview>
-                <FileUpload.ItemName />
-                <FileUpload.ItemSizeText />
-                <FileUpload.ItemDeleteTrigger asChild>
-                  <IconButton variant="link" size="sm">
-                    <Trash2Icon />
-                  </IconButton>
-                </FileUpload.ItemDeleteTrigger>
-              </FileUpload.Item>
-            ))
-          }
+          {(files) => (
+            <>
+              <>
+                {files.length === 0 && (
+                  <FileUpload.Dropzone>
+                    <FileUpload.Label>Drop your files here</FileUpload.Label>
+                    <FileUpload.Trigger asChild>
+                      <Button size="sm">Open Dialog</Button>
+                    </FileUpload.Trigger>
+                  </FileUpload.Dropzone>
+                )}
+              </>
+
+              {files.map((file, id) => (
+                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                <FileUpload.Item key={id} file={file}>
+                  <FileUpload.ItemPreview type="image/*">
+                    <FileUpload.ItemPreviewImage />
+                  </FileUpload.ItemPreview>
+                  <FileUpload.ItemName />
+                  <FileUpload.ItemSizeText />
+                  <FileUpload.ItemDeleteTrigger asChild>
+                    <IconButton variant="link" size="sm">
+                      <Trash2Icon />
+                    </IconButton>
+                  </FileUpload.ItemDeleteTrigger>
+                </FileUpload.Item>
+              ))}
+            </>
+          )}
         </FileUpload.ItemGroup>
       </FileUpload.Root>
     </VStack>

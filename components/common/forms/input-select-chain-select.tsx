@@ -1,6 +1,6 @@
 import { ChainSelectDropdown } from 'components/common/chain-select-dropdown';
 import { FormLabel } from 'components/park-ui/form-label';
-import * as Select from 'components/park-ui/select';
+import type * as Select from 'components/park-ui/select';
 import { Text } from 'components/park-ui/text';
 import { useField } from 'formik';
 import React from 'react';
@@ -16,7 +16,7 @@ export const InputSelectChainSelect = () => {
   };
 
   return (
-    <VStack gap={2}>
+    <VStack gap={2} alignItems={'flex-start'}>
       <FormLabel htmlFor={field.name}>Chain</FormLabel>
       <ChainSelectDropdown
         defaultValue={field.value ? [field.value] : undefined}

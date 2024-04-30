@@ -2,7 +2,6 @@ import {
   TreeView as ArkTreeView,
   type TreeViewRootProps,
 } from '@ark-ui/react/tree-view';
-import { ChevronRightIcon } from 'lucide-react';
 import { forwardRef } from 'react';
 import { css, cx } from 'styled-system/css';
 import { splitCssProps } from 'styled-system/jsx';
@@ -31,39 +30,32 @@ export const TreeView = forwardRef<HTMLDivElement, TreeViewProps>(
     const { data, className, ...rootProps } = localProps;
     const styles = treeView();
 
-    const renderChild = (child: Child) => (
-      <ArkTreeView.Branch
-        key={child.id}
-        id={child.id}
-        className={styles.branch}
-      >
-        <ArkTreeView.BranchControl className={styles.branchControl}>
-          <ArkTreeView.BranchIndicator className={styles.branchIndicator}>
-            <ChevronRightIcon />
-          </ArkTreeView.BranchIndicator>
-          <ArkTreeView.BranchText className={styles.branchText}>
+    const renderChild = (child: Child) =>
+      child.children ? (
+        <ArkTreeView.Branch
+          key={child.id}
+          id={child.id}
+          className={styles.branch}
+        >
+          <ArkTreeView.BranchControl className={styles.branchControl}>
+            <ArkTreeView.BranchIndicator className={styles.branchIndicator}>
+              <ChevronRightIcon />
+            </ArkTreeView.BranchIndicator>
+            <ArkTreeView.BranchText className={styles.branchText}>
+              {child.name}
+            </ArkTreeView.BranchText>
+          </ArkTreeView.BranchControl>
+          <ArkTreeView.BranchContent className={styles.branchContent}>
+            {child.children.map(renderChild)}
+          </ArkTreeView.BranchContent>
+        </ArkTreeView.Branch>
+      ) : (
+        <ArkTreeView.Item key={child.id} id={child.id} className={styles.item}>
+          <ArkTreeView.ItemText className={styles.itemText}>
             {child.name}
-          </ArkTreeView.BranchText>
-        </ArkTreeView.BranchControl>
-        <ArkTreeView.BranchContent className={styles.branchContent}>
-          {child.children?.map((child) =>
-            child.children ? (
-              renderChild(child)
-            ) : (
-              <ArkTreeView.Item
-                key={child.id}
-                id={child.id}
-                className={styles.item}
-              >
-                <ArkTreeView.ItemText className={styles.itemText}>
-                  {child.name}
-                </ArkTreeView.ItemText>
-              </ArkTreeView.Item>
-            ),
-          )}
-        </ArkTreeView.BranchContent>
-      </ArkTreeView.Branch>
-    );
+          </ArkTreeView.ItemText>
+        </ArkTreeView.Item>
+      );
 
     return (
       <ArkTreeView.Root
@@ -81,3 +73,17 @@ export const TreeView = forwardRef<HTMLDivElement, TreeViewProps>(
 );
 
 TreeView.displayName = 'TreeView';
+
+const ChevronRightIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>Chevron Right Icon</title>
+    <path
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="m9 18l6-6l-6-6"
+    />
+  </svg>
+);

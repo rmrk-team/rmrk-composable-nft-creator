@@ -29,7 +29,6 @@ export const PinInput = forwardRef<HTMLDivElement, PinInputProps>(
 
     return (
       <ArkPinInput.Root
-        // @ts-expect-error TODO cssProps is to complex to be typed
         className={cx(styles.root, css(cssProps), className)}
         ref={ref}
         {...rootProps}

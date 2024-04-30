@@ -17,3 +17,9 @@ export const fileUploadCatalogThumbnailAcceptedFileTypes: Accept = {
   'image/jpeg': ['.jpg', '.jpeg'],
   'image/webp': ['.webp'],
 };
+
+export const catalogPartTypes = [
+  0, // None
+  1, // Slot
+  2, // Fixed
+] as const;

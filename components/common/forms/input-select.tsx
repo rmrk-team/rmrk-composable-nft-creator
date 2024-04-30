@@ -22,7 +22,12 @@ export const InputSelect = ({
   ...selectProps
 }: Props) => {
   return (
-    <Select.Root {...selectProps} items={items} variant="outline">
+    <Select.Root
+      {...selectProps}
+      items={items}
+      variant="outline"
+      positioning={{ sameWidth: true }}
+    >
       {label && <Select.Label>{label}</Select.Label>}
 
       <Select.Control>
@@ -33,26 +38,24 @@ export const InputSelect = ({
           </Select.Indicator>
         </Select.Trigger>
       </Select.Control>
-      <Portal>
-        <Select.Positioner>
-          <Select.Content>
-            <Select.ItemGroup id={id}>
-              {groupLabel && (
-                <Select.ItemGroupLabel htmlFor={id}>
-                  {groupLabel}
-                </Select.ItemGroupLabel>
-              )}
+      <Select.Positioner>
+        <Select.Content>
+          <Select.ItemGroup id={id}>
+            {groupLabel && (
+              <Select.ItemGroupLabel htmlFor={id}>
+                {groupLabel}
+              </Select.ItemGroupLabel>
+            )}
 
-              {items.map((item) => (
-                <Select.Item key={item.value} item={item}>
-                  <Select.ItemText>{item.label}</Select.ItemText>
-                  <Select.ItemIndicator>✓</Select.ItemIndicator>
-                </Select.Item>
-              ))}
-            </Select.ItemGroup>
-          </Select.Content>
-        </Select.Positioner>
-      </Portal>
+            {items.map((item) => (
+              <Select.Item key={item.value} item={item}>
+                <Select.ItemText>{item.label}</Select.ItemText>
+                <Select.ItemIndicator>✓</Select.ItemIndicator>
+              </Select.Item>
+            ))}
+          </Select.ItemGroup>
+        </Select.Content>
+      </Select.Positioner>
     </Select.Root>
   );
 };

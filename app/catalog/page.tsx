@@ -1,6 +1,6 @@
 'use client';
 
-import { type Address } from 'abitype';
+import type { Address } from 'abitype';
 import {
   DeployCatalogForm,
   type DeployCatalogFormFields,
@@ -9,7 +9,7 @@ import { DeploySuccessDialog } from 'components/catalog/deploy-catalog/deploy-su
 import { ChainSelectDropdown } from 'components/common/chain-select-dropdown';
 import * as Alert from 'components/park-ui/alert';
 import { Heading } from 'components/park-ui/heading';
-import * as Select from 'components/park-ui/select';
+import type * as Select from 'components/park-ui/select';
 import { Text } from 'components/park-ui/text';
 import { getCatalogAddressFromDeployedEventLogs } from 'lib/catalog/deploy-catalog/get-catalog-address-from-deployed-event-logs';
 import { pinMetadataWithFiles } from 'lib/ipfs/pin-metadata';
@@ -31,7 +31,7 @@ export default function CatalogLandingPage() {
   const onChainSelect: Select.RootProps['onValueChange'] = (e) => {
     const selectedChainIdString = e.value?.[0];
     const chainId = selectedChainIdString
-      ? (parseInt(selectedChainIdString) as SupportedChainId)
+      ? (Number.parseInt(selectedChainIdString) as SupportedChainId)
       : undefined;
     if (chainId) {
       setSelectedChainId(chainId);

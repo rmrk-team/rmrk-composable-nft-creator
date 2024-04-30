@@ -23,7 +23,6 @@ export const Pagination = forwardRef<HTMLElement, PaginationProps>(
 
     return (
       <ArkPagination.Root
-        // @ts-expect-error TODO cssProps is to complex to be typed
         className={cx(styles.root, css(cssProps), className)}
         ref={ref}
         {...rootProps}
@@ -39,16 +38,18 @@ export const Pagination = forwardRef<HTMLElement, PaginationProps>(
               page.type === 'page' ? (
                 <ArkPagination.Item
                   className={styles.item}
-                  key={`park-pagination-item-${page.value}`}
+                  // biome-ignore lint/suspicious/noArrayIndexKey: Park-ui generated. Unknown what other fields are available
+                  key={index}
                   {...page}
                   asChild
                 >
                   <Button variant="outline">{page.value}</Button>
                 </ArkPagination.Item>
               ) : (
+                // biome-ignore lint/correctness/useJsxKeyInIterable: <explanation>
                 <ArkPagination.Ellipsis
                   className={styles.ellipsis}
-                  // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                  // biome-ignore lint/suspicious/noArrayIndexKey: Park-ui generated. Unknown what other fields are available
                   key={index}
                   index={index}
                 >
