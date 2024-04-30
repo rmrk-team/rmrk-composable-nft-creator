@@ -1,32 +1,25 @@
 {
-  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "strict": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "useDefineForClassFields": true,
-    "useUnknownInCatchVariables": true,
-    "checkJs": false,
-    "verbatimModuleSyntax": true,
-    "noErrorTruncation": true,
-    "module": "esnext",
-    "target": "ES2021",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "target": "es2020",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "jsx": "preserve",
-    "baseUrl": "./",
-    "moduleResolution": "node",
     "allowJs": true,
-    "noEmit": true,
-    "allowSyntheticDefaultImports": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
     "skipLibCheck": true,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
     "plugins": [
       {
         "name": "next"
@@ -35,10 +28,9 @@
     "paths": {
       "styled-system/*": ["styled-system/*"],
       "lib/*": ["lib/*"],
-      "components/*": ["components/*"],
-      "contracts/*": ["contracts/*"]
+      "components/*": ["components/*"]
     }
   },
-  "exclude": ["node_modules", "contracts"],
+  "exclude": ["node_modules", "contracts/**"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"]
 }

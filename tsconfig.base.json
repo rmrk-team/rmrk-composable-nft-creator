@@ -1,5 +1,4 @@
 {
-  "include": [],
   "compilerOptions": {
     "incremental": true,
     "strict": true,

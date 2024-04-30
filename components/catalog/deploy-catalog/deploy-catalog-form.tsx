@@ -1,5 +1,3 @@
-'use client';
-
 import { InputSelectCatalogType } from 'components/catalog/deploy-catalog/input-select-catalog-type';
 import { FileUploadDropzone } from 'components/common/forms/file-upload-dropzone';
 import { InputField } from 'components/common/forms/input-field';
