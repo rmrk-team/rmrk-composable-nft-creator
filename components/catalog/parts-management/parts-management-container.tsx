@@ -111,7 +111,6 @@ export const PartsManagementContainer = ({
                     </Collapsible.Trigger>
                     <Collapsible.Content>
                       <Flex
-                        ml={8}
                         direction={'column'}
                         gap={4}
                         p="4"
