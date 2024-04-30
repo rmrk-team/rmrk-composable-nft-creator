@@ -8,7 +8,6 @@ import type {
 import { EditPartEquippableWhitelist } from 'components/catalog/parts-management/edit-part-equippable-whitelist/edit-part-equippable-whitelist';
 import { Loader } from 'components/common/loader';
 import type { SupportedChainId } from 'lib/wagmi-config';
-import { useReadRmrkCatalogUtilsGetExtendedParts } from 'lib/wagmi/generated';
 import React from 'react';
 import { Box, Flex } from 'styled-system/jsx';
 
@@ -20,29 +19,24 @@ type Props = {
   partId: bigint;
   chainId: SupportedChainId;
   catalogAddress: Address;
+  part: CatalogPart;
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  refetchParts: () => Promise<any>;
 };
 
-export const PartListRow = ({ partId, chainId, catalogAddress }: Props) => {
-  const config = useRMRKConfig();
-  const {
-    data,
-    isLoading,
-    isError,
-    refetch: refetchPart,
-  } = useReadRmrkCatalogUtilsGetExtendedParts({
-    chainId,
-    address: config.utilityContracts[chainId]?.RMRKCatalogUtils,
-    args: [catalogAddress, [partId]],
-  });
-
-  const part = data?.[0];
-
+export const PartListRow = ({
+  partId,
+  chainId,
+  catalogAddress,
+  part,
+  refetchParts,
+}: Props) => {
   const { data: metadata, isLoading: isLoadingMetadata } = useFetchIpfsMetadata(
     { metadataUri: part?.metadataURI },
     { enabled: !!part?.metadataURI },
   );
 
-  if (isLoading || isLoadingMetadata) {
+  if (isLoadingMetadata) {
     return <Loader />;
   }
 
@@ -89,7 +83,7 @@ export const PartListRow = ({ partId, chainId, catalogAddress }: Props) => {
             chainId={chainId}
             partId={partId}
             part={part}
-            refetchPart={refetchPart}
+            refetchParts={refetchParts}
           />
         </Box>
       )}

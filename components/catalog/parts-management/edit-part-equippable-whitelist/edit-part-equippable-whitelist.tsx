@@ -19,14 +19,14 @@ type Props = {
   partId: bigint;
   part: CatalogPart;
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  refetchPart: () => Promise<any>;
+  refetchParts: () => Promise<any>;
 };
 
 export const EditPartEquippableWhitelist = ({
   partId,
   chainId,
   catalogAddress,
-  refetchPart,
+  refetchParts,
   part,
 }: Props) => {
   //TODO: This sets a new array in place of previous array, we should offer to use addEquippableAddresses also if user wants to update previous array instead
@@ -107,7 +107,7 @@ export const EditPartEquippableWhitelist = ({
       //TODO: Handle success (close modal, show success message, refetch part)
 
       await sleep(500);
-      await refetchPart();
+      await refetchParts();
       await refetchIsEquippableToAll();
 
       onClose();
