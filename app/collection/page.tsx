@@ -8,7 +8,9 @@ export default function CollectionLandingPage() {
   return (
     <>
       <VStack gap="8" width="100%" flex={1}>
-        <Heading as="h1">RMRK Composable collection</Heading>
+        <Heading as="h1" fontWeight={600}>
+          RMRK Composable collection
+        </Heading>
 
         <Box>TODO: Deploy a new RMRK Composable collection form</Box>
 

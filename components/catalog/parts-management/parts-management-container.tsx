@@ -39,7 +39,9 @@ export const PartsManagementContainer = ({
   return (
     <Flex direction={'column'} gap={4}>
       <Box>
-        <Heading as={'h4'}>Catalog parts</Heading>
+        <Heading as={'h4'} fontWeight={600}>
+          Catalog parts
+        </Heading>
       </Box>
       {isPending ? (
         <>

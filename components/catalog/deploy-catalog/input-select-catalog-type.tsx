@@ -24,7 +24,7 @@ export const InputSelectCatalogType = () => {
   };
 
   return (
-    <VStack gap={2}>
+    <VStack gap={2} alignItems={'flex-start'}>
       <FormLabel htmlFor={field.name}>Catalog type</FormLabel>
       <InputSelect
         defaultValue={field.value ? [field.value] : undefined}

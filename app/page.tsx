@@ -28,7 +28,9 @@ export default function Home() {
   return (
     <VStack gap="8" width="100%" flex={1}>
       <Center flex={1}>
-        <Heading as="h1">Welcome to RMRK Composable NFT creator</Heading>
+        <Heading as="h1" fontWeight={600}>
+          Welcome to RMRK Composable NFT creator
+        </Heading>
       </Center>
 
       <Center flex={1}>

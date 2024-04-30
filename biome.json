@@ -2,7 +2,13 @@
   "$schema": "https://biomejs.dev/schemas/1.5.1/schema.json",
   "files": {
     "ignoreUnknown": true,
-    "ignore": ["styled-system/**", "dist/**", ".next/**", "contracts/**"]
+    "ignore": [
+      "styled-system/**",
+      "dist/**",
+      ".next/**",
+      "contracts/**",
+      "node_modules/**"
+    ]
   },
   "formatter": {
     "enabled": true,

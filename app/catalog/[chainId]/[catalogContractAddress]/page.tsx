@@ -62,7 +62,9 @@ export default function ManageCatalogPage({
   if (!catalogContractAddress || !chainId) {
     return (
       <VStack gap="8" width="100%" flex={1}>
-        <Heading as="h1">RMRK Catalog creator</Heading>
+        <Heading as="h1" fontWeight={600}>
+          RMRK Catalog creator
+        </Heading>
         <Alert.Root>
           <Alert.Icon asChild>
             <AlertCircle />
@@ -97,7 +99,9 @@ export default function ManageCatalogPage({
 
   return (
     <VStack gap="8" width="100%" flex={1}>
-      <Heading as="h1">Manage catalog {catalogContractAddress}</Heading>
+      <Heading as="h1" fontWeight={600}>
+        Manage catalog {catalogContractAddress}
+      </Heading>
       <Text>
         Please make sure that all catalog parts are of the same media type:{' '}
         {catalogType}

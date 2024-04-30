@@ -82,7 +82,9 @@ export default function CatalogLandingPage() {
       />
 
       <VStack gap="8" width="100%" flex={1}>
-        <Heading as="h1">RMRK Catalog creator</Heading>
+        <Heading as="h1" fontWeight={600}>
+          RMRK Catalog creator
+        </Heading>
 
         {deployedCatalogAddress && isSuccess && (
           <Container>
@@ -100,10 +102,12 @@ export default function CatalogLandingPage() {
         )}
 
         <Box width={['100%', undefined, undefined, 'xl']}>
-          <ChainSelectDropdown
-            defaultValue={[selectedChainId.toString()]}
-            onValueChange={onChainSelect}
-          />
+          <Box py={8}>
+            <ChainSelectDropdown
+              defaultValue={[selectedChainId.toString()]}
+              onValueChange={onChainSelect}
+            />
+          </Box>
           <DeployCatalogForm
             onSubmit={onSubmit}
             isLoading={isLoadingReceipt}

@@ -11,10 +11,16 @@ import { VStack } from 'styled-system/jsx';
 type Props = {
   name: string;
   label: string;
+  placeholder?: string;
   validateFunction?: TagsInput.RootProps['validate'];
 };
 
-export const TagsInputField = ({ name, label, validateFunction }: Props) => {
+export const TagsInputField = ({
+  name,
+  label,
+  placeholder,
+  validateFunction,
+}: Props) => {
   const [field, meta, helpers] = useField(name);
 
   const onValueChange: TagsInput.RootProps['onValueChange'] = (details) => {
@@ -48,7 +54,7 @@ export const TagsInputField = ({ name, label, validateFunction }: Props) => {
                   <TagsInput.ItemInput />
                 </TagsInput.Item>
               ))}
-              <TagsInput.Input placeholder="Add Framework" />
+              <TagsInput.Input placeholder={placeholder || `Add ${name}`} />
             </TagsInput.Control>
             <TagsInput.ClearTrigger asChild>
               <Button variant="outline">Clear</Button>

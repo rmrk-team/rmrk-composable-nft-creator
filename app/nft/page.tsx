@@ -8,7 +8,7 @@ export default function NftLandingPage() {
   return (
     <>
       <VStack gap="8" width="100%" flex={1}>
-        <Heading as="h1">
+        <Heading as="h1" fontWeight={600}>
           Select RMRK NFT collection to create Composable NFTs
         </Heading>
 

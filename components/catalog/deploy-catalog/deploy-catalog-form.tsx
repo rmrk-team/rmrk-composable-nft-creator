@@ -62,7 +62,7 @@ export const DeployCatalogForm = ({
     >
       {({ errors, submitForm, isSubmitting, handleSubmit }) => (
         <Form id={formId} onSubmit={handleSubmit}>
-          <VStack gap={8}>
+          <VStack gap={8} alignItems={'flex-start'}>
             <InputField name="name" label="Catalog name" />
             <InputSelectCatalogType />
             <FileUploadDropzone
