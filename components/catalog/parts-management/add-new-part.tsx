@@ -1,4 +1,3 @@
-import { waitForTransactionReceipt } from '@wagmi/core';
 import type { Address } from 'abitype';
 import type { AddCatalogPartFormFields } from 'components/catalog/parts-management/add-new-part-form';
 import { AddNewPartModal } from 'components/catalog/parts-management/add-new-part-modal';
@@ -8,6 +7,7 @@ import { type SupportedChainId, wagmiConfig } from 'lib/wagmi-config';
 import { useWriteRmrkCatalogImplAddPart } from 'lib/wagmi/generated';
 import React, { useState } from 'react';
 import invariant from 'tiny-invariant';
+import { waitForTransactionReceipt } from 'wagmi/actions';
 
 type Props = {
   catalogAddress: Address;

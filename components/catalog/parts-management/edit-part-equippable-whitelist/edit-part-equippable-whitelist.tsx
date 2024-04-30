@@ -1,4 +1,3 @@
-import { waitForTransactionReceipt } from '@wagmi/core';
 import type { Address } from 'abitype';
 import type { EditSlotEquippableFormFields } from 'components/catalog/parts-management/edit-part-equippable-whitelist/edit-part-equippable-whitelist-form';
 import { EditPartEquippableWhitelistModal } from 'components/catalog/parts-management/edit-part-equippable-whitelist/edit-part-equippable-whitelist-modal';
@@ -12,6 +11,7 @@ import {
   useWriteRmrkCatalogImplSetEquippableToAll,
 } from 'lib/wagmi/generated';
 import React, { useState } from 'react';
+import { waitForTransactionReceipt } from 'wagmi/actions';
 
 type Props = {
   catalogAddress: Address;
