@@ -1,6 +1,6 @@
 'use client';
 
-import { RMRKCatalogUtils } from '@rmrk-team/rmrk-evm-utils';
+import { RMRKCatalogImpl, RMRKCatalogUtils } from '@rmrk-team/rmrk-evm-utils';
 import { useRMRKConfig } from '@rmrk-team/rmrk-hooks';
 import type { Address } from 'abitype';
 import { PartsManagementContainer } from 'components/catalog/parts-management/parts-management-container';
@@ -15,7 +15,7 @@ import { useReadRmrkCatalogImplGetPaginatedPartIds } from 'lib/wagmi/generated';
 import { AlertCircle } from 'lucide-react';
 import React from 'react';
 import { Box, Container, Flex, Grid, VStack } from 'styled-system/jsx';
-import { useChainId, useReadContract } from 'wagmi';
+import { useAccount, useChainId, useReadContract } from 'wagmi';
 
 type Props = {
   params: {
@@ -37,6 +37,8 @@ export default function ManageCatalogPage({
   const config = useRMRKConfig();
   const chainIdFromConnector = useChainId();
 
+  const { address, isConnected } = useAccount();
+
   const chainId = chainIdFromPath
     ? Number.parseInt(chainIdFromPath)
     : chainIdFromConnector;
@@ -47,6 +49,14 @@ export default function ManageCatalogPage({
     address: config.utilityContracts[chainId]?.RMRKCatalogUtils,
     functionName: 'getCatalogData',
     args: catalogContractAddress ? [catalogContractAddress] : undefined,
+    query: { enabled: !!chainId && !!catalogContractAddress },
+  });
+
+  const catalogOwnerResponse = useReadContract({
+    chainId,
+    abi: RMRKCatalogImpl,
+    address: catalogContractAddress,
+    functionName: 'owner',
     query: { enabled: !!chainId && !!catalogContractAddress },
   });
 
@@ -77,7 +87,7 @@ export default function ManageCatalogPage({
     );
   }
 
-  if (catalogDetailsResponse.isLoading) {
+  if (catalogDetailsResponse.isLoading || catalogOwnerResponse.isLoading) {
     return (
       <Flex
         height={'100%'}
@@ -93,6 +103,40 @@ export default function ManageCatalogPage({
 
   if (!catalogDetailsResponse.data) {
     return null;
+  }
+
+  if (!isConnected) {
+    return (
+      <VStack gap="8" width="100%" flex={1}>
+        <Heading as="h1" fontWeight={600}>
+          RMRK Catalog creator
+        </Heading>
+        <Alert.Root>
+          <Alert.Icon asChild>
+            <AlertCircle />
+          </Alert.Icon>
+          <Alert.Title>Connect your wallet to manage catalog</Alert.Title>
+        </Alert.Root>
+      </VStack>
+    );
+  }
+
+  const isOwner = catalogOwnerResponse.data === address;
+
+  if (!isOwner) {
+    return (
+      <VStack gap="8" width="100%" flex={1}>
+        <Heading as="h1" fontWeight={600}>
+          RMRK Catalog creator
+        </Heading>
+        <Alert.Root>
+          <Alert.Icon asChild>
+            <AlertCircle />
+          </Alert.Icon>
+          <Alert.Title>You are not the owner of this catalog</Alert.Title>
+        </Alert.Root>
+      </VStack>
+    );
   }
 
   const [_, catalogType, catalogMetadataUri] = catalogDetailsResponse.data;
