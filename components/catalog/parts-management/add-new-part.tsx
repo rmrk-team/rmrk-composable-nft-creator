@@ -2,7 +2,7 @@ import type { Address } from 'abitype';
 import type { AddCatalogPartFormFields } from 'components/catalog/parts-management/add-new-part-form';
 import { AddNewPartModal } from 'components/catalog/parts-management/add-new-part-modal';
 import { pinMetadataWithFiles } from 'lib/ipfs/pin-metadata';
-import { sleep } from 'lib/utils/sleep';
+import { sleep } from 'components/common/logo/utils/sleep';
 import { type SupportedChainId, wagmiConfig } from 'lib/wagmi-config';
 import { useWriteRmrkCatalogImplAddPart } from 'lib/wagmi/generated';
 import React, { useState } from 'react';
