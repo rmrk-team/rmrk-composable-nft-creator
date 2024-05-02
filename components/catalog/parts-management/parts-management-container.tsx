@@ -122,7 +122,6 @@ export const PartsManagementContainer = ({
                           (part, partIndex) => (
                             <PartListRow
                               key={allCatalogPartIds[partIndex].toString()}
-                              partId={allCatalogPartIds[partIndex]}
                               part={part}
                               chainId={chainId}
                               catalogAddress={catalogAddress}

@@ -36,6 +36,7 @@ export const TagsInputField = ({
         validate={validateFunction}
         onValueChange={onValueChange}
         addOnPaste
+        defaultValue={field.value}
       >
         {(api) => (
           <>

@@ -1,4 +1,7 @@
-import type { RMRKCatalogImpl } from '@rmrk-team/rmrk-evm-utils';
+import type {
+  RMRKCatalogImpl,
+  RMRKCatalogUtils,
+} from '@rmrk-team/rmrk-evm-utils';
 import { useFetchIpfsMetadata, useRMRKConfig } from '@rmrk-team/rmrk-hooks';
 import type {
   AbiParametersToPrimitiveTypes,
@@ -12,11 +15,10 @@ import React from 'react';
 import { Box, Flex } from 'styled-system/jsx';
 
 export type CatalogPart = AbiParametersToPrimitiveTypes<
-  ExtractAbiFunction<typeof RMRKCatalogImpl, 'getPart'>['outputs']
->[0];
+  ExtractAbiFunction<typeof RMRKCatalogUtils, 'getExtendedParts'>['outputs']
+>[0][0];
 
 type Props = {
-  partId: bigint;
   chainId: SupportedChainId;
   catalogAddress: Address;
   part: CatalogPart;
@@ -25,7 +27,6 @@ type Props = {
 };
 
 export const PartListRow = ({
-  partId,
   chainId,
   catalogAddress,
   part,
@@ -43,6 +44,8 @@ export const PartListRow = ({
   if (!part) {
     return null;
   }
+
+  const partId = part.partId;
 
   const partType = part.itemType === 1 ? 'slot' : 'fixed';
   const image = metadata?.mediaUri || metadata?.image;
