@@ -1,11 +1,11 @@
 import { AccountWallet } from 'components/account/account-wallet';
-import Logo from 'components/common/logo/Logo';
+import Logo from 'components/common/images/Logo';
 import React from 'react';
 import { Box, HStack } from 'styled-system/jsx';
 export const TopBar = () => {
   return (
     <HStack p={2}>
-      <Logo/>
+      <Logo />
       <Box ml="auto">
         <AccountWallet />
       </Box>

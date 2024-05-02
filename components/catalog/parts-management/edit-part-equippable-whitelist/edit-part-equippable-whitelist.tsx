@@ -3,7 +3,7 @@ import type { EditSlotEquippableFormFields } from 'components/catalog/parts-mana
 import { EditPartEquippableWhitelistModal } from 'components/catalog/parts-management/edit-part-equippable-whitelist/edit-part-equippable-whitelist-modal';
 import type { CatalogPart } from 'components/catalog/parts-management/part-list-row';
 import { Loader } from 'components/common/loader';
-import { sleep } from 'components/common/logo/utils/sleep';
+import { sleep } from 'lib/utils/sleep';
 import { type SupportedChainId, wagmiConfig } from 'lib/wagmi-config';
 import {
   useReadRmrkCatalogImplCheckIsEquippableToAll,
