@@ -1,7 +1,7 @@
 import { defineConfig } from '@wagmi/cli';
 import { actions, foundry, react } from '@wagmi/cli/plugins';
 import { RMRKCatalogFactoryContractAddress } from 'lib/consts/contract-addresses';
-import { baseSepolia, sepolia } from 'wagmi/chains';
+import { base, baseSepolia, sepolia } from 'wagmi/chains';
 
 type FoundryConfigDeployments = {
   [p: string]: `0x${string}` | Record<number, `0x${string}`> | undefined;
@@ -11,6 +11,7 @@ const rmrkConfigDeployments: FoundryConfigDeployments = {
   RMRKCatalogFactory: {
     [baseSepolia.id]: RMRKCatalogFactoryContractAddress[baseSepolia.id],
     [sepolia.id]: RMRKCatalogFactoryContractAddress[sepolia.id],
+    [base.id]: RMRKCatalogFactoryContractAddress[base.id],
   },
   // RMRKEquipRenderUtils: {
   //   [baseSepolia.id]: RMRKCatalogFactoryContractAddress[baseSepolia.id],
