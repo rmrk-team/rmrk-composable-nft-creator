@@ -7,10 +7,10 @@ import {
 } from '@rainbow-me/rainbowkit/wallets';
 import type { Transport } from 'viem';
 import { http, createConfig } from 'wagmi';
-import { baseSepolia } from 'wagmi/chains';
+import { base, baseSepolia } from 'wagmi/chains';
 
 // const productionChains = [base] as const;
-const productionChains = [] as const;
+const productionChains = [base] as const;
 const testnetChains = [baseSepolia] as const;
 export const allSupportedChains = [
   ...productionChains,

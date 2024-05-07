@@ -50,9 +50,9 @@ export const AddNewPart = ({
       invariant(name);
       invariant(type);
       //TODO: Allow user to enter metadataURI directly instead of pinning it. Same for images
-      invariant(mediaFiles?.[0]);
+      // invariant(mediaFiles?.[0]);
       const metadataURI = await pinMetadataWithFiles({
-        mediaFile: mediaFiles[0],
+        mediaFile: mediaFiles?.[0],
         metadataFields: { name, description },
       });
       invariant(metadataURI);

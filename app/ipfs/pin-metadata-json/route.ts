@@ -11,7 +11,9 @@ const md5 = (str: string) => createHash('md5').update(str).digest('hex');
 export async function POST(request: Request) {
   try {
     const data = await request.formData();
-    const mediaFile: File | null = data.get('mediaFile') as unknown as File;
+    const mediaFile: File | null = data.get(
+      'mediaFile',
+    ) as unknown as File | null;
     const thumbnailFile: File | null = data.get(
       'thumbnailFile',
     ) as unknown as File;
@@ -23,12 +25,9 @@ export async function POST(request: Request) {
       ? JSON.parse(metadataFieldsString)
       : {};
 
-    if (!mediaFile) {
-      return new Response('No file provided', {
-        status: 400,
-      });
-    }
-    const mediaFileCid = await filebaseClient.storeBlob(mediaFile);
+    const mediaFileCid = mediaFile
+      ? await filebaseClient.storeBlob(mediaFile)
+      : undefined;
     const mediaUri = mediaFileCid ? `ipfs://${mediaFileCid}` : undefined;
 
     let thumbnailCid: string | undefined = undefined;

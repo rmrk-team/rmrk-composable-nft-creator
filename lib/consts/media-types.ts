@@ -6,10 +6,18 @@ export const supportedCatalogImageMimeTypes = [
   'image/webp',
 ] as const;
 
+export const supportedCatalogModelMimeTypes = ['model/gltf-binary'] as const;
+
+export const catalogTypes = [
+  ...supportedCatalogImageMimeTypes,
+  ...supportedCatalogModelMimeTypes,
+] as const;
+
 export const fileUploadCatalogPartAcceptedFileTypes: Accept = {
   'image/png': ['.png'],
   'image/svg+xml': ['.svg'],
   'image/webp': ['.webp'],
+  'model/gltf-binary': ['.glb'],
 };
 
 export const fileUploadCatalogThumbnailAcceptedFileTypes: Accept = {
