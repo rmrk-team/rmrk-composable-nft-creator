@@ -10,6 +10,8 @@ import type {
 } from 'abitype';
 import { EditPartEquippableWhitelist } from 'components/catalog/parts-management/edit-part-equippable-whitelist/edit-part-equippable-whitelist';
 import { Loader } from 'components/common/loader';
+import { Badge } from 'components/park-ui/badge';
+import { Text } from 'components/park-ui/text';
 import type { SupportedChainId } from 'lib/wagmi-config';
 import React from 'react';
 import { Box, Flex } from 'styled-system/jsx';
@@ -74,10 +76,18 @@ export const PartListRow = ({
         </Box>
       )}
 
-      <Box>id: {partId.toString()}</Box>
-      <Box>name: {metadata?.name}</Box>
-      <Box>zIndex: {part.z}</Box>
-      <Box>type: {partType}</Box>
+      <Flex direction={'column'} gap={2}>
+        <Flex alignItems={'center'} gap={2}>
+          <Badge variant={'solid'}>{partId.toString()}</Badge>
+          <Text size={'2xl'}>{metadata?.name}</Text>
+        </Flex>
+        <Flex gap={2}>
+          <Badge size={'sm'} variant={partType === 'slot' ? 'solid' : 'subtle'}>
+            type: {partType}
+          </Badge>
+          <Badge size={'sm'}>z-index: {part.z}</Badge>
+        </Flex>
+      </Flex>
 
       {partType === 'slot' && (
         <Box marginLeft={'auto'}>
