@@ -28,7 +28,9 @@ export async function POST(request: Request) {
     const mediaFileCid = mediaFile
       ? await filebaseClient.storeBlob(mediaFile)
       : undefined;
-    const mediaUri = mediaFileCid ? `ipfs://${mediaFileCid}` : undefined;
+    const mediaUri = mediaFileCid
+      ? `ipfs://${mediaFileCid}`
+      : metadataFields.mediaUri;
 
     let thumbnailCid: string | undefined = undefined;
 
@@ -36,7 +38,9 @@ export async function POST(request: Request) {
       thumbnailCid = await filebaseClient.storeBlob(thumbnailFile);
     }
 
-    const thumbnailUri = thumbnailCid ? `ipfs://${thumbnailCid}` : undefined;
+    const thumbnailUri = thumbnailCid
+      ? `ipfs://${thumbnailCid}`
+      : metadataFields.thumbnailUri;
 
     const objectName = `${md5(
       `${mediaUri}${thumbnailUri}${metadataFieldsString}`,

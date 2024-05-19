@@ -7,15 +7,17 @@ import { VStack } from 'styled-system/jsx';
 
 type Props = {
   name: string;
-  label: string;
+  label?: string;
+  placeholder?: string;
 };
-export const InputField = ({ name, label }: Props) => {
+
+export const InputField = ({ name, label, placeholder }: Props) => {
   const [field, meta, helpers] = useField(name);
 
   return (
     <VStack gap={1} textAlign={'left'} alignItems={'flex-start'}>
-      <FormLabel htmlFor="name">{label}</FormLabel>
-      <Input {...field} />
+      {label && <FormLabel htmlFor="name">{label}</FormLabel>}
+      <Input {...field} placeholder={placeholder} />
       {meta.touched && meta.error && <Text color="red">{meta.error}</Text>}
     </VStack>
   );

@@ -43,19 +43,29 @@ export const AddNewPart = ({
   const onSubmit = async (
     addCatalogPartFormFields: AddCatalogPartFormFields,
   ) => {
-    const { type, name, description, z, mediaFiles, equippable } =
+    const { type, z, equippable, metadataFields, metadataUri } =
       addCatalogPartFormFields;
     try {
       invariant(z);
-      invariant(name);
       invariant(type);
-      //TODO: Allow user to enter metadataURI directly instead of pinning it. Same for images
-      // invariant(mediaFiles?.[0]);
-      const metadataURI = await pinMetadataWithFiles({
-        mediaFile: mediaFiles?.[0],
-        metadataFields: { name, description },
-      });
+
+      let metadataURI = metadataUri;
+
+      if (metadataFields?.name || metadataFields?.mediaFiles) {
+        invariant(metadataFields?.name);
+
+        metadataURI = await pinMetadataWithFiles({
+          mediaFile: metadataFields.mediaFiles?.[0],
+          metadataFields: {
+            name: metadataFields.name,
+            description: metadataFields.description,
+            mediaUri: metadataFields.mediaUri,
+          },
+        });
+      }
+
       invariant(metadataURI);
+
       const nextPartId = currentTotalPartIds + 1;
       // setHash(undefined);
       const hash = await writeContractAsync({
