@@ -13,6 +13,10 @@
     "lint:fix": "pnpm lint --apply",
     "wagmi:generate": "wagmi generate"
   },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=9"
+  },
   "dependencies": {
     "@ark-ui/anatomy": "^3.1.0",
     "@ark-ui/react": "^2.2.3",
@@ -51,7 +55,6 @@
     "simple-git-hooks": "^2.11.1",
     "typescript": "5.4.5"
   },
-  "packageManager": "pnpm@9.1.0",
   "simple-git-hooks": {
     "pre-commit": "pnpm format && pnpm lint:fix"
   },
