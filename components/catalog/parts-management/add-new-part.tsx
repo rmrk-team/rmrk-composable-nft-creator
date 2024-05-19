@@ -54,6 +54,12 @@ export const AddNewPart = ({
       if (metadataFields?.name || metadataFields?.mediaFiles) {
         invariant(metadataFields?.name);
 
+        if (type === 2) {
+          if (!metadataFields.mediaFiles?.[0] && !metadataFields.mediaUri) {
+            throw new Error('Media file is required for fixed parts');
+          }
+        }
+
         metadataURI = await pinMetadataWithFiles({
           mediaFile: metadataFields.mediaFiles?.[0],
           metadataFields: {
