@@ -46,7 +46,9 @@ export const AddNewPart = ({
     const { type, z, equippable, metadataFields, metadataUri } =
       addCatalogPartFormFields;
     try {
-      invariant(z);
+      if (typeof z !== 'number') {
+        throw new Error('z-index is required');
+      }
       invariant(type);
 
       let metadataURI = metadataUri;
