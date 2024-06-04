@@ -34,6 +34,12 @@ This project uses [Panda.css](https://panda-css.com) for core styling and Panda'
 ### Other notes
 This project uses [Biome.js](https://biomejs.dev) for code formatting (instead of prettier) and linting. Biome IDE plugins have options to run on save (both vscode and intellij), I recommend turning it on. But to run both formatting and linting at any time manually, you can run `pnpm format && pnpm lint:fix`. Please visit Biome.js website to see how to install and use biome IDE plugin.
 
+### Live test UI
+
+Still a test UI, and few things to improve. But you can play around with it already
+Catalog creator: https://rmrk-composable-nft-creator.vercel.app/
+Singular build where you can add catalog to asset (for parent NFT) and equippable asset (for child nft): https://singular-rmrk2-git-feat-composable-asset-entry-test-rmrk-team.vercel.app/
+
 
 ## Contributing
 
