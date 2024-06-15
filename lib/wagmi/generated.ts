@@ -17,7 +17,12 @@ import {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -89,18 +94,33 @@ export const rmrkCatalogFactoryAbi = [
 ] as const
 
 /**
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const rmrkCatalogFactoryAddress = {
+  137: '0xaa61013f9d11CaB44e373c07Db770d7f1231334A',
+  592: '0x8E1B3c288DE12c10625308153A317c41E9353882',
+  1284: '0xD61C2594534b4B48BbF3eAdCF78884c06b41e643',
+  3776: '0xBC8B913a317cf44325134A7C21E6E75347F126a0',
   8453: '0xe42Bd7eE4c00624F975a00104613412f482c91b1',
+  60808: '0x9C970747a0dAdC0905DA137E43672314211d8039',
   84532: '0xD23820304b10E8AC745E90B33924A886b92DF13f',
   11155111: '0x14ec017a839687dc364A22ABd36fF300338A44ee',
 } as const
 
 /**
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1454,7 +1474,12 @@ export const rmrkEquipRenderUtilsAbi = [
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1466,7 +1491,12 @@ export const readRmrkCatalogFactory = /*#__PURE__*/ createReadContract({
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getDeployerCatalogAtIndex"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1480,7 +1510,12 @@ export const readRmrkCatalogFactoryGetDeployerCatalogAtIndex =
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getDeployerCatalogs"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1494,7 +1529,12 @@ export const readRmrkCatalogFactoryGetDeployerCatalogs =
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getLastDeployerCatalog"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1508,7 +1548,12 @@ export const readRmrkCatalogFactoryGetLastDeployerCatalog =
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getTotalDeployerCatalogs"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1522,7 +1567,12 @@ export const readRmrkCatalogFactoryGetTotalDeployerCatalogs =
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1534,7 +1584,12 @@ export const writeRmrkCatalogFactory = /*#__PURE__*/ createWriteContract({
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"deployCatalog"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1548,7 +1603,12 @@ export const writeRmrkCatalogFactoryDeployCatalog =
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1560,7 +1620,12 @@ export const simulateRmrkCatalogFactory = /*#__PURE__*/ createSimulateContract({
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"deployCatalog"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1574,7 +1639,12 @@ export const simulateRmrkCatalogFactoryDeployCatalog =
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1587,7 +1657,12 @@ export const watchRmrkCatalogFactoryEvent =
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `eventName` set to `"CatalogDeployed"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2404,7 +2479,12 @@ export const readRmrkEquipRenderUtilsValidateChildrenOf =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2416,7 +2496,12 @@ export const useReadRmrkCatalogFactory = /*#__PURE__*/ createUseReadContract({
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getDeployerCatalogAtIndex"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2430,7 +2515,12 @@ export const useReadRmrkCatalogFactoryGetDeployerCatalogAtIndex =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getDeployerCatalogs"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2444,7 +2534,12 @@ export const useReadRmrkCatalogFactoryGetDeployerCatalogs =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getLastDeployerCatalog"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2458,7 +2553,12 @@ export const useReadRmrkCatalogFactoryGetLastDeployerCatalog =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getTotalDeployerCatalogs"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2472,7 +2572,12 @@ export const useReadRmrkCatalogFactoryGetTotalDeployerCatalogs =
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2484,7 +2589,12 @@ export const useWriteRmrkCatalogFactory = /*#__PURE__*/ createUseWriteContract({
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"deployCatalog"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2498,7 +2608,12 @@ export const useWriteRmrkCatalogFactoryDeployCatalog =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2511,7 +2626,12 @@ export const useSimulateRmrkCatalogFactory =
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"deployCatalog"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2525,7 +2645,12 @@ export const useSimulateRmrkCatalogFactoryDeployCatalog =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2538,7 +2663,12 @@ export const useWatchRmrkCatalogFactoryEvent =
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `eventName` set to `"CatalogDeployed"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
  * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
