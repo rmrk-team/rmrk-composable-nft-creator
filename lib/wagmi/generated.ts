@@ -1,22 +1,28 @@
 import {
   createReadContract,
+  createWriteContract,
   createSimulateContract,
   createWatchContractEvent,
-  createWriteContract,
-} from 'wagmi/codegen';
+} from 'wagmi/codegen'
 
 import {
   createUseReadContract,
+  createUseWriteContract,
   createUseSimulateContract,
   createUseWatchContractEvent,
-  createUseWriteContract,
-} from 'wagmi/codegen';
+} from 'wagmi/codegen'
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // RMRKCatalogFactory
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -85,25 +91,43 @@ export const rmrkCatalogFactoryAbi = [
     ],
     name: 'CatalogDeployed',
   },
-] as const;
+] as const
 
 /**
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const rmrkCatalogFactoryAddress = {
+  137: '0xaa61013f9d11CaB44e373c07Db770d7f1231334A',
+  592: '0x8E1B3c288DE12c10625308153A317c41E9353882',
+  1284: '0xD61C2594534b4B48BbF3eAdCF78884c06b41e643',
+  3776: '0xBC8B913a317cf44325134A7C21E6E75347F126a0',
+  8453: '0xe42Bd7eE4c00624F975a00104613412f482c91b1',
+  60808: '0x9C970747a0dAdC0905DA137E43672314211d8039',
   84532: '0xD23820304b10E8AC745E90B33924A886b92DF13f',
   11155111: '0x14ec017a839687dc364A22ABd36fF300338A44ee',
-} as const;
+} as const
 
 /**
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const rmrkCatalogFactoryConfig = {
   address: rmrkCatalogFactoryAddress,
   abi: rmrkCatalogFactoryAbi,
-} as const;
+} as const
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // RMRKCatalogImpl
@@ -556,7 +580,7 @@ export const rmrkCatalogImplAbi = [
   { type: 'error', inputs: [], name: 'RMRKPartDoesNotExist' },
   { type: 'error', inputs: [], name: 'RMRKPartIsNotSlot' },
   { type: 'error', inputs: [], name: 'RMRKZeroLengthIdsPassed' },
-] as const;
+] as const
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // RMRKCatalogUtils
@@ -709,7 +733,7 @@ export const rmrkCatalogUtilsAbi = [
     stateMutability: 'view',
   },
   { type: 'error', inputs: [], name: 'RMRKNotComposableAsset' },
-] as const;
+] as const
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // RMRKEquipRenderUtils
@@ -1441,7 +1465,7 @@ export const rmrkEquipRenderUtilsAbi = [
   { type: 'error', inputs: [], name: 'RMRKParentIsNotNFT' },
   { type: 'error', inputs: [], name: 'RMRKTokenHasNoAssets' },
   { type: 'error', inputs: [], name: 'RMRKUnexpectedParent' },
-] as const;
+] as const
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Action
@@ -1450,17 +1474,29 @@ export const rmrkEquipRenderUtilsAbi = [
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const readRmrkCatalogFactory = /*#__PURE__*/ createReadContract({
   abi: rmrkCatalogFactoryAbi,
   address: rmrkCatalogFactoryAddress,
-});
+})
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getDeployerCatalogAtIndex"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1469,11 +1505,17 @@ export const readRmrkCatalogFactoryGetDeployerCatalogAtIndex =
     abi: rmrkCatalogFactoryAbi,
     address: rmrkCatalogFactoryAddress,
     functionName: 'getDeployerCatalogAtIndex',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getDeployerCatalogs"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1482,11 +1524,17 @@ export const readRmrkCatalogFactoryGetDeployerCatalogs =
     abi: rmrkCatalogFactoryAbi,
     address: rmrkCatalogFactoryAddress,
     functionName: 'getDeployerCatalogs',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getLastDeployerCatalog"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1495,11 +1543,17 @@ export const readRmrkCatalogFactoryGetLastDeployerCatalog =
     abi: rmrkCatalogFactoryAbi,
     address: rmrkCatalogFactoryAddress,
     functionName: 'getLastDeployerCatalog',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getTotalDeployerCatalogs"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1508,22 +1562,34 @@ export const readRmrkCatalogFactoryGetTotalDeployerCatalogs =
     abi: rmrkCatalogFactoryAbi,
     address: rmrkCatalogFactoryAddress,
     functionName: 'getTotalDeployerCatalogs',
-  });
+  })
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const writeRmrkCatalogFactory = /*#__PURE__*/ createWriteContract({
   abi: rmrkCatalogFactoryAbi,
   address: rmrkCatalogFactoryAddress,
-});
+})
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"deployCatalog"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1532,22 +1598,34 @@ export const writeRmrkCatalogFactoryDeployCatalog =
     abi: rmrkCatalogFactoryAbi,
     address: rmrkCatalogFactoryAddress,
     functionName: 'deployCatalog',
-  });
+  })
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const simulateRmrkCatalogFactory = /*#__PURE__*/ createSimulateContract({
   abi: rmrkCatalogFactoryAbi,
   address: rmrkCatalogFactoryAddress,
-});
+})
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"deployCatalog"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1556,11 +1634,17 @@ export const simulateRmrkCatalogFactoryDeployCatalog =
     abi: rmrkCatalogFactoryAbi,
     address: rmrkCatalogFactoryAddress,
     functionName: 'deployCatalog',
-  });
+  })
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1568,11 +1652,17 @@ export const watchRmrkCatalogFactoryEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: rmrkCatalogFactoryAbi,
     address: rmrkCatalogFactoryAddress,
-  });
+  })
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `eventName` set to `"CatalogDeployed"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -1581,14 +1671,14 @@ export const watchRmrkCatalogFactoryCatalogDeployedEvent =
     abi: rmrkCatalogFactoryAbi,
     address: rmrkCatalogFactoryAddress,
     eventName: 'CatalogDeployed',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__
  */
 export const readRmrkCatalogImpl = /*#__PURE__*/ createReadContract({
   abi: rmrkCatalogImplAbi,
-});
+})
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"checkIsEquippable"`
@@ -1597,7 +1687,7 @@ export const readRmrkCatalogImplCheckIsEquippable =
   /*#__PURE__*/ createReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'checkIsEquippable',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"checkIsEquippableToAll"`
@@ -1606,7 +1696,7 @@ export const readRmrkCatalogImplCheckIsEquippableToAll =
   /*#__PURE__*/ createReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'checkIsEquippableToAll',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getAllPartIds"`
@@ -1615,7 +1705,7 @@ export const readRmrkCatalogImplGetAllPartIds =
   /*#__PURE__*/ createReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'getAllPartIds',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getLock"`
@@ -1623,7 +1713,7 @@ export const readRmrkCatalogImplGetAllPartIds =
 export const readRmrkCatalogImplGetLock = /*#__PURE__*/ createReadContract({
   abi: rmrkCatalogImplAbi,
   functionName: 'getLock',
-});
+})
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getMetadataURI"`
@@ -1632,7 +1722,7 @@ export const readRmrkCatalogImplGetMetadataUri =
   /*#__PURE__*/ createReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'getMetadataURI',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getPaginatedPartIds"`
@@ -1641,7 +1731,7 @@ export const readRmrkCatalogImplGetPaginatedPartIds =
   /*#__PURE__*/ createReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'getPaginatedPartIds',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getPart"`
@@ -1649,7 +1739,7 @@ export const readRmrkCatalogImplGetPaginatedPartIds =
 export const readRmrkCatalogImplGetPart = /*#__PURE__*/ createReadContract({
   abi: rmrkCatalogImplAbi,
   functionName: 'getPart',
-});
+})
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getPartByIndex"`
@@ -1658,7 +1748,7 @@ export const readRmrkCatalogImplGetPartByIndex =
   /*#__PURE__*/ createReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'getPartByIndex',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getParts"`
@@ -1666,7 +1756,7 @@ export const readRmrkCatalogImplGetPartByIndex =
 export const readRmrkCatalogImplGetParts = /*#__PURE__*/ createReadContract({
   abi: rmrkCatalogImplAbi,
   functionName: 'getParts',
-});
+})
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getTotalParts"`
@@ -1675,7 +1765,7 @@ export const readRmrkCatalogImplGetTotalParts =
   /*#__PURE__*/ createReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'getTotalParts',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getType"`
@@ -1683,7 +1773,7 @@ export const readRmrkCatalogImplGetTotalParts =
 export const readRmrkCatalogImplGetType = /*#__PURE__*/ createReadContract({
   abi: rmrkCatalogImplAbi,
   functionName: 'getType',
-});
+})
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"isContributor"`
@@ -1692,7 +1782,7 @@ export const readRmrkCatalogImplIsContributor =
   /*#__PURE__*/ createReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'isContributor',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"owner"`
@@ -1700,7 +1790,7 @@ export const readRmrkCatalogImplIsContributor =
 export const readRmrkCatalogImplOwner = /*#__PURE__*/ createReadContract({
   abi: rmrkCatalogImplAbi,
   functionName: 'owner',
-});
+})
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"supportsInterface"`
@@ -1709,14 +1799,14 @@ export const readRmrkCatalogImplSupportsInterface =
   /*#__PURE__*/ createReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'supportsInterface',
-  });
+  })
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__
  */
 export const writeRmrkCatalogImpl = /*#__PURE__*/ createWriteContract({
   abi: rmrkCatalogImplAbi,
-});
+})
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addEquippableAddresses"`
@@ -1725,7 +1815,7 @@ export const writeRmrkCatalogImplAddEquippableAddresses =
   /*#__PURE__*/ createWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'addEquippableAddresses',
-  });
+  })
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addPart"`
@@ -1733,7 +1823,7 @@ export const writeRmrkCatalogImplAddEquippableAddresses =
 export const writeRmrkCatalogImplAddPart = /*#__PURE__*/ createWriteContract({
   abi: rmrkCatalogImplAbi,
   functionName: 'addPart',
-});
+})
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addPartList"`
@@ -1742,7 +1832,7 @@ export const writeRmrkCatalogImplAddPartList =
   /*#__PURE__*/ createWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'addPartList',
-  });
+  })
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"manageContributor"`
@@ -1751,7 +1841,7 @@ export const writeRmrkCatalogImplManageContributor =
   /*#__PURE__*/ createWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'manageContributor',
-  });
+  })
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -1760,7 +1850,7 @@ export const writeRmrkCatalogImplRenounceOwnership =
   /*#__PURE__*/ createWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'renounceOwnership',
-  });
+  })
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"resetEquippableAddresses"`
@@ -1769,7 +1859,7 @@ export const writeRmrkCatalogImplResetEquippableAddresses =
   /*#__PURE__*/ createWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'resetEquippableAddresses',
-  });
+  })
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setEquippableAddresses"`
@@ -1778,7 +1868,7 @@ export const writeRmrkCatalogImplSetEquippableAddresses =
   /*#__PURE__*/ createWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setEquippableAddresses',
-  });
+  })
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setEquippableToAll"`
@@ -1787,7 +1877,7 @@ export const writeRmrkCatalogImplSetEquippableToAll =
   /*#__PURE__*/ createWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setEquippableToAll',
-  });
+  })
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setLock"`
@@ -1795,7 +1885,7 @@ export const writeRmrkCatalogImplSetEquippableToAll =
 export const writeRmrkCatalogImplSetLock = /*#__PURE__*/ createWriteContract({
   abi: rmrkCatalogImplAbi,
   functionName: 'setLock',
-});
+})
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setMetadataURI"`
@@ -1804,7 +1894,7 @@ export const writeRmrkCatalogImplSetMetadataUri =
   /*#__PURE__*/ createWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setMetadataURI',
-  });
+  })
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setType"`
@@ -1812,7 +1902,7 @@ export const writeRmrkCatalogImplSetMetadataUri =
 export const writeRmrkCatalogImplSetType = /*#__PURE__*/ createWriteContract({
   abi: rmrkCatalogImplAbi,
   functionName: 'setType',
-});
+})
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"transferOwnership"`
@@ -1821,14 +1911,14 @@ export const writeRmrkCatalogImplTransferOwnership =
   /*#__PURE__*/ createWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'transferOwnership',
-  });
+  })
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__
  */
 export const simulateRmrkCatalogImpl = /*#__PURE__*/ createSimulateContract({
   abi: rmrkCatalogImplAbi,
-});
+})
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addEquippableAddresses"`
@@ -1837,7 +1927,7 @@ export const simulateRmrkCatalogImplAddEquippableAddresses =
   /*#__PURE__*/ createSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'addEquippableAddresses',
-  });
+  })
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addPart"`
@@ -1846,7 +1936,7 @@ export const simulateRmrkCatalogImplAddPart =
   /*#__PURE__*/ createSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'addPart',
-  });
+  })
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addPartList"`
@@ -1855,7 +1945,7 @@ export const simulateRmrkCatalogImplAddPartList =
   /*#__PURE__*/ createSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'addPartList',
-  });
+  })
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"manageContributor"`
@@ -1864,7 +1954,7 @@ export const simulateRmrkCatalogImplManageContributor =
   /*#__PURE__*/ createSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'manageContributor',
-  });
+  })
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -1873,7 +1963,7 @@ export const simulateRmrkCatalogImplRenounceOwnership =
   /*#__PURE__*/ createSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'renounceOwnership',
-  });
+  })
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"resetEquippableAddresses"`
@@ -1882,7 +1972,7 @@ export const simulateRmrkCatalogImplResetEquippableAddresses =
   /*#__PURE__*/ createSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'resetEquippableAddresses',
-  });
+  })
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setEquippableAddresses"`
@@ -1891,7 +1981,7 @@ export const simulateRmrkCatalogImplSetEquippableAddresses =
   /*#__PURE__*/ createSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setEquippableAddresses',
-  });
+  })
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setEquippableToAll"`
@@ -1900,7 +1990,7 @@ export const simulateRmrkCatalogImplSetEquippableToAll =
   /*#__PURE__*/ createSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setEquippableToAll',
-  });
+  })
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setLock"`
@@ -1909,7 +1999,7 @@ export const simulateRmrkCatalogImplSetLock =
   /*#__PURE__*/ createSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setLock',
-  });
+  })
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setMetadataURI"`
@@ -1918,7 +2008,7 @@ export const simulateRmrkCatalogImplSetMetadataUri =
   /*#__PURE__*/ createSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setMetadataURI',
-  });
+  })
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setType"`
@@ -1927,7 +2017,7 @@ export const simulateRmrkCatalogImplSetType =
   /*#__PURE__*/ createSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setType',
-  });
+  })
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"transferOwnership"`
@@ -1936,14 +2026,14 @@ export const simulateRmrkCatalogImplTransferOwnership =
   /*#__PURE__*/ createSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'transferOwnership',
-  });
+  })
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__
  */
 export const watchRmrkCatalogImplEvent = /*#__PURE__*/ createWatchContractEvent(
   { abi: rmrkCatalogImplAbi },
-);
+)
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"AddedEquippables"`
@@ -1952,7 +2042,7 @@ export const watchRmrkCatalogImplAddedEquippablesEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'AddedEquippables',
-  });
+  })
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"AddedPart"`
@@ -1961,7 +2051,7 @@ export const watchRmrkCatalogImplAddedPartEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'AddedPart',
-  });
+  })
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"ContractURIUpdated"`
@@ -1970,7 +2060,7 @@ export const watchRmrkCatalogImplContractUriUpdatedEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'ContractURIUpdated',
-  });
+  })
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"ContributorUpdate"`
@@ -1979,7 +2069,7 @@ export const watchRmrkCatalogImplContributorUpdateEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'ContributorUpdate',
-  });
+  })
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"LockSet"`
@@ -1988,7 +2078,7 @@ export const watchRmrkCatalogImplLockSetEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'LockSet',
-  });
+  })
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"OwnershipTransferred"`
@@ -1997,7 +2087,7 @@ export const watchRmrkCatalogImplOwnershipTransferredEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'OwnershipTransferred',
-  });
+  })
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"SetEquippableToAll"`
@@ -2006,7 +2096,7 @@ export const watchRmrkCatalogImplSetEquippableToAllEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'SetEquippableToAll',
-  });
+  })
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"SetEquippables"`
@@ -2015,7 +2105,7 @@ export const watchRmrkCatalogImplSetEquippablesEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'SetEquippables',
-  });
+  })
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"TypeUpdated"`
@@ -2024,14 +2114,14 @@ export const watchRmrkCatalogImplTypeUpdatedEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'TypeUpdated',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__
  */
 export const readRmrkCatalogUtils = /*#__PURE__*/ createReadContract({
   abi: rmrkCatalogUtilsAbi,
-});
+})
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getCatalogData"`
@@ -2040,7 +2130,7 @@ export const readRmrkCatalogUtilsGetCatalogData =
   /*#__PURE__*/ createReadContract({
     abi: rmrkCatalogUtilsAbi,
     functionName: 'getCatalogData',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getCatalogDataAndExtendedParts"`
@@ -2049,7 +2139,7 @@ export const readRmrkCatalogUtilsGetCatalogDataAndExtendedParts =
   /*#__PURE__*/ createReadContract({
     abi: rmrkCatalogUtilsAbi,
     functionName: 'getCatalogDataAndExtendedParts',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getExtendedParts"`
@@ -2058,7 +2148,7 @@ export const readRmrkCatalogUtilsGetExtendedParts =
   /*#__PURE__*/ createReadContract({
     abi: rmrkCatalogUtilsAbi,
     functionName: 'getExtendedParts',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getOrphanEquipmentsFromChildAsset"`
@@ -2067,7 +2157,7 @@ export const readRmrkCatalogUtilsGetOrphanEquipmentsFromChildAsset =
   /*#__PURE__*/ createReadContract({
     abi: rmrkCatalogUtilsAbi,
     functionName: 'getOrphanEquipmentsFromChildAsset',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getOrphanEquipmentsFromParentAsset"`
@@ -2076,7 +2166,7 @@ export const readRmrkCatalogUtilsGetOrphanEquipmentsFromParentAsset =
   /*#__PURE__*/ createReadContract({
     abi: rmrkCatalogUtilsAbi,
     functionName: 'getOrphanEquipmentsFromParentAsset',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getSlotPartsAndCatalog"`
@@ -2085,7 +2175,7 @@ export const readRmrkCatalogUtilsGetSlotPartsAndCatalog =
   /*#__PURE__*/ createReadContract({
     abi: rmrkCatalogUtilsAbi,
     functionName: 'getSlotPartsAndCatalog',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"splitSlotAndFixedParts"`
@@ -2094,14 +2184,14 @@ export const readRmrkCatalogUtilsSplitSlotAndFixedParts =
   /*#__PURE__*/ createReadContract({
     abi: rmrkCatalogUtilsAbi,
     functionName: 'splitSlotAndFixedParts',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__
  */
 export const readRmrkEquipRenderUtils = /*#__PURE__*/ createReadContract({
   abi: rmrkEquipRenderUtilsAbi,
-});
+})
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"checkExpectedParent"`
@@ -2110,7 +2200,7 @@ export const readRmrkEquipRenderUtilsCheckExpectedParent =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'checkExpectedParent',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"composeEquippables"`
@@ -2119,7 +2209,7 @@ export const readRmrkEquipRenderUtilsComposeEquippables =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'composeEquippables',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"directOwnerOfWithParentsPerspective"`
@@ -2128,7 +2218,7 @@ export const readRmrkEquipRenderUtilsDirectOwnerOfWithParentsPerspective =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'directOwnerOfWithParentsPerspective',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"equippedChildrenOf"`
@@ -2137,7 +2227,7 @@ export const readRmrkEquipRenderUtilsEquippedChildrenOf =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'equippedChildrenOf',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getAllEquippableSlotsFromParent"`
@@ -2146,7 +2236,7 @@ export const readRmrkEquipRenderUtilsGetAllEquippableSlotsFromParent =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getAllEquippableSlotsFromParent',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getAssetIdWithTopPriority"`
@@ -2155,7 +2245,7 @@ export const readRmrkEquipRenderUtilsGetAssetIdWithTopPriority =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getAssetIdWithTopPriority',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getAssetsById"`
@@ -2164,7 +2254,7 @@ export const readRmrkEquipRenderUtilsGetAssetsById =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getAssetsById',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getChildIndex"`
@@ -2173,7 +2263,7 @@ export const readRmrkEquipRenderUtilsGetChildIndex =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getChildIndex',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getChildrenWithTopMetadata"`
@@ -2182,7 +2272,7 @@ export const readRmrkEquipRenderUtilsGetChildrenWithTopMetadata =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getChildrenWithTopMetadata',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getEquippableSlotsFromParent"`
@@ -2191,7 +2281,7 @@ export const readRmrkEquipRenderUtilsGetEquippableSlotsFromParent =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getEquippableSlotsFromParent',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getEquippableSlotsFromParentForPendingChild"`
@@ -2200,7 +2290,7 @@ export const readRmrkEquipRenderUtilsGetEquippableSlotsFromParentForPendingChild
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getEquippableSlotsFromParentForPendingChild',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getEquipped"`
@@ -2209,7 +2299,7 @@ export const readRmrkEquipRenderUtilsGetEquipped =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getEquipped',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getExtendedActiveAssets"`
@@ -2218,7 +2308,7 @@ export const readRmrkEquipRenderUtilsGetExtendedActiveAssets =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getExtendedActiveAssets',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getExtendedEquippableActiveAssets"`
@@ -2227,7 +2317,7 @@ export const readRmrkEquipRenderUtilsGetExtendedEquippableActiveAssets =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getExtendedEquippableActiveAssets',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getExtendedNft"`
@@ -2236,7 +2326,7 @@ export const readRmrkEquipRenderUtilsGetExtendedNft =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getExtendedNft',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getExtendedPendingAssets"`
@@ -2245,7 +2335,7 @@ export const readRmrkEquipRenderUtilsGetExtendedPendingAssets =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getExtendedPendingAssets',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getParent"`
@@ -2254,7 +2344,7 @@ export const readRmrkEquipRenderUtilsGetParent =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getParent',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getPendingAssets"`
@@ -2263,7 +2353,7 @@ export const readRmrkEquipRenderUtilsGetPendingAssets =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getPendingAssets',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getPendingChildIndex"`
@@ -2272,7 +2362,7 @@ export const readRmrkEquipRenderUtilsGetPendingChildIndex =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getPendingChildIndex',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getSlotPartsAndCatalog"`
@@ -2281,7 +2371,7 @@ export const readRmrkEquipRenderUtilsGetSlotPartsAndCatalog =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getSlotPartsAndCatalog',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getTopAsset"`
@@ -2290,7 +2380,7 @@ export const readRmrkEquipRenderUtilsGetTopAsset =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getTopAsset',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getTopAssetAndEquippableDataForToken"`
@@ -2299,7 +2389,7 @@ export const readRmrkEquipRenderUtilsGetTopAssetAndEquippableDataForToken =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getTopAssetAndEquippableDataForToken',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getTopAssetMetaForToken"`
@@ -2308,7 +2398,7 @@ export const readRmrkEquipRenderUtilsGetTopAssetMetaForToken =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getTopAssetMetaForToken',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getTopAssetMetadataForTokens"`
@@ -2317,7 +2407,7 @@ export const readRmrkEquipRenderUtilsGetTopAssetMetadataForTokens =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getTopAssetMetadataForTokens',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getTotalDescendants"`
@@ -2326,7 +2416,7 @@ export const readRmrkEquipRenderUtilsGetTotalDescendants =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getTotalDescendants',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"hasMoreThanOneLevelOfNesting"`
@@ -2335,7 +2425,7 @@ export const readRmrkEquipRenderUtilsHasMoreThanOneLevelOfNesting =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'hasMoreThanOneLevelOfNesting',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"isAssetEquipped"`
@@ -2344,7 +2434,7 @@ export const readRmrkEquipRenderUtilsIsAssetEquipped =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'isAssetEquipped',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"isTokenRejectedOrAbandoned"`
@@ -2353,7 +2443,7 @@ export const readRmrkEquipRenderUtilsIsTokenRejectedOrAbandoned =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'isTokenRejectedOrAbandoned',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"splitSlotAndFixedParts"`
@@ -2362,7 +2452,7 @@ export const readRmrkEquipRenderUtilsSplitSlotAndFixedParts =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'splitSlotAndFixedParts',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"validateChildOf"`
@@ -2371,7 +2461,7 @@ export const readRmrkEquipRenderUtilsValidateChildOf =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'validateChildOf',
-  });
+  })
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"validateChildrenOf"`
@@ -2380,7 +2470,7 @@ export const readRmrkEquipRenderUtilsValidateChildrenOf =
   /*#__PURE__*/ createReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'validateChildrenOf',
-  });
+  })
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // React
@@ -2389,17 +2479,29 @@ export const readRmrkEquipRenderUtilsValidateChildrenOf =
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const useReadRmrkCatalogFactory = /*#__PURE__*/ createUseReadContract({
   abi: rmrkCatalogFactoryAbi,
   address: rmrkCatalogFactoryAddress,
-});
+})
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getDeployerCatalogAtIndex"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2408,11 +2510,17 @@ export const useReadRmrkCatalogFactoryGetDeployerCatalogAtIndex =
     abi: rmrkCatalogFactoryAbi,
     address: rmrkCatalogFactoryAddress,
     functionName: 'getDeployerCatalogAtIndex',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getDeployerCatalogs"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2421,11 +2529,17 @@ export const useReadRmrkCatalogFactoryGetDeployerCatalogs =
     abi: rmrkCatalogFactoryAbi,
     address: rmrkCatalogFactoryAddress,
     functionName: 'getDeployerCatalogs',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getLastDeployerCatalog"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2434,11 +2548,17 @@ export const useReadRmrkCatalogFactoryGetLastDeployerCatalog =
     abi: rmrkCatalogFactoryAbi,
     address: rmrkCatalogFactoryAddress,
     functionName: 'getLastDeployerCatalog',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"getTotalDeployerCatalogs"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2447,22 +2567,34 @@ export const useReadRmrkCatalogFactoryGetTotalDeployerCatalogs =
     abi: rmrkCatalogFactoryAbi,
     address: rmrkCatalogFactoryAddress,
     functionName: 'getTotalDeployerCatalogs',
-  });
+  })
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
 export const useWriteRmrkCatalogFactory = /*#__PURE__*/ createUseWriteContract({
   abi: rmrkCatalogFactoryAbi,
   address: rmrkCatalogFactoryAddress,
-});
+})
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"deployCatalog"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2471,11 +2603,17 @@ export const useWriteRmrkCatalogFactoryDeployCatalog =
     abi: rmrkCatalogFactoryAbi,
     address: rmrkCatalogFactoryAddress,
     functionName: 'deployCatalog',
-  });
+  })
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2483,11 +2621,17 @@ export const useSimulateRmrkCatalogFactory =
   /*#__PURE__*/ createUseSimulateContract({
     abi: rmrkCatalogFactoryAbi,
     address: rmrkCatalogFactoryAddress,
-  });
+  })
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `functionName` set to `"deployCatalog"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2496,11 +2640,17 @@ export const useSimulateRmrkCatalogFactoryDeployCatalog =
     abi: rmrkCatalogFactoryAbi,
     address: rmrkCatalogFactoryAddress,
     functionName: 'deployCatalog',
-  });
+  })
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2508,11 +2658,17 @@ export const useWatchRmrkCatalogFactoryEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: rmrkCatalogFactoryAbi,
     address: rmrkCatalogFactoryAddress,
-  });
+  })
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogFactoryAbi}__ and `eventName` set to `"CatalogDeployed"`
  *
+ * - [__View Contract on Polygon Polygon Scan__](https://polygonscan.com/address/0xaa61013f9d11CaB44e373c07Db770d7f1231334A)
+ * - [__View Contract on Astar Astar Subscan__](https://astar.subscan.io/address/0x8E1B3c288DE12c10625308153A317c41E9353882)
+ * - [__View Contract on Moonbeam Moonscan__](https://moonscan.io/address/0xD61C2594534b4B48BbF3eAdCF78884c06b41e643)
+ * - [__View Contract on Astar Zk Evm Astar Zk Evm Explorer__](https://astar-zkevm.explorer.startale.com/address/0xBC8B913a317cf44325134A7C21E6E75347F126a0)
+ * - [__View Contract on Base Basescan__](https://basescan.org/address/0xe42Bd7eE4c00624F975a00104613412f482c91b1)
+ * - [__View Contract on Bob Blockscout__](https://explorer.gobob.xyz/address/0x9C970747a0dAdC0905DA137E43672314211d8039)
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xD23820304b10E8AC745E90B33924A886b92DF13f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x14ec017a839687dc364A22ABd36fF300338A44ee)
  */
@@ -2521,14 +2677,14 @@ export const useWatchRmrkCatalogFactoryCatalogDeployedEvent =
     abi: rmrkCatalogFactoryAbi,
     address: rmrkCatalogFactoryAddress,
     eventName: 'CatalogDeployed',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__
  */
 export const useReadRmrkCatalogImpl = /*#__PURE__*/ createUseReadContract({
   abi: rmrkCatalogImplAbi,
-});
+})
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"checkIsEquippable"`
@@ -2537,7 +2693,7 @@ export const useReadRmrkCatalogImplCheckIsEquippable =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'checkIsEquippable',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"checkIsEquippableToAll"`
@@ -2546,7 +2702,7 @@ export const useReadRmrkCatalogImplCheckIsEquippableToAll =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'checkIsEquippableToAll',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getAllPartIds"`
@@ -2555,7 +2711,7 @@ export const useReadRmrkCatalogImplGetAllPartIds =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'getAllPartIds',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getLock"`
@@ -2564,7 +2720,7 @@ export const useReadRmrkCatalogImplGetLock =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'getLock',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getMetadataURI"`
@@ -2573,7 +2729,7 @@ export const useReadRmrkCatalogImplGetMetadataUri =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'getMetadataURI',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getPaginatedPartIds"`
@@ -2582,7 +2738,7 @@ export const useReadRmrkCatalogImplGetPaginatedPartIds =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'getPaginatedPartIds',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getPart"`
@@ -2591,7 +2747,7 @@ export const useReadRmrkCatalogImplGetPart =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'getPart',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getPartByIndex"`
@@ -2600,7 +2756,7 @@ export const useReadRmrkCatalogImplGetPartByIndex =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'getPartByIndex',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getParts"`
@@ -2609,7 +2765,7 @@ export const useReadRmrkCatalogImplGetParts =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'getParts',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getTotalParts"`
@@ -2618,7 +2774,7 @@ export const useReadRmrkCatalogImplGetTotalParts =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'getTotalParts',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"getType"`
@@ -2627,7 +2783,7 @@ export const useReadRmrkCatalogImplGetType =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'getType',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"isContributor"`
@@ -2636,7 +2792,7 @@ export const useReadRmrkCatalogImplIsContributor =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'isContributor',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"owner"`
@@ -2644,7 +2800,7 @@ export const useReadRmrkCatalogImplIsContributor =
 export const useReadRmrkCatalogImplOwner = /*#__PURE__*/ createUseReadContract({
   abi: rmrkCatalogImplAbi,
   functionName: 'owner',
-});
+})
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"supportsInterface"`
@@ -2653,14 +2809,14 @@ export const useReadRmrkCatalogImplSupportsInterface =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'supportsInterface',
-  });
+  })
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__
  */
 export const useWriteRmrkCatalogImpl = /*#__PURE__*/ createUseWriteContract({
   abi: rmrkCatalogImplAbi,
-});
+})
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addEquippableAddresses"`
@@ -2669,7 +2825,7 @@ export const useWriteRmrkCatalogImplAddEquippableAddresses =
   /*#__PURE__*/ createUseWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'addEquippableAddresses',
-  });
+  })
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addPart"`
@@ -2678,7 +2834,7 @@ export const useWriteRmrkCatalogImplAddPart =
   /*#__PURE__*/ createUseWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'addPart',
-  });
+  })
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addPartList"`
@@ -2687,7 +2843,7 @@ export const useWriteRmrkCatalogImplAddPartList =
   /*#__PURE__*/ createUseWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'addPartList',
-  });
+  })
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"manageContributor"`
@@ -2696,7 +2852,7 @@ export const useWriteRmrkCatalogImplManageContributor =
   /*#__PURE__*/ createUseWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'manageContributor',
-  });
+  })
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -2705,7 +2861,7 @@ export const useWriteRmrkCatalogImplRenounceOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'renounceOwnership',
-  });
+  })
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"resetEquippableAddresses"`
@@ -2714,7 +2870,7 @@ export const useWriteRmrkCatalogImplResetEquippableAddresses =
   /*#__PURE__*/ createUseWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'resetEquippableAddresses',
-  });
+  })
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setEquippableAddresses"`
@@ -2723,7 +2879,7 @@ export const useWriteRmrkCatalogImplSetEquippableAddresses =
   /*#__PURE__*/ createUseWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setEquippableAddresses',
-  });
+  })
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setEquippableToAll"`
@@ -2732,7 +2888,7 @@ export const useWriteRmrkCatalogImplSetEquippableToAll =
   /*#__PURE__*/ createUseWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setEquippableToAll',
-  });
+  })
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setLock"`
@@ -2741,7 +2897,7 @@ export const useWriteRmrkCatalogImplSetLock =
   /*#__PURE__*/ createUseWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setLock',
-  });
+  })
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setMetadataURI"`
@@ -2750,7 +2906,7 @@ export const useWriteRmrkCatalogImplSetMetadataUri =
   /*#__PURE__*/ createUseWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setMetadataURI',
-  });
+  })
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setType"`
@@ -2759,7 +2915,7 @@ export const useWriteRmrkCatalogImplSetType =
   /*#__PURE__*/ createUseWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setType',
-  });
+  })
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"transferOwnership"`
@@ -2768,13 +2924,13 @@ export const useWriteRmrkCatalogImplTransferOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'transferOwnership',
-  });
+  })
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__
  */
 export const useSimulateRmrkCatalogImpl =
-  /*#__PURE__*/ createUseSimulateContract({ abi: rmrkCatalogImplAbi });
+  /*#__PURE__*/ createUseSimulateContract({ abi: rmrkCatalogImplAbi })
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addEquippableAddresses"`
@@ -2783,7 +2939,7 @@ export const useSimulateRmrkCatalogImplAddEquippableAddresses =
   /*#__PURE__*/ createUseSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'addEquippableAddresses',
-  });
+  })
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addPart"`
@@ -2792,7 +2948,7 @@ export const useSimulateRmrkCatalogImplAddPart =
   /*#__PURE__*/ createUseSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'addPart',
-  });
+  })
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"addPartList"`
@@ -2801,7 +2957,7 @@ export const useSimulateRmrkCatalogImplAddPartList =
   /*#__PURE__*/ createUseSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'addPartList',
-  });
+  })
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"manageContributor"`
@@ -2810,7 +2966,7 @@ export const useSimulateRmrkCatalogImplManageContributor =
   /*#__PURE__*/ createUseSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'manageContributor',
-  });
+  })
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -2819,7 +2975,7 @@ export const useSimulateRmrkCatalogImplRenounceOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'renounceOwnership',
-  });
+  })
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"resetEquippableAddresses"`
@@ -2828,7 +2984,7 @@ export const useSimulateRmrkCatalogImplResetEquippableAddresses =
   /*#__PURE__*/ createUseSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'resetEquippableAddresses',
-  });
+  })
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setEquippableAddresses"`
@@ -2837,7 +2993,7 @@ export const useSimulateRmrkCatalogImplSetEquippableAddresses =
   /*#__PURE__*/ createUseSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setEquippableAddresses',
-  });
+  })
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setEquippableToAll"`
@@ -2846,7 +3002,7 @@ export const useSimulateRmrkCatalogImplSetEquippableToAll =
   /*#__PURE__*/ createUseSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setEquippableToAll',
-  });
+  })
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setLock"`
@@ -2855,7 +3011,7 @@ export const useSimulateRmrkCatalogImplSetLock =
   /*#__PURE__*/ createUseSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setLock',
-  });
+  })
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setMetadataURI"`
@@ -2864,7 +3020,7 @@ export const useSimulateRmrkCatalogImplSetMetadataUri =
   /*#__PURE__*/ createUseSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setMetadataURI',
-  });
+  })
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"setType"`
@@ -2873,7 +3029,7 @@ export const useSimulateRmrkCatalogImplSetType =
   /*#__PURE__*/ createUseSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'setType',
-  });
+  })
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `functionName` set to `"transferOwnership"`
@@ -2882,13 +3038,13 @@ export const useSimulateRmrkCatalogImplTransferOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: rmrkCatalogImplAbi,
     functionName: 'transferOwnership',
-  });
+  })
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__
  */
 export const useWatchRmrkCatalogImplEvent =
-  /*#__PURE__*/ createUseWatchContractEvent({ abi: rmrkCatalogImplAbi });
+  /*#__PURE__*/ createUseWatchContractEvent({ abi: rmrkCatalogImplAbi })
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"AddedEquippables"`
@@ -2897,7 +3053,7 @@ export const useWatchRmrkCatalogImplAddedEquippablesEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'AddedEquippables',
-  });
+  })
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"AddedPart"`
@@ -2906,7 +3062,7 @@ export const useWatchRmrkCatalogImplAddedPartEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'AddedPart',
-  });
+  })
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"ContractURIUpdated"`
@@ -2915,7 +3071,7 @@ export const useWatchRmrkCatalogImplContractUriUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'ContractURIUpdated',
-  });
+  })
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"ContributorUpdate"`
@@ -2924,7 +3080,7 @@ export const useWatchRmrkCatalogImplContributorUpdateEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'ContributorUpdate',
-  });
+  })
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"LockSet"`
@@ -2933,7 +3089,7 @@ export const useWatchRmrkCatalogImplLockSetEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'LockSet',
-  });
+  })
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"OwnershipTransferred"`
@@ -2942,7 +3098,7 @@ export const useWatchRmrkCatalogImplOwnershipTransferredEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'OwnershipTransferred',
-  });
+  })
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"SetEquippableToAll"`
@@ -2951,7 +3107,7 @@ export const useWatchRmrkCatalogImplSetEquippableToAllEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'SetEquippableToAll',
-  });
+  })
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"SetEquippables"`
@@ -2960,7 +3116,7 @@ export const useWatchRmrkCatalogImplSetEquippablesEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'SetEquippables',
-  });
+  })
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link rmrkCatalogImplAbi}__ and `eventName` set to `"TypeUpdated"`
@@ -2969,14 +3125,14 @@ export const useWatchRmrkCatalogImplTypeUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: rmrkCatalogImplAbi,
     eventName: 'TypeUpdated',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__
  */
 export const useReadRmrkCatalogUtils = /*#__PURE__*/ createUseReadContract({
   abi: rmrkCatalogUtilsAbi,
-});
+})
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getCatalogData"`
@@ -2985,7 +3141,7 @@ export const useReadRmrkCatalogUtilsGetCatalogData =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogUtilsAbi,
     functionName: 'getCatalogData',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getCatalogDataAndExtendedParts"`
@@ -2994,7 +3150,7 @@ export const useReadRmrkCatalogUtilsGetCatalogDataAndExtendedParts =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogUtilsAbi,
     functionName: 'getCatalogDataAndExtendedParts',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getExtendedParts"`
@@ -3003,7 +3159,7 @@ export const useReadRmrkCatalogUtilsGetExtendedParts =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogUtilsAbi,
     functionName: 'getExtendedParts',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getOrphanEquipmentsFromChildAsset"`
@@ -3012,7 +3168,7 @@ export const useReadRmrkCatalogUtilsGetOrphanEquipmentsFromChildAsset =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogUtilsAbi,
     functionName: 'getOrphanEquipmentsFromChildAsset',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getOrphanEquipmentsFromParentAsset"`
@@ -3021,7 +3177,7 @@ export const useReadRmrkCatalogUtilsGetOrphanEquipmentsFromParentAsset =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogUtilsAbi,
     functionName: 'getOrphanEquipmentsFromParentAsset',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"getSlotPartsAndCatalog"`
@@ -3030,7 +3186,7 @@ export const useReadRmrkCatalogUtilsGetSlotPartsAndCatalog =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogUtilsAbi,
     functionName: 'getSlotPartsAndCatalog',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkCatalogUtilsAbi}__ and `functionName` set to `"splitSlotAndFixedParts"`
@@ -3039,14 +3195,14 @@ export const useReadRmrkCatalogUtilsSplitSlotAndFixedParts =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkCatalogUtilsAbi,
     functionName: 'splitSlotAndFixedParts',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__
  */
 export const useReadRmrkEquipRenderUtils = /*#__PURE__*/ createUseReadContract({
   abi: rmrkEquipRenderUtilsAbi,
-});
+})
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"checkExpectedParent"`
@@ -3055,7 +3211,7 @@ export const useReadRmrkEquipRenderUtilsCheckExpectedParent =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'checkExpectedParent',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"composeEquippables"`
@@ -3064,7 +3220,7 @@ export const useReadRmrkEquipRenderUtilsComposeEquippables =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'composeEquippables',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"directOwnerOfWithParentsPerspective"`
@@ -3073,7 +3229,7 @@ export const useReadRmrkEquipRenderUtilsDirectOwnerOfWithParentsPerspective =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'directOwnerOfWithParentsPerspective',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"equippedChildrenOf"`
@@ -3082,7 +3238,7 @@ export const useReadRmrkEquipRenderUtilsEquippedChildrenOf =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'equippedChildrenOf',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getAllEquippableSlotsFromParent"`
@@ -3091,7 +3247,7 @@ export const useReadRmrkEquipRenderUtilsGetAllEquippableSlotsFromParent =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getAllEquippableSlotsFromParent',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getAssetIdWithTopPriority"`
@@ -3100,7 +3256,7 @@ export const useReadRmrkEquipRenderUtilsGetAssetIdWithTopPriority =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getAssetIdWithTopPriority',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getAssetsById"`
@@ -3109,7 +3265,7 @@ export const useReadRmrkEquipRenderUtilsGetAssetsById =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getAssetsById',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getChildIndex"`
@@ -3118,7 +3274,7 @@ export const useReadRmrkEquipRenderUtilsGetChildIndex =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getChildIndex',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getChildrenWithTopMetadata"`
@@ -3127,7 +3283,7 @@ export const useReadRmrkEquipRenderUtilsGetChildrenWithTopMetadata =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getChildrenWithTopMetadata',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getEquippableSlotsFromParent"`
@@ -3136,7 +3292,7 @@ export const useReadRmrkEquipRenderUtilsGetEquippableSlotsFromParent =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getEquippableSlotsFromParent',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getEquippableSlotsFromParentForPendingChild"`
@@ -3145,7 +3301,7 @@ export const useReadRmrkEquipRenderUtilsGetEquippableSlotsFromParentForPendingCh
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getEquippableSlotsFromParentForPendingChild',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getEquipped"`
@@ -3154,7 +3310,7 @@ export const useReadRmrkEquipRenderUtilsGetEquipped =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getEquipped',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getExtendedActiveAssets"`
@@ -3163,7 +3319,7 @@ export const useReadRmrkEquipRenderUtilsGetExtendedActiveAssets =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getExtendedActiveAssets',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getExtendedEquippableActiveAssets"`
@@ -3172,7 +3328,7 @@ export const useReadRmrkEquipRenderUtilsGetExtendedEquippableActiveAssets =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getExtendedEquippableActiveAssets',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getExtendedNft"`
@@ -3181,7 +3337,7 @@ export const useReadRmrkEquipRenderUtilsGetExtendedNft =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getExtendedNft',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getExtendedPendingAssets"`
@@ -3190,7 +3346,7 @@ export const useReadRmrkEquipRenderUtilsGetExtendedPendingAssets =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getExtendedPendingAssets',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getParent"`
@@ -3199,7 +3355,7 @@ export const useReadRmrkEquipRenderUtilsGetParent =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getParent',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getPendingAssets"`
@@ -3208,7 +3364,7 @@ export const useReadRmrkEquipRenderUtilsGetPendingAssets =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getPendingAssets',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getPendingChildIndex"`
@@ -3217,7 +3373,7 @@ export const useReadRmrkEquipRenderUtilsGetPendingChildIndex =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getPendingChildIndex',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getSlotPartsAndCatalog"`
@@ -3226,7 +3382,7 @@ export const useReadRmrkEquipRenderUtilsGetSlotPartsAndCatalog =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getSlotPartsAndCatalog',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getTopAsset"`
@@ -3235,7 +3391,7 @@ export const useReadRmrkEquipRenderUtilsGetTopAsset =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getTopAsset',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getTopAssetAndEquippableDataForToken"`
@@ -3244,7 +3400,7 @@ export const useReadRmrkEquipRenderUtilsGetTopAssetAndEquippableDataForToken =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getTopAssetAndEquippableDataForToken',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getTopAssetMetaForToken"`
@@ -3253,7 +3409,7 @@ export const useReadRmrkEquipRenderUtilsGetTopAssetMetaForToken =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getTopAssetMetaForToken',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getTopAssetMetadataForTokens"`
@@ -3262,7 +3418,7 @@ export const useReadRmrkEquipRenderUtilsGetTopAssetMetadataForTokens =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getTopAssetMetadataForTokens',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"getTotalDescendants"`
@@ -3271,7 +3427,7 @@ export const useReadRmrkEquipRenderUtilsGetTotalDescendants =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'getTotalDescendants',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"hasMoreThanOneLevelOfNesting"`
@@ -3280,7 +3436,7 @@ export const useReadRmrkEquipRenderUtilsHasMoreThanOneLevelOfNesting =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'hasMoreThanOneLevelOfNesting',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"isAssetEquipped"`
@@ -3289,7 +3445,7 @@ export const useReadRmrkEquipRenderUtilsIsAssetEquipped =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'isAssetEquipped',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"isTokenRejectedOrAbandoned"`
@@ -3298,7 +3454,7 @@ export const useReadRmrkEquipRenderUtilsIsTokenRejectedOrAbandoned =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'isTokenRejectedOrAbandoned',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"splitSlotAndFixedParts"`
@@ -3307,7 +3463,7 @@ export const useReadRmrkEquipRenderUtilsSplitSlotAndFixedParts =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'splitSlotAndFixedParts',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"validateChildOf"`
@@ -3316,7 +3472,7 @@ export const useReadRmrkEquipRenderUtilsValidateChildOf =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'validateChildOf',
-  });
+  })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link rmrkEquipRenderUtilsAbi}__ and `functionName` set to `"validateChildrenOf"`
@@ -3325,4 +3481,4 @@ export const useReadRmrkEquipRenderUtilsValidateChildrenOf =
   /*#__PURE__*/ createUseReadContract({
     abi: rmrkEquipRenderUtilsAbi,
     functionName: 'validateChildrenOf',
-  });
+  })

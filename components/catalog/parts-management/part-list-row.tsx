@@ -1,4 +1,7 @@
-import type { RMRKCatalogImpl } from '@rmrk-team/rmrk-evm-utils';
+import type {
+  RMRKCatalogImpl,
+  RMRKCatalogUtils,
+} from '@rmrk-team/rmrk-evm-utils';
 import { useFetchIpfsMetadata, useRMRKConfig } from '@rmrk-team/rmrk-hooks';
 import type {
   AbiParametersToPrimitiveTypes,
@@ -7,48 +10,44 @@ import type {
 } from 'abitype';
 import { EditPartEquippableWhitelist } from 'components/catalog/parts-management/edit-part-equippable-whitelist/edit-part-equippable-whitelist';
 import { Loader } from 'components/common/loader';
+import { Badge } from 'components/park-ui/badge';
+import { Text } from 'components/park-ui/text';
 import type { SupportedChainId } from 'lib/wagmi-config';
-import { useReadRmrkCatalogUtilsGetExtendedParts } from 'lib/wagmi/generated';
 import React from 'react';
 import { Box, Flex } from 'styled-system/jsx';
 
 export type CatalogPart = AbiParametersToPrimitiveTypes<
-  ExtractAbiFunction<typeof RMRKCatalogImpl, 'getPart'>['outputs']
->[0];
+  ExtractAbiFunction<typeof RMRKCatalogUtils, 'getExtendedParts'>['outputs']
+>[0][0];
 
 type Props = {
-  partId: bigint;
   chainId: SupportedChainId;
   catalogAddress: Address;
+  part: CatalogPart;
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  refetchParts: () => Promise<any>;
 };
 
-export const PartListRow = ({ partId, chainId, catalogAddress }: Props) => {
-  const config = useRMRKConfig();
-  const {
-    data,
-    isLoading,
-    isError,
-    refetch: refetchPart,
-  } = useReadRmrkCatalogUtilsGetExtendedParts({
-    chainId,
-    address: config.utilityContracts[chainId]?.RMRKCatalogUtils,
-    args: [catalogAddress, [partId]],
-  });
-
-  const part = data?.[0];
-
+export const PartListRow = ({
+  chainId,
+  catalogAddress,
+  part,
+  refetchParts,
+}: Props) => {
   const { data: metadata, isLoading: isLoadingMetadata } = useFetchIpfsMetadata(
     { metadataUri: part?.metadataURI },
     { enabled: !!part?.metadataURI },
   );
 
-  if (isLoading || isLoadingMetadata) {
+  if (isLoadingMetadata) {
     return <Loader />;
   }
 
   if (!part) {
     return null;
   }
+
+  const partId = part.partId;
 
   const partType = part.itemType === 1 ? 'slot' : 'fixed';
   const image = metadata?.mediaUri || metadata?.image;
@@ -77,10 +76,18 @@ export const PartListRow = ({ partId, chainId, catalogAddress }: Props) => {
         </Box>
       )}
 
-      <Box>id: {partId.toString()}</Box>
-      <Box>name: {metadata?.name}</Box>
-      <Box>zIndex: {part.z}</Box>
-      <Box>type: {partType}</Box>
+      <Flex direction={'column'} gap={2}>
+        <Flex alignItems={'center'} gap={2}>
+          <Badge variant={'solid'}>{partId.toString()}</Badge>
+          <Text size={'2xl'}>{metadata?.name}</Text>
+        </Flex>
+        <Flex gap={2}>
+          <Badge size={'sm'} variant={partType === 'slot' ? 'solid' : 'subtle'}>
+            type: {partType}
+          </Badge>
+          <Badge size={'sm'}>z-index: {part.z}</Badge>
+        </Flex>
+      </Flex>
 
       {partType === 'slot' && (
         <Box marginLeft={'auto'}>
@@ -89,7 +96,7 @@ export const PartListRow = ({ partId, chainId, catalogAddress }: Props) => {
             chainId={chainId}
             partId={partId}
             part={part}
-            refetchPart={refetchPart}
+            refetchParts={refetchParts}
           />
         </Box>
       )}

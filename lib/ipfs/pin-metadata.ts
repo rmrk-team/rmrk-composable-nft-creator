@@ -14,13 +14,16 @@ export const pinMetadataWithFiles = async ({
   thumbnailFile,
   metadataFields,
 }: {
-  mediaFile: File;
+  mediaFile?: File;
   thumbnailFile?: File;
   metadataFields: Metadata;
 }): Promise<string> => {
   const data = new FormData();
   data.append('metadataFields', JSON.stringify(metadataFields));
-  data.append('mediaFile', mediaFile);
+  if (mediaFile) {
+    data.append('mediaFile', mediaFile);
+  }
+
   if (thumbnailFile) {
     data.append('thumbnailFile', thumbnailFile);
   }

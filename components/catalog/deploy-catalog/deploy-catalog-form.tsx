@@ -1,13 +1,12 @@
 import { InputSelectCatalogType } from 'components/catalog/deploy-catalog/input-select-catalog-type';
 import { FileUploadDropzone } from 'components/common/forms/file-upload-dropzone';
 import { InputField } from 'components/common/forms/input-field';
-import { InputSelect } from 'components/common/forms/input-select';
 import { Button } from 'components/park-ui/button';
 import { Form, Formik } from 'formik';
 import type { CatalogSchema } from 'lib/catalog/deploy-catalog/deploy-catalog-form/deploy-catalog-form-schema';
 import {
+  catalogTypes,
   fileUploadCatalogThumbnailAcceptedFileTypes,
-  supportedCatalogImageMimeTypes,
 } from 'lib/consts/media-types';
 import React from 'react';
 import { Box, VStack } from 'styled-system/jsx';
@@ -21,7 +20,7 @@ export type DeployCatalogFormFields = {
 
 const DeployCatalogFormSchema = yup.object().shape({
   name: yup.string().min(3).max(100).required(),
-  type: yup.string().oneOf(supportedCatalogImageMimeTypes).defined().required(),
+  type: yup.string().oneOf(catalogTypes).defined().required(),
   files: yup.array().of(yup.mixed()).min(1).max(1).required(),
 });
 

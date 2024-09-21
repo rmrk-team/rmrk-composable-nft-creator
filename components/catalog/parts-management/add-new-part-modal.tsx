@@ -1,3 +1,4 @@
+import { Portal } from '@ark-ui/react';
 import type { Address } from 'abitype';
 import {
   type AddCatalogPartFormFields,
@@ -9,7 +10,7 @@ import { IconButton } from 'components/park-ui/icon-button';
 import type { SupportedChainId } from 'lib/wagmi-config';
 import { DiamondPlus, XIcon } from 'lucide-react';
 import React, { useState } from 'react';
-import { Stack } from 'styled-system/jsx';
+import { Box, Stack } from 'styled-system/jsx';
 
 type Props = Dialog.RootProps & {
   catalogAddress: Address;
@@ -32,39 +33,58 @@ export const AddNewPartModal = ({
   ...dialogProps
 }: Props) => {
   return (
-    <Dialog.Root
-      {...dialogProps}
-      open={isOpen}
-      unmountOnExit={true}
-      onOpenChange={(e) => setIsOpen(e.open)}
-    >
-      <Dialog.Trigger asChild>
-        <Button
-          variant={'outline'}
-          colorPalette={'gray'}
-          width={'100%'}
-          size={'lg'}
-        >
-          Add new part <DiamondPlus />
-        </Button>
-      </Dialog.Trigger>
-      <Dialog.Backdrop />
-      <Dialog.Positioner>
-        <Dialog.Content width={'md'}>
-          <Stack gap="8" p="6">
-            <Stack gap="1">
-              <Dialog.Title>Add new Part</Dialog.Title>
-              <Dialog.Description>Add new Part</Dialog.Description>
-              <AddNewPartForm onCancel={onClose} onSubmit={onSubmit} />
-            </Stack>
-          </Stack>
-          <Dialog.CloseTrigger asChild position="absolute" top="2" right="2">
-            <IconButton aria-label="Close Dialog" variant="ghost" size="sm">
-              <XIcon />
-            </IconButton>
-          </Dialog.CloseTrigger>
-        </Dialog.Content>
-      </Dialog.Positioner>
-    </Dialog.Root>
+    <>
+      <Button
+        onClick={() => setIsOpen(true)}
+        variant={'outline'}
+        colorPalette={'gray'}
+        width={'100%'}
+        size={'lg'}
+      >
+        Add new part <DiamondPlus />
+      </Button>
+
+      <Dialog.Root
+        {...dialogProps}
+        open={isOpen}
+        unmountOnExit={true}
+        onOpenChange={(e) => setIsOpen(e.open)}
+      >
+        <Portal>
+          <Dialog.Backdrop />
+          <Dialog.Positioner overflow={'hidden'}>
+            <Dialog.Content
+              width={'md'}
+              overflowY={'auto'}
+              maxH={'calc(100% - 7.5rem)'}
+            >
+              <Box overflow={'auto'}>
+                <Stack gap="8" p="6">
+                  <Stack gap="1">
+                    <Dialog.Title>Add new Part</Dialog.Title>
+                    <Dialog.Description>Add new Part</Dialog.Description>
+                    <AddNewPartForm onCancel={onClose} onSubmit={onSubmit} />
+                  </Stack>
+                </Stack>
+                <Dialog.CloseTrigger
+                  asChild
+                  position="absolute"
+                  top="2"
+                  right="2"
+                >
+                  <IconButton
+                    aria-label="Close Dialog"
+                    variant="ghost"
+                    size="sm"
+                  >
+                    <XIcon />
+                  </IconButton>
+                </Dialog.CloseTrigger>
+              </Box>
+            </Dialog.Content>
+          </Dialog.Positioner>
+        </Portal>
+      </Dialog.Root>
+    </>
   );
 };

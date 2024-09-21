@@ -21,7 +21,7 @@ type Props = FileUpload.RootProps & {
 export const FileUploadDropzone = ({
   isDisabled,
   name,
-  label = 'Upload file',
+  label,
   maxFiles = 1,
   maxFileSize = 50 * 1024 * 1024,
   accept = fileUploadCatalogThumbnailAcceptedFileTypes,
@@ -38,7 +38,7 @@ export const FileUploadDropzone = ({
 
   return (
     <VStack gap={1} width="100%" alignItems={'flex-start'}>
-      <FormLabel htmlFor="name">{label}</FormLabel>
+      {label && <FormLabel htmlFor={name}>{label}</FormLabel>}
       {meta.touched && meta.error && <Text color="red">{meta.error}</Text>}
       <FileUpload.Root
         maxFiles={maxFiles}

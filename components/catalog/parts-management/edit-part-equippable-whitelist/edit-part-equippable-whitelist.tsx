@@ -10,7 +10,9 @@ import {
   useWriteRmrkCatalogImplSetEquippableAddresses,
   useWriteRmrkCatalogImplSetEquippableToAll,
 } from 'lib/wagmi/generated';
+import { CheckCheck, Filter } from 'lucide-react';
 import React, { useState } from 'react';
+import { Flex } from 'styled-system/jsx';
 import { waitForTransactionReceipt } from 'wagmi/actions';
 
 type Props = {
@@ -19,14 +21,14 @@ type Props = {
   partId: bigint;
   part: CatalogPart;
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  refetchPart: () => Promise<any>;
+  refetchParts: () => Promise<any>;
 };
 
 export const EditPartEquippableWhitelist = ({
   partId,
   chainId,
   catalogAddress,
-  refetchPart,
+  refetchParts,
   part,
 }: Props) => {
   //TODO: This sets a new array in place of previous array, we should offer to use addEquippableAddresses also if user wants to update previous array instead
@@ -107,7 +109,7 @@ export const EditPartEquippableWhitelist = ({
       //TODO: Handle success (close modal, show success message, refetch part)
 
       await sleep(500);
-      await refetchPart();
+      await refetchParts();
       await refetchIsEquippableToAll();
 
       onClose();
@@ -125,15 +127,28 @@ export const EditPartEquippableWhitelist = ({
   }
 
   return (
-    <EditPartEquippableWhitelistModal
-      chainId={chainId}
-      catalogAddress={catalogAddress}
-      partId={partId}
-      onSubmit={onSubmit}
-      initialValues={initialValues}
-      onClose={onClose}
-      isOpen={isOpen}
-      setIsOpen={setIsOpen}
-    />
+    <Flex gap={2} direction={'column'} alignItems={'center'}>
+      <Flex gap={2} alignItems={'center'}>
+        {isEquippableToAll ? (
+          <>
+            <CheckCheck size={16} /> Public
+          </>
+        ) : (
+          <>
+            <Filter size={16} /> Whitelist
+          </>
+        )}
+      </Flex>
+      <EditPartEquippableWhitelistModal
+        chainId={chainId}
+        catalogAddress={catalogAddress}
+        partId={partId}
+        onSubmit={onSubmit}
+        initialValues={initialValues}
+        onClose={onClose}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
+    </Flex>
   );
 };
