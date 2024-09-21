@@ -1,44 +1,72 @@
 import type { Address } from 'abitype';
 import { SlotEquippablesTagsInput } from 'components/catalog/parts-management/edit-part-equippable-whitelist/slot-equippables-tags-input';
 import { InputSelectPartType } from 'components/catalog/parts-management/input-select-part-type';
-import { FileUploadDropzone } from 'components/common/forms/file-upload-dropzone';
-import { InputField } from 'components/common/forms/input-field';
+import { PartMetadataFields } from 'components/catalog/parts-management/part-metadata-fields';
 import { InputFieldNumber } from 'components/common/forms/input-field-number';
 import { Button } from 'components/park-ui/button';
 import { Text } from 'components/park-ui/text';
 import { Form, Formik } from 'formik';
-import {
-  catalogPartTypes,
-  fileUploadCatalogPartAcceptedFileTypes,
-} from 'lib/consts/media-types';
+import { catalogPartTypes } from 'lib/consts/media-types';
 import React from 'react';
 import { Divider, Stack, VStack } from 'styled-system/jsx';
 import * as yup from 'yup';
 
 export type AddCatalogPartFormFields = {
   type: 1 | 2 | undefined; // 0 = None, 1 = Slot, 2 = Fixed
-  name: string | undefined;
-  mediaFiles: File[] | undefined;
   z: number | undefined; // z-index
-  description?: string;
+  metadataFields: {
+    name: string | undefined;
+    mediaFiles: File[] | undefined;
+    mediaUri: string | undefined;
+    description?: string;
+  };
   equippable?: Address[];
+  metadataUri?: string;
 };
 
-const AddCatalogPartFormSchema = yup.object().shape({
-  name: yup.string().min(3).max(100).required().nullable(),
-  type: yup.number().oneOf(catalogPartTypes).defined().required().nullable(),
-  mediaFiles: yup.array().of(yup.mixed()).min(1).max(1).optional().nullable(),
-  z: yup.number().min(0).defined().required().nullable(),
+const AddCatalogPartFormMetadataFields = yup.object().shape({
   description: yup.string().optional().nullable(),
-  equippable: yup.array().of(yup.string()).optional().nullable(),
-});
+  mediaFiles: yup.array().of(yup.mixed()).min(1).max(1).optional().nullable(),
+  mediaUri: yup.string().optional().nullable(),
+  name: yup.string().min(3).max(100).required().nullable(),
+})
+
+const getCatalogPartFormSchema = (isDirectIpfsMetadataUri: boolean) => {
+  return yup.object().shape({
+    type: yup.number().oneOf(catalogPartTypes).defined().required().nullable(),
+    z: yup.number().min(0).defined().required().nullable(),
+    equippable: yup.array().of(yup.string()).optional().nullable(),
+    metadataFields: isDirectIpfsMetadataUri ? AddCatalogPartFormMetadataFields.optional().nullable() : AddCatalogPartFormMetadataFields,
+    metadataUri: isDirectIpfsMetadataUri ? yup.string().required().nullable() : yup.string().optional().nullable(),
+  });
+}
+
+// const AddCatalogPartFormSchema = yup.object().shape({
+//   type: yup.number().oneOf(catalogPartTypes).defined().required().nullable(),
+//   z: yup.number().min(0).defined().required().nullable(),
+//   equippable: yup.array().of(yup.string()).optional().nullable(),
+//   metadataFields: yup.object().shape({
+//     description: yup.string().optional().nullable(),
+//     mediaFiles: yup.array().of(yup.mixed()).min(1).max(1).optional().nullable(),
+//     mediaUri: yup.string().optional().nullable(),
+//     name: yup.string().min(3).max(100).required().nullable(),
+//   }),
+//   metadataUri: yup.string().optional().nullable(),
+// });
+
+export const initialPartMetadataFields = {
+  name: undefined,
+  mediaFiles: undefined,
+  description: undefined,
+  mediaUri: undefined,
+};
 
 const initialValues: AddCatalogPartFormFields = {
-  name: undefined,
   type: undefined,
-  mediaFiles: undefined,
+  metadataFields: initialPartMetadataFields,
   z: undefined,
   equippable: undefined,
+  metadataUri: undefined,
 };
 
 type Props = {
@@ -51,10 +79,14 @@ type Props = {
 export const AddNewPartForm = ({ onSubmit, onCancel }: Props) => {
   const formId = 'add-new-part-form';
 
+  const [isUseCustomIpfsUri, setIsUseCustomIpfsUri] = React.useState(false);
+
+  const schema = getCatalogPartFormSchema(isUseCustomIpfsUri);
+
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={AddCatalogPartFormSchema}
+      validationSchema={schema}
       onSubmit={onSubmit}
       validateOnChange={true}
       validateOnBlur={false}
@@ -63,14 +95,8 @@ export const AddNewPartForm = ({ onSubmit, onCancel }: Props) => {
       {({ errors, submitForm, isSubmitting, handleSubmit, values }) => (
         <Form id={formId} onSubmit={handleSubmit}>
           <VStack gap={8} alignItems={'flex-start'} textAlign={'left'}>
-            <InputField name="name" label="Part name" />
             <InputSelectPartType />
-            <FileUploadDropzone
-              name="mediaFiles"
-              label="Part media"
-              maxFiles={1}
-              accept={fileUploadCatalogPartAcceptedFileTypes}
-            />
+            <PartMetadataFields partType={values.type} setIsUseCustomIpfsUri={setIsUseCustomIpfsUri} isUseCustomIpfsUri={isUseCustomIpfsUri} />
             <InputFieldNumber name="z" label="Z-index" />
             {values.type === 1 && (
               <>
