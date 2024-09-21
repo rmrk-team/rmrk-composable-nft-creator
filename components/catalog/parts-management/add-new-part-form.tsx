@@ -10,6 +10,8 @@ import { catalogPartTypes } from 'lib/consts/media-types';
 import React from 'react';
 import { Divider, Stack, VStack } from 'styled-system/jsx';
 import * as yup from 'yup';
+// import * as Alert from 'components/park-ui/alert';
+// import { AlertCircle } from 'lucide-react';
 
 export type AddCatalogPartFormFields = {
   type: 1 | 2 | undefined; // 0 = None, 1 = Slot, 2 = Fixed
@@ -24,19 +26,18 @@ export type AddCatalogPartFormFields = {
   metadataUri?: string;
 };
 
-const AddCatalogPartFormMetadataFields = yup.object().shape({
-  description: yup.string().optional().nullable(),
-  mediaFiles: yup.array().of(yup.mixed()).min(1).max(1).optional().nullable(),
-  mediaUri: yup.string().optional().nullable(),
-  name: yup.string().min(3).max(100).required().nullable(),
-})
 
 const getCatalogPartFormSchema = (isDirectIpfsMetadataUri: boolean) => {
   return yup.object().shape({
     type: yup.number().oneOf(catalogPartTypes).defined().required().nullable(),
     z: yup.number().min(0).defined().required().nullable(),
     equippable: yup.array().of(yup.string()).optional().nullable(),
-    metadataFields: isDirectIpfsMetadataUri ? AddCatalogPartFormMetadataFields.optional().nullable() : AddCatalogPartFormMetadataFields,
+    metadataFields: yup.object().shape({
+      description: yup.string().optional().nullable(),
+      mediaFiles: yup.array().of(yup.mixed()).min(1).max(1).optional().nullable(),
+      mediaUri: yup.string().optional().nullable(),
+      name: isDirectIpfsMetadataUri ? yup.string().min(3).max(100).optional().nullable() : yup.string().min(3).max(100).required().nullable(),
+    }),
     metadataUri: isDirectIpfsMetadataUri ? yup.string().required().nullable() : yup.string().optional().nullable(),
   });
 }
@@ -110,6 +111,15 @@ export const AddNewPartForm = ({ onSubmit, onCancel }: Props) => {
                 </VStack>
               </>
             )}
+            {/*{errors && !!Object.values(errors)[0] && (*/}
+            {/*  <Alert.Root>*/}
+            {/*    <Alert.Icon asChild>*/}
+            {/*      <AlertCircle />*/}
+            {/*    </Alert.Icon>*/}
+            {/*    <Alert.Title>{JSON.stringify(errors)}</Alert.Title>*/}
+            {/*  </Alert.Root>*/}
+            {/*)}*/}
+
           </VStack>
           <Stack gap="3" direction="row" width="full" mt={10}>
             <Button
