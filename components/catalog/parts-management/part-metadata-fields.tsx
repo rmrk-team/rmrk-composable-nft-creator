@@ -13,12 +13,13 @@ import { Box, Flex } from 'styled-system/jsx';
 
 type Props = {
   partType: 1 | 2 | undefined; // 0 = None, 1 = Slot, 2 = Fixed
+  setIsUseCustomIpfsUri: React.Dispatch<React.SetStateAction<boolean>>,
+  isUseCustomIpfsUri: boolean
 };
 
-export const PartMetadataFields = ({ partType }: Props) => {
+export const PartMetadataFields = ({ partType, setIsUseCustomIpfsUri, isUseCustomIpfsUri }: Props) => {
   const { setFieldValue, values } =
     useFormikContext<AddCatalogPartFormFields>();
-  const [isUseCustomIpfsUri, setIsUseCustomIpfsUri] = React.useState(false);
 
   const toggleCustomIpfsUri = () => {
     if (isUseCustomIpfsUri) {

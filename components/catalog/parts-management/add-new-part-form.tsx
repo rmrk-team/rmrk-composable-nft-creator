@@ -24,18 +24,35 @@ export type AddCatalogPartFormFields = {
   metadataUri?: string;
 };
 
-const AddCatalogPartFormSchema = yup.object().shape({
-  type: yup.number().oneOf(catalogPartTypes).defined().required().nullable(),
-  z: yup.number().min(0).defined().required().nullable(),
-  equippable: yup.array().of(yup.string()).optional().nullable(),
-  metadataFields: yup.object().shape({
-    description: yup.string().optional().nullable(),
-    mediaFiles: yup.array().of(yup.mixed()).min(1).max(1).optional().nullable(),
-    mediaUri: yup.string().optional().nullable(),
-    name: yup.string().min(3).max(100).required().nullable(),
-  }),
-  metadataUri: yup.string().optional().nullable(),
-});
+const AddCatalogPartFormMetadataFields = yup.object().shape({
+  description: yup.string().optional().nullable(),
+  mediaFiles: yup.array().of(yup.mixed()).min(1).max(1).optional().nullable(),
+  mediaUri: yup.string().optional().nullable(),
+  name: yup.string().min(3).max(100).required().nullable(),
+})
+
+const getCatalogPartFormSchema = (isDirectIpfsMetadataUri: boolean) => {
+  return yup.object().shape({
+    type: yup.number().oneOf(catalogPartTypes).defined().required().nullable(),
+    z: yup.number().min(0).defined().required().nullable(),
+    equippable: yup.array().of(yup.string()).optional().nullable(),
+    metadataFields: isDirectIpfsMetadataUri ? AddCatalogPartFormMetadataFields.optional().nullable() : AddCatalogPartFormMetadataFields,
+    metadataUri: isDirectIpfsMetadataUri ? yup.string().required().nullable() : yup.string().optional().nullable(),
+  });
+}
+
+// const AddCatalogPartFormSchema = yup.object().shape({
+//   type: yup.number().oneOf(catalogPartTypes).defined().required().nullable(),
+//   z: yup.number().min(0).defined().required().nullable(),
+//   equippable: yup.array().of(yup.string()).optional().nullable(),
+//   metadataFields: yup.object().shape({
+//     description: yup.string().optional().nullable(),
+//     mediaFiles: yup.array().of(yup.mixed()).min(1).max(1).optional().nullable(),
+//     mediaUri: yup.string().optional().nullable(),
+//     name: yup.string().min(3).max(100).required().nullable(),
+//   }),
+//   metadataUri: yup.string().optional().nullable(),
+// });
 
 export const initialPartMetadataFields = {
   name: undefined,
@@ -62,10 +79,14 @@ type Props = {
 export const AddNewPartForm = ({ onSubmit, onCancel }: Props) => {
   const formId = 'add-new-part-form';
 
+  const [isUseCustomIpfsUri, setIsUseCustomIpfsUri] = React.useState(false);
+
+  const schema = getCatalogPartFormSchema(isUseCustomIpfsUri);
+
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={AddCatalogPartFormSchema}
+      validationSchema={schema}
       onSubmit={onSubmit}
       validateOnChange={true}
       validateOnBlur={false}
@@ -75,7 +96,7 @@ export const AddNewPartForm = ({ onSubmit, onCancel }: Props) => {
         <Form id={formId} onSubmit={handleSubmit}>
           <VStack gap={8} alignItems={'flex-start'} textAlign={'left'}>
             <InputSelectPartType />
-            <PartMetadataFields partType={values.type} />
+            <PartMetadataFields partType={values.type} setIsUseCustomIpfsUri={setIsUseCustomIpfsUri} isUseCustomIpfsUri={isUseCustomIpfsUri} />
             <InputFieldNumber name="z" label="Z-index" />
             {values.type === 1 && (
               <>
